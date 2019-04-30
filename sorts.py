@@ -4,9 +4,9 @@ def degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang):
 		if int(ritsang)<500:
 			degat=(96+32*vieup+lootpv)*6//5-defensem
 		elif int(ritsang)>=500 and int(ritsang)<2000:
-			degat=(force+96+32*vieup+lootpv)*5//4-defensem
+			degat=(96+32*vieup+lootpv)*5//4-defensem
 		elif int(ritsang)>=2000 and int(ritsang)<5000:
-			degat=(force+96+32*vieup+lootpv)*4//3-defensem
+			degat=(96+32*vieup+lootpv)*4//3-defensem
 		elif int(ritsang)>=5000:
 			degat=(96+32*vieup+lootpv)*2-defensem
 		if int(degat)<0:
@@ -128,15 +128,15 @@ def rituel_sanglant():
 		degat=0
 	return degat
 
-def ombreflamme(magie,ombre):
+def ombreflamme(force,ombre):
 	if int(ombre)<500:
-		degat=magie
+		degat=force
 	elif int(ombre)>=500 and int(ombre)<2000:
-		degat=magie*5//4
+		degat=force*5//4
 	elif int(ombre)>=2000 and int(ombre)<5000:
-		degat=magie*3//2
+		degat=force*3//2
 	elif int(ombre)>=5000:
-		degat=magie*2
+		degat=force*2
 	if int(degat)<0:
 		degat=0
 	return degat
@@ -284,16 +284,16 @@ def serie_meurtriere(stackvit,defensem,serie):
 		degat=0
 	return degat
 
-def drainage(magie,drain):
+def drainage(force,drain):
 	print (" ")
 	if int(drain)<500:
-		degat=magie//3
+		degat=force//3
 	elif int(drain)>=500 and int(drain)<2000:
-		degat=magie*2//5
+		degat=force*2//5
 	elif int(drain)>=2000 and int(drain)<5000:
-		degat=magie//2
+		degat=force//2
 	elif int(drain)>=5000:
-		degat=magie*2//3
+		degat=force*2//3
 	if int(serie)<0:
 		degat=0
 	return degat
@@ -301,13 +301,13 @@ def drainage(magie,drain):
 def feu_ame(magie,ame,lvlm,feu):
 	print (" ")
 	if int(feu)<500:
-		degat=magie*ame//lvlm
+		degat=force*ame//lvlm
 	elif int(feu)>=500 and int(feu)<2000:
-		degat=(magie*5//4)*ame//lvlm
+		degat=(force*5//4)*ame//lvlm
 	elif int(feu)>=2000 and int(feu)<5000:
-		degat=(magie*3//2)*ame//lvlm
+		degat=(force*3//2)*ame//lvlm
 	elif int(feu)>=5000:
-		degat=magie*2*ame//lvlm
+		degat=force*2*ame//lvlm
 	if int(serie)<0:
 		degat=0
 	return degat

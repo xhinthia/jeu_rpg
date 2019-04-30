@@ -217,6 +217,17 @@ while int(pal)!=210000:
 		print ("quête : "+str(guldef)+"/100 defense atteinte")
 		print ("quête : "+str(gulvit)+"/100 vitesse atteinte")
 	print (" ")
+#	if int(pal)>=210:
+#		if int(keltu)==2:
+#			print ("[11] garde de Kel'Thuzad")
+#		elif int(norfend)==2:
+#			print ("[11] garde d'Arthas")
+#		elif int(exode)==2:
+#			print ("[11] garde de Thrall")
+#		elif int(azzin)==2:
+#			print ("[11] garde d'Illidan")
+#		print ("[0] quitter")
+#	else:
 	print ("[1] demon lvl "+str(1+pal))
 	print ("[2] demon lvl "+str(2+pal))
 	print ("[3] demon lvl "+str(3+pal))
@@ -227,12 +238,6 @@ while int(pal)!=210000:
 	print ("[8] demon lvl "+str(8+pal))
 	print ("[9] demon lvl "+str(9+pal))
 	print ("[10] demon primordial lvl "+str(10+pal))
-	if int(pal)>=210:
-		print ("[11] Kel'Thuzad")
-		print ("[12] Arthas")
-		print ("[13] Thrall")
-		print ("[14] Illidan")
-		print ("[15] Gul'Dan")
 	print ("[0] quitter")
 	choix1=input()
 	if int(choix1)==0:
@@ -661,6 +666,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")			
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -765,6 +851,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -1237,6 +1328,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -1339,6 +1511,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -1811,6 +1988,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -1913,6 +2171,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -2385,6 +2648,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -2487,6 +2831,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -2959,6 +3308,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -3061,6 +3491,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -3533,6 +3968,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -3635,6 +4151,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -4107,6 +4628,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -4209,6 +4811,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -4681,6 +5288,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -4783,6 +5471,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -5255,6 +5948,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -5357,6 +6131,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					exp=exp+lvlm
 					expmax=5*lvl
 					if int(exp)>=int(expmax):
@@ -5829,6 +6608,87 @@ while int(pal)!=210000:
 							print ("vitesse ("+str(nom)+") = "+str(vitesse))
 							jeu=1
 							print (" ")
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(lvl)>=120:
+							print ("[2] drainage")
+						if int(lvl)>=140:
+							print ("[3] connexion")
+						if int(lvl)>=160:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						if int(choix3)==1:
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------")
+								print ("|==> OMBREFLAMME LVL UP !!! <==|")
+								print ("--------------------------------")
+								print (" ")
+							else:
+								print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
+								print (" ")
+						elif int(choix3)==2 and int(lvl)>=120:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							print ("+"+str(degat)+" PV !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("-----------------------------")
+								print ("|==> DRAINAGE LVL UP !!! <==|")
+								print ("-----------------------------")
+								print (" ")
+							else:
+								print ("[ drainage passe au niveau "+str(drain)+" ]")
+								print (" ")
+						elif int(choix3)==3 and int(lvl)>=140:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
+							print ("+"+str(force*3//2)+" de force !")
+							print ("PV ("+str(nom)+") = "+str(vie))
+							force=force*3//2
+							print ("force ("+str(nom)+") = "+str(force))
+							print (" ")
+							jeu=1
+						elif int(choix3)==4 and int(lvl)>=160:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
+							print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
+							continuer=input("[enter]")
+							print (" ")
+							print ("-"+str(degat)+" PV !")
+							print ("PV ("+str(nomm)+") = "+str(viem))
+							print (" ")
+							ame=0
+							print("ame démoniaque = "+str(ame))
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("---------------------------------")
+								print ("|==> FEU DE L'AME LVL UP !!! <==|")
+								print ("---------------------------------")
+								print (" ")
+							else:
+								print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
+								print (" ")
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -5931,6 +6791,11 @@ while int(pal)!=210000:
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
+					if int(lvl)>=160:
+						ame=ame+1
+						print ("vous récupérez l'âme du démon vaincu !")
+						print ("ame démoniaque = "+str(ame))
+						print (" ")
 					lot=input("vous ouvrez le coffre de loot...")
 					loot = [1,1,1,2,2,2,3,3,3,4,4,4,5]
 					lootchoice=random.choice(loot)
@@ -6025,6 +6890,8 @@ while int(pal)!=210000:
 					print ("vous êtes mort...")
 					mort=input()
 					pass
+
+
 	if os.path.isfile("sauv.txt")=="true":
 		os.remove("sauv.txt")
 	fw = open("sauv.txt","w")
@@ -6123,6 +6990,7 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Kel'Thuzad !!!")
 		print ("Pour vous recompenser, Kel'Thuzad vous transforme en liche...")
+		print ("passif = +500 PV !")
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		kel=input("[enter]")
 		print (" ")
@@ -6132,6 +7000,7 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Frostmourne !!!")
 		print ("Pour vous recompenser, vous vous transformez en chevalier de la mort...")
+		print ("passif = +100 force !")
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		nor=input("[enter]")
 		print (" ")
@@ -6141,6 +7010,7 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Thrall !!!")
 		print ("Pour vous recompenser, Thrall vous transforme en guerrier...")
+		print ("passif = +50 defense !")
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		exo=input("[enter]")
 		print (" ")
@@ -6150,6 +7020,7 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête d'Illidan !!!")
 		print ("Pour vous recompenser, Illidan vous transforme en chasseur de démons...")
+		print ("passif = +50 vitesse")
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		azz=input("[enter]")
 		print (" ")
@@ -6159,15 +7030,16 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Gul'Dan !!!")
 		print ("Pour vous recompenser, Gul'Dan vous transforme en démoniste...")
+		print ("vous devenez corrompu, vos attaques ignorent la defense de l'adversaire")
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		corr=input("[enter]")
 		print (" ")
 
-	if int(quete2)==0 and int(pal)==210:
-		if int(keltu)==2:
-			print ("Comment ? vous avez réussi à tuer le demon qui gardait la porte des mondes ?")
-			print ("Et vous avez encore soif de pouvoir...")
-			print ("Désormais, vous pouvez traverser le portail et decouvrir de nouveaux mondes !")
+	#if int(quete2)==0 and int(pal)==210:
+	#	if int(keltu)==2:
+	#		print ("Comment ? vous avez réussi à tuer le demon qui gardait la porte des mondes ?")
+	#		print ("Et vous avez encore soif de pouvoir...")
+	#		print ("Désormais, vous pouvez traverser le portail et decouvrir de nouveaux mondes !")
 
 #########################################################################################################################################################
 #########################################################################################################################################################
@@ -6184,1951 +7056,3 @@ while int(pal)!=210000:
 #########################################################################################################################################################
 #########################################################################################################################################################
 
-print ("votre transformation en démoniste change vos caractéristiques de bases...")
-print ("vous sentez une energie demoniaque vous parcourir...")
-print ("la magie remplace la force !")
-transfo=input("[enter]")
-print (" ")
-print (nom)
-print (lvl)
-print ("PV = "+str(96+34*vieup+lootpv))
-print ("magie = "+str(32+10*forceup+lootforce))
-print ("defense = "+str(16+5*defenseup+lootdefense))
-print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-transfo=input("[enter]")
-print (" ")
-
-while int(corrup)!=3:
-	print ("[1] demon lvl "+str(1+pal))
-	print ("[2] demon lvl "+str(2+pal))
-	print ("[3] demon lvl "+str(3+pal))
-	print ("[4] demon lvl "+str(4+pal))
-	print ("[5] demon lvl "+str(5+pal))
-	print ("[6] demon lvl "+str(6+pal))
-	print ("[7] demon lvl "+str(7+pal))
-	print ("[8] demon lvl "+str(8+pal))
-	print ("[9] demon lvl "+str(9+pal))
-	print ("[10] demon primordial lvl "+str(10+pal))
-	if int(pal)>=210:
-		print ("[11] Kel'Thuzad")
-		print ("[12] Arthas")
-		print ("[13] Thrall")
-		print ("[14] Illidan")
-		print ("[15] Gul'Dan")
-	print ("[0] quitter")
-	choix1=input()
-	if int(choix1)==0:
-		exit()
-	elif int(choix1)==1:
-		lvlm=1+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=33+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==2:
-		lvlm=2+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==3:
-		lvlm=3+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==4:
-		lvlm=4+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==5:
-		lvlm=5+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==6:
-		lvlm=6+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("force = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==7:
-		lvlm=7+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==8:
-		lvlm=8+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==9:
-		lvlm=9+pal
-		tour=0
-		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (" ")
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print ("-"+str(degatm)+" PV !")
-				print ("PV ("+str(nom)+") = "+str(vie))
-				print (" ")
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-
-	elif int(choix1)==10:
-		lvlm=10+pal
-		tour=0
-		stackvit=1
-		nomm="demon primordial" 
-		viem=105+20*lvlm
-		forcem=32+5*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
-		vie=96+34*vieup+lootpv
-		magie=32+10*forceup+lootforce
-		defense=16+5*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		while int(vie)>0 and int(viem)>0:
-			vit_liste = []
-			i=0
-			a=vitesse//10
-			b=vitessem//10
-			while i<a:
-				i=i+1
-				vit_liste.append(1)
-			i=0
-			while i<b:
-				i=i+1
-				vit_liste.append(2)
-			a=random.choice(vit_liste)
-			jeu=0
-			tour=tour+1
-			if int(a)==1:
-				while int(jeu)==0:
-					print ("[1] ombreflamme")
-					if int(lvl)>=120:
-						print ("[2] drainage")
-					if int(lvl)>=140:
-						print ("[3] connexion")
-					if int(lvl)>=160:
-						print ("[4] feu de l'âme")
-					choix2=input()
-					if int(choix2)==1:
-						degat=ombreflamme(magie,ombre)
-						viem=viem-degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						jeu=1
-						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-							print ("--------------------------------")
-							print ("|==> OMBREFLAMME LVL UP !!! <==|")
-							print ("--------------------------------")
-							print (" ")
-						else:
-							print ("[ ombreflamme passe au niveau "+str(ombre)+" ]")
-							print (" ")
-					elif int(choix2)==2 and int(lvl)>=120:
-						degat=drainage(magie,drain)
-						viem=viem-degat
-						vie=vie+degat
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						print ("+"+str(degat)+" PV !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						print (" ")
-						jeu=1
-						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-							print ("-----------------------------")
-							print ("|==> DRAINAGE LVL UP !!! <==|")
-							print ("-----------------------------")
-							print (" ")
-						else:
-							print ("[ drainage passe au niveau "+str(drain)+" ]")
-							print (" ")
-					elif int(choix2)==3 and int(lvl)>=140:
-						vie=vie-(96+34*vieup+lootpv)//5
-						print (" ")
-						print ("-"+str((96+34*vieup+lootpv)//5)+" PV !")
-						print ("+"+str(magie*3//2)+" de magie !")
-						print ("PV ("+str(nom)+") = "+str(vie))
-						magie=magie*3//2
-						print ("magie ("+str(nom)+") = "+str(magie))
-						print (" ")
-						jeu=1
-					elif int(choix2)==4 and int(lvl)>=160:
-						degat=feu_ame(magie,ame,lvlm,feu)
-						viem=viem-degat
-						print (" ")
-						print ("vous rassemblez la puissance de toutes les âmes démoniaques au creux de votre main...")
-						print ("vous la transformez en une flamme noire démoniaque avant de la lancer sur votre adversaire !!")
-						continuer=input("[enter]")
-						print (" ")
-						print ("-"+str(degat)+" PV !")
-						print ("PV ("+str(nomm)+") = "+str(viem))
-						print (" ")
-						ame=0
-						print("ame démoniaque = "+str(ame))
-						print (" ")
-						jeu=1
-						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-							print ("---------------------------------")
-							print ("|==> FEU DE L'AME LVL UP !!! <==|")
-							print ("---------------------------------")
-							print (" ")
-						else:
-							print ("[ feu de l'âme passe au niveau "+str(feu)+" ]")
-							print (" ")
-					else:
-						pass
-				if int(viem)<=0:
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					if int(lvl)>=160:
-						ame=ame+1
-						print ("vous récupérez l'âme du démon vaincu !")
-						print ("ame démoniaque = "+str(ame))
-						print (" ")
-					lot=input("vous ouvrez le coffre de loot...")
-					loot = [1,1,1,2,2,2,3,3,3,4,4,4,5]
-					lootchoice=random.choice(loot)
-					if int(lootchoice)==1:
-						print ("vous gagnez le coeur de Kel'Thuzad !")
-						print ("+ "+str(32+pal)+" PV !")
-						lootpv=lootpv+32+pal
-					elif int(lootchoice)==2:
-						print ("vous gagnez une âme sacrifiée par Gul'Dan !")
-						print ("+ "+str(11+pal)+" magie !")
-						lootforce=lootforce+11+pal
-					elif int(lootchoice)==3:
-						print ("vous gagnez l'armure de Thrall !")
-						print ("+ "+str(5+pal)+" defense !")
-						lootdefense=lootdefense+5+pal
-					elif int(lootchoice)==4:
-						print ("vous gagnez les ailes d'Illidan !")
-						print ("+ "+str(4+pal)+" vitesse !")
-						lootvitesse=lootvitesse+4+pal
-					elif int(lootchoice)==5:
-						print ("vous gagnez le crâne légendaire de Gul'dan !!!")
-						print ("+ "+str(23+pal)+" PV !")
-						print ("+ "+str(7+pal)+" magie !")
-						print ("+ "+str(3+pal)+" defense !")
-						print ("+ "+str(2+pal)+" vitesse !")
-						lootpv=lootpv+23+pal
-						lootforce=lootforce+7+pal
-						lootdefense=lootdefense+3+pal
-						lootvitesse=lootvitesse+2+pal
-					print (" ")
-					if int(pal)==70:
-						amedemo=1
-					pal=pal+10
-					exp=exp+lvlm
-					expmax=5*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +34 PV")
-						print ("[2] +10 magie")
-						print ("[3] +5 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print ("PV = "+str(96+34*vieup+lootpv))
-						print ("magie = "+str(32+10*forceup+lootforce))
-						print ("defense = "+str(16+5*defenseup+lootdefense))
-						print ("vitesse = "+str(16+4*vitesseup+lootvitesse))
-						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
-					else:
-						print ("niveau = "+str(lvl))
-						print ("experience = "+str(exp)+"/"+str(expmax))
-						print (" ")
-			elif int(a)==2:
-				boss = [1,1,1,2]
-				capa=random.choice(boss)
-				if int(capa)==1:
-					degatm=frappe_ombre(forcem,defense)
-					vie=vie-degatm
-					print (" ")
-					print (str(nomm)+" utilise frappe de l'ombre...")
-					print ("-"+str(degatm)+" PV !")
-					print ("PV ("+str(nom)+") = "+str(vie))
-					print (" ")
-				elif int(capa)==2:
-					degatm=destru_primo(forcem,defense)
-					vie=vie-degatm
-					print (" ")
-					print (str(nomm)+" utilise destruction primordiale !")
-					print ("-"+str(degatm)+" PV !")
-					print ("PV ("+str(nom)+") = "+str(vie))
-					print (" ")
-				
-				if int(vie)<=0:
-					print ("vous êtes mort...")
-					mort=input()
-					pass
-	if os.path.isfile("sauv.txt")=="true":
-		os.remove("sauv.txt")
-	fw = open("sauv.txt","w")
-	fw.write(str(nom))
-	fw.write("\n")
-	fw.write(str(lvl))
-	fw.write("\n")
-	fw.write(str(exp))
-	fw.write("\n")
-	fw.write(str(vieup))
-	fw.write("\n")
-	fw.write(str(forceup))
-	fw.write("\n")
-	fw.write(str(defenseup))
-	fw.write("\n")
-	fw.write(str(vitesseup))
-	fw.write("\n")
-	fw.write(str(pal))
-	fw.write("\n")
-	fw.write(str(lootpv))
-	fw.write("\n")
-	fw.write(str(lootforce))
-	fw.write("\n")
-	fw.write(str(lootdefense))
-	fw.write("\n")
-	fw.write(str(lootvitesse))
-	fw.write("\n")
-	fw.write(str(degpv))
-	fw.write("\n")
-	fw.write(str(degfor))
-	fw.write("\n")
-	fw.write(str(degdef))
-	fw.write("\n")
-	fw.write(str(degvit))
-	fw.write("\n")
-	fw.write(str(keltu))
-	fw.write("\n")
-	fw.write(str(immortal))
-	fw.write("\n")
-	fw.write(str(norfend))
-	fw.write("\n")
-	fw.write(str(amedemo))
-	fw.write("\n")
-	fw.write(str(exode))
-	fw.write("\n")
-	fw.write(str(armudemo))
-	fw.write("\n")
-	fw.write(str(azzin))
-	fw.write("\n")
-	fw.write(str(agilistack))
-	fw.write("\n")
-	fw.write(str(corrup))
-	fw.write("\n")
-	fw.write(str(chassedemo))
-	fw.write("\n")
-	fw.write(str(ritsang))
-	fw.write("\n")
-	fw.write(str(mourne))
-	fw.write("\n")
-	fw.write(str(war))
-	fw.write("\n")
-	fw.write(str(oth))
-	fw.write("\n")
-	fw.write(str(ombre))
-	fw.write("\n")
-	fw.write(str(pacte))
-	fw.write("\n")
-	fw.write(str(trans))
-	fw.write("\n")
-	fw.write(str(abso))
-	fw.write("\n")
-	fw.write(str(poigne))
-	fw.write("\n")
-	fw.write(str(renfo))
-	fw.write("\n")
-	fw.write(str(anean))
-	fw.write("\n")
-	fw.write(str(onde))
-	fw.write("\n")
-	fw.write(str(veng))
-	fw.write("\n")
-	fw.write(str(souffle))
-	fw.write("\n")
-	fw.write(str(serie))
-	fw.write("\n")
-	fw.write(str(drain))
-	fw.write("\n")
-	fw.write(str(feu))
-	fw.write("\n")
-	fw.write(str(ame))
-	fw.close()
