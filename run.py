@@ -249,9 +249,9 @@ while int(pal)!=210000:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=33+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=33+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -857,7 +857,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -911,9 +911,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -1517,7 +1517,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -1571,9 +1571,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -2177,7 +2177,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -2231,9 +2231,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -2837,7 +2837,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -2891,9 +2891,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -3497,7 +3497,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -3551,9 +3551,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -4157,7 +4157,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -4211,9 +4211,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -4817,7 +4817,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -4871,9 +4871,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -5477,7 +5477,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -5531,9 +5531,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon lvl "+str(lvlm)
-		viem=105+16*lvlm
-		forcem=32+4*lvlm
-		defensem=16+2*lvlm
+		viem=105+24*lvlm
+		forcem=32+6*lvlm
+		defensem=16+3*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -6137,7 +6137,7 @@ while int(pal)!=210000:
 						print ("ame démoniaque = "+str(ame))
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -6191,9 +6191,9 @@ while int(pal)!=210000:
 		tour=0
 		stackvit=1
 		nomm="demon primordial" 
-		viem=105+20*lvlm
-		forcem=32+5*lvlm
-		defensem=16+3*lvlm
+		viem=105+30*lvlm
+		forcem=32+8*lvlm
+		defensem=16+5*lvlm
 		vitessem=20+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -6801,36 +6801,36 @@ while int(pal)!=210000:
 					lootchoice=random.choice(loot)
 					if int(lootchoice)==1:
 						print ("vous gagnez le coeur de Kel'Thuzad !")
-						print ("+ "+str(30+pal)+" PV !")
-						lootpv=lootpv+30+pal
+						print ("+ "+str(40+pal)+" PV !")
+						lootpv=lootpv+40+pal
 					elif int(lootchoice)==2:
 						print ("vous gagnez la lame d'Arthas !")
-						print ("+ "+str(9+pal)+" force !")
-						lootforce=lootforce+9+pal
+						print ("+ "+str(9+pal//4)+" force !")
+						lootforce=lootforce+9+pal//4
 					elif int(lootchoice)==3:
 						print ("vous gagnez l'armure de Thrall !")
-						print ("+ "+str(4+pal)+" defense !")
-						lootdefense=lootdefense+4+pal
+						print ("+ "+str(4+pal//8)+" defense !")
+						lootdefense=lootdefense+4+pal//8
 					elif int(lootchoice)==4:
 						print ("vous gagnez les ailes d'Illidan !")
-						print ("+ "+str(4+pal)+" vitesse !")
-						lootvitesse=lootvitesse+4+pal
+						print ("+ "+str(4+pal//8)+" vitesse !")
+						lootvitesse=lootvitesse+4+pal//8
 					elif int(lootchoice)==5:
 						print ("vous gagnez le crâne légendaire de Gul'dan !!!")
-						print ("+ "+str(20+pal)+" PV !")
-						print ("+ "+str(6+pal)+" force !")
-						print ("+ "+str(2+pal)+" defense !")
-						print ("+ "+str(2+pal)+" vitesse !")
-						lootpv=lootpv+20+pal
-						lootforce=lootforce+6+pal
-						lootdefense=lootdefense+2+pal
-						lootvitesse=lootvitesse+2+pal
+						print ("+ "+str(25+pal//2)+" PV !")
+						print ("+ "+str(6+pal//5)+" force !")
+						print ("+ "+str(2+pal//10)+" defense !")
+						print ("+ "+str(2+pal//10)+" vitesse !")
+						lootpv=lootpv+25+pal//2
+						lootforce=lootforce+6+pal//5
+						lootdefense=lootdefense+2+pal//10
+						lootvitesse=lootvitesse+2+pal//10
 					print (" ")
 					if int(pal)==70:
 						amedemo=1
 					pal=pal+10
 					exp=exp+lvlm
-					expmax=5*lvl
+					expmax=5*lvl+lvl*lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -6984,7 +6984,7 @@ while int(pal)!=210000:
 	fw.write(str(ame))
 	fw.close()
 	
-	if int(immortal)>=500000 and int(totalpv)>=2750:
+	if int(immortal)>=500000 and int(totalpv)>=2750 and int(keltu)==1:
 		keltu=2
 		immortal=0
 		print (" ")
@@ -6994,7 +6994,7 @@ while int(pal)!=210000:
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		kel=input("[enter]")
 		print (" ")
-	elif int(frost)>=730 and int(amedemo)==1:
+	elif int(frost)>=730 and int(amedemo)==1 and int(norfend)==1:
 		norfend=2
 		amedemo=0
 		print (" ")
@@ -7004,7 +7004,7 @@ while int(pal)!=210000:
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		nor=input("[enter]")
 		print (" ")
-	elif int(armudemo)>=100000 and int(armuleg)>=350:
+	elif int(armudemo)>=100000 and int(armuleg)>=350 and int(exode)==1:
 		exode=2
 		armudemo=0
 		print (" ")
@@ -7014,7 +7014,7 @@ while int(pal)!=210000:
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		exo=input("[enter]")
 		print (" ")
-	elif int(vitilli)>=350 and int(agilistack)>=25000:
+	elif int(vitilli)>=350 and int(agilistack)>=25000 and int(azzin)==1:
 		azzin=2
 		agilistack=0
 		print (" ")
@@ -7024,7 +7024,7 @@ while int(pal)!=210000:
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		azz=input("[enter]")
 		print (" ")
-	elif int(chassedemo)>=15000 and int(gulpv)>=800 and int(gulfor)>=210 and int(guldef)>=100 and int(gulvit)>=100:
+	elif int(chassedemo)>=15000 and int(gulpv)>=800 and int(gulfor)>=210 and int(guldef)>=100 and int(gulvit)>=100 and int(corrup)==1:
 		corrup=2
 		chassedemo=0
 		print (" ")
@@ -7034,6 +7034,8 @@ while int(pal)!=210000:
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		corr=input("[enter]")
 		print (" ")
+
+	#if int(pal)
 
 	#if int(quete2)==0 and int(pal)==210:
 	#	if int(keltu)==2:
