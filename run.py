@@ -7192,8 +7192,11 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Kel'Thuzad !!!")
 		print ("Pour vous recompenser, Kel'Thuzad vous transforme en liche...")
-		print ("passif = +500 PV !")
-		lootpv=lootpv+500
+		print ("passif : convertis une partie de vos PV en force, defense et vitesse")
+		lootforce=lootforce+(96+32*vieup+lootpv)//20
+		lootdefense=lootdefense+(96+32*vieup+lootpv)//50
+		lootvitesse=lootvitesse+(96+32*vieup+lootpv)//55
+		lootpv=lootpv-(96+32*vieup+lootpv)//20-(96+32*vieup+lootpv)//50-(96+32*vieup+lootpv)//55
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		kel=input("[enter]")
 		print (" ")
@@ -7203,8 +7206,11 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Frostmourne !!!")
 		print ("Pour vous recompenser, vous vous transformez en chevalier de la mort...")
-		print ("passif = +100 force !")
-		lootforce=lootforce+100
+		print ("passif : convertis une partie de votre force en vie, defense et vitesse")
+		lootpv=lootpv+(32+8*forceup+lootforce)*5//8
+		lootdefense=lootdefense+(32+8*forceup+lootforce)//13
+		lootvitesse=lootvitesse+(32+8*forceup+lootforce)//16
+		lootforce=lootforce-(32+8*forceup+lootforce)*5//8-(32+8*forceup+lootforce)//13-(32+8*forceup+lootforce)//16
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		nor=input("[enter]")
 		print (" ")
@@ -7214,8 +7220,11 @@ while int(pal)!=210000:
 		print (" ")
 		print ("Vous avez terminé la quête de Thrall !!!")
 		print ("Pour vous recompenser, Thrall vous transforme en guerrier...")
-		print ("passif = +50 defense !")
-		lootdefense=lootdefense+50
+		print ("passif = convertis une partie de votre defense en vie, force et vitesse")
+		lootpv=lootpv+(16+4*defenseup+lootdefense)*5//4
+		lootforce=lootforce+(16+4*defenseup+lootdefense)*4//9
+		lootvitesse=lootvitesse+(16+4*defenseup+lootdefense)//8
+		lootdefense=lootdefense-(16+4*defenseup+lootdefense)*5//4-(16+4*defenseup+lootdefense)*4//9-(16+4*defenseup+lootdefense)//8
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		exo=input("[enter]")
 		print (" ")
@@ -7226,7 +7235,10 @@ while int(pal)!=210000:
 		print ("Vous avez terminé la quête d'Illidan !!!")
 		print ("Pour vous recompenser, Illidan vous transforme en chasseur de démons...")
 		print ("passif = +50 vitesse")
-		lootvitesse=lootvitesse+50
+		lootpv=lootpv+(16+4*vitesseup+lootvitesse)*5//4
+		lootforce=lootforce+(16+4*vitesseup+lootvitesse)*4//9
+		lootdefense=lootdefense+(16+4*vitesseup+lootvitesse)//8
+		lootvitesse=lootvitesse-(16+4*vitesseup+lootvitesse)*5//4-(16+4*vitesseup+lootvitesse)*4//9-(16+4*vitesseup+lootvitesse)//8
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		azz=input("[enter]")
 		print (" ")
