@@ -259,13 +259,13 @@ def vengeance(degveng,veng):
 def dernier_souffle(defense,souffle):
 	print (" ")
 	if int(souffle)<500:
-		buff=defense//5
+		buff=defense//2
 	elif int(souffle)>=500 and int(souffle)<2000:
-		buff=defense//4
-	elif int(souffle)>=2000 and int(souffle)<5000:
-		buff=defense*2//5
-	elif int(souffle)>=5000:
 		buff=defense
+	elif int(souffle)>=2000 and int(souffle)<5000:
+		buff=defense*3//2
+	elif int(souffle)>=5000:
+		buff=defense*3
 	if int(buff)<0:
 		buff=0
 	return buff
