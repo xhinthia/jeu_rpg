@@ -60,6 +60,12 @@ if pml=="oui":
 	tuto=int(sauveg[44])
 	quete2=int(sauveg[45])
 	expmax=int(sauveg[46])
+	if int(quete2)==1:
+		paldemo=int(sauveg[47])
+		palimmo=int(sauveg[48])
+		palbarb=int(sauveg[49])
+		palelem=int(sauveg[50])
+		palfufu=int(sauveg[51])
 	print (" __________________")
 	print ("()_________________)")
 	print ("|                 |")
@@ -1330,7 +1336,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -2172,7 +2178,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -3014,7 +3020,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -3856,7 +3862,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -4698,7 +4704,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -5540,7 +5546,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -6382,7 +6388,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -7224,7 +7230,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -8066,7 +8072,7 @@ while int(pal)<250:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -8901,12 +8907,13 @@ while int(pal)<250:
 				if int(viem)<=0:
 					if int(corrup)==1:
 						chassedemo=chassedemo+1
+					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
 					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -9023,9 +9030,10 @@ while int(pal)<250:
 							defenseup=defenseup+1
 						elif int(carac)==4:
 							vitesseup=vitesseup+1
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance !!!!!")
-							print (" ")
+						if int(keltu)==2 or int(norfend)==2 or int(exode)==2 or int(azzin)==2 or int(corrup)==2:
+							if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
+								print ("vous maîtrisez une nouvelle puissance !!!!!")
+								print (" ")
 					print (" ")
 					print (" ")
 					print ("  _________________")
@@ -9383,6 +9391,12 @@ if int(quete2)==0:
 	print (" ")
 	print ("'Ne t'inquiète pas tu peux voyager sans limite à travers les portails...'")
 	print (" ")
+	paldemo=250
+	palimmo=250
+	palbarb=250
+	palelem=250
+	palfufu=250
+	quete2=1
 	continuer=input("[enter]")
 print (" ")
 print (" ")
@@ -9439,7 +9453,6 @@ print (" ")
 print (" ")
 print (" ")
 print (" ")
-quete2=1
 while int(pal)<1000000:
 	print ("[1] royaume des démons (caractéristiques équilibrées)")
 	print ("[2] lac des immortels (conseil : avoir beaucoup de PV)")
@@ -9449,6 +9462,7 @@ while int(pal)<1000000:
 	print ("[0] quitter")
 	choix5=input()
 	if int(choix5)==0:
+		palvar=1
 		if os.path.isfile("sauv.txt")=="true":
 			os.remove("sauv.txt")
 		fw = open("sauv.txt","w")
@@ -9545,6 +9559,18 @@ while int(pal)<1000000:
 		fw.write(str(quete2))
 		fw.write("\n")
 		fw.write(str(expmax))
+		fw.write("\n")
+		fw.write(str(palvar))
+		fw.write("\n")
+		fw.write(str(paldemo))
+		fw.write("\n")
+		fw.write(str(palimmo))
+		fw.write("\n")
+		fw.write(str(palbarb))
+		fw.write("\n")
+		fw.write(str(palelem))
+		fw.write("\n")
+		fw.write(str(palfufu))
 		fw.close()
 		exit()
 	retour=0
@@ -9620,7 +9646,16 @@ while int(pal)<1000000:
 		retour=1
 		pass
 	elif int(choix1)==1:
-		lvlm=1+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
 		bloodstack=0
@@ -9628,9 +9663,9 @@ while int(pal)<1000000:
 		if int(choix5)==1:
 			nomm="demon malsain lvl "+str(lvlm)
 			viem=105+30*lvlm
-			forcem=33+8*lvlm
-			defensem=16+5*lvlm
-			vitessem=20+1*lvlm
+			forcem=31+8*lvlm
+			defensem=15+5*lvlm
+			vitessem=15+1*lvlm
 		elif int(choix5)==2:
 			nomm="garde immortel lvl "+str(lvlm)
 			viem=1500+650*lvlm
@@ -9659,13 +9694,6 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -9673,11 +9701,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -9888,8 +9916,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -9909,11 +9937,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -9946,8 +9974,10 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -10077,9 +10107,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -10186,10 +10216,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -10260,7 +10290,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -10320,8 +10350,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -10374,8 +10402,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -10403,8 +10429,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -10422,15 +10446,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -10472,18 +10495,64 @@ while int(pal)<1000000:
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
-				print (" ")				
+				print (" ")
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -10493,25 +10562,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==2:
-		lvlm=2+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=135+30*lvlm
+			forcem=39+8*lvlm
+			defensem=20+5*lvlm
+			vitessem=16+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=2150+650*lvlm
+			forcem=7+2*lvlm
+			defensem=13+3*lvlm
+			vitessem=16+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=220+115*lvlm
+			forcem=125+5*lvlm
+			defensem=22+2*lvlm
+			vitessem=16+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=135+30*lvlm
+			forcem=36+6*lvlm
+			defensem=28+8*lvlm
+			vitessem=16+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=135+30*lvlm
+			forcem=37+4*lvlm
+			defensem=18+2*lvlm
+			vitessem=24+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -10519,11 +10617,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -10734,8 +10832,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -10755,11 +10853,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -10792,8 +10890,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -10923,9 +11021,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -11032,10 +11130,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -11106,7 +11204,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -11166,8 +11264,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -11220,8 +11316,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -11249,8 +11343,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -11268,15 +11360,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -11322,14 +11413,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -11339,25 +11476,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==3:
-		lvlm=3+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=165+30*lvlm
+			forcem=47+8*lvlm
+			defensem=25+5*lvlm
+			vitessem=17+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=2800+650*lvlm
+			forcem=9+2*lvlm
+			defensem=16+3*lvlm
+			vitessem=17+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=335+115*lvlm
+			forcem=130+5*lvlm
+			defensem=24+2*lvlm
+			vitessem=17+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=165+30*lvlm
+			forcem=42+6*lvlm
+			defensem=36+8*lvlm
+			vitessem=17+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=165+30*lvlm
+			forcem=41+4*lvlm
+			defensem=20+2*lvlm
+			vitessem=28+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -11365,11 +11531,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -11580,8 +11746,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -11601,11 +11767,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -11638,8 +11804,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -11730,7 +11896,7 @@ while int(pal)<1000000:
 							print (" ")
 							print ("vos blessures infligées à l'adversaire vous font enrager !")
 							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")						
+							print (" ")
 							coup=input("[enter]")
 							print (" ")
 							print (" ")
@@ -11769,9 +11935,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -11878,10 +12044,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -11952,7 +12118,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -12012,8 +12178,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -12066,8 +12230,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -12095,8 +12257,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -12114,15 +12274,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -12168,14 +12327,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -12185,25 +12390,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==4:
-		lvlm=4+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=195+30*lvlm
+			forcem=55+8*lvlm
+			defensem=30+5*lvlm
+			vitessem=18+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=3450+650*lvlm
+			forcem=11+2*lvlm
+			defensem=19+3*lvlm
+			vitessem=18+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=450+115*lvlm
+			forcem=135+5*lvlm
+			defensem=26+2*lvlm
+			vitessem=18+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=195+30*lvlm
+			forcem=48+6*lvlm
+			defensem=44+8*lvlm
+			vitessem=18+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=195+30*lvlm
+			forcem=45+4*lvlm
+			defensem=22+2*lvlm
+			vitessem=32+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -12211,11 +12445,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -12354,7 +12588,7 @@ while int(pal)<1000000:
 							print (" ")
 							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
 							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
+							print (" ")	
 							coup=input("[enter]")
 							viem=viem-degat
 							print (" ")
@@ -12426,8 +12660,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -12447,11 +12681,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -12484,8 +12718,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -12615,9 +12849,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -12720,14 +12954,14 @@ while int(pal)<1000000:
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
 							print ("Vous vous transformez en démon !")
-							print (" ")							
+							print (" ")
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -12798,7 +13032,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -12858,8 +13092,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -12912,8 +13144,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -12941,8 +13171,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -12960,15 +13188,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -13014,14 +13241,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -13031,25 +13304,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==5:
-		lvlm=5+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=225+30*lvlm
+			forcem=63+8*lvlm
+			defensem=35+5*lvlm
+			vitessem=19+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=4100+650*lvlm
+			forcem=13+2*lvlm
+			defensem=22+3*lvlm
+			vitessem=19+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=565+115*lvlm
+			forcem=140+5*lvlm
+			defensem=28+2*lvlm
+			vitessem=19+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=225+30*lvlm
+			forcem=54+6*lvlm
+			defensem=52+8*lvlm
+			vitessem=19+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=225+30*lvlm
+			forcem=49+4*lvlm
+			defensem=24+2*lvlm
+			vitessem=36+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -13057,11 +13359,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -13272,8 +13574,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -13293,11 +13595,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -13330,8 +13632,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -13461,9 +13763,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -13570,10 +13872,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -13644,7 +13946,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -13704,8 +14006,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -13758,8 +14058,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -13787,8 +14085,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -13806,15 +14102,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -13860,14 +14155,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -13875,27 +14216,55 @@ while int(pal)<1000000:
 					print (" ")
 					print (" ")
 					pass
-
 	elif int(choix1)==6:
-		lvlm=6+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=255+30*lvlm
+			forcem=71+8*lvlm
+			defensem=40+5*lvlm
+			vitessem=20+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=4750+650*lvlm
+			forcem=15+2*lvlm
+			defensem=25+3*lvlm
+			vitessem=20+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=680+115*lvlm
+			forcem=145+5*lvlm
+			defensem=30+2*lvlm
+			vitessem=20+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=255+30*lvlm
+			forcem=60+6*lvlm
+			defensem=60+8*lvlm
+			vitessem=20+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=255+30*lvlm
+			forcem=53+4*lvlm
+			defensem=26+2*lvlm
+			vitessem=40+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -13903,11 +14272,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -14118,8 +14487,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -14139,11 +14508,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -14176,8 +14545,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -14307,9 +14676,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -14416,10 +14785,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -14490,7 +14859,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -14550,8 +14919,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -14604,8 +14971,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -14633,8 +14998,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -14652,15 +15015,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -14706,14 +15068,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -14723,25 +15131,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==7:
-		lvlm=7+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=285+30*lvlm
+			forcem=79+8*lvlm
+			defensem=45+5*lvlm
+			vitessem=21+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=5400+650*lvlm
+			forcem=17+2*lvlm
+			defensem=28+3*lvlm
+			vitessem=21+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=795+115*lvlm
+			forcem=150+5*lvlm
+			defensem=32+2*lvlm
+			vitessem=21+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=285+30*lvlm
+			forcem=66+6*lvlm
+			defensem=68+8*lvlm
+			vitessem=21+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=285+30*lvlm
+			forcem=57+4*lvlm
+			defensem=28+2*lvlm
+			vitessem=44+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -14749,11 +15186,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -14964,8 +15401,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -14985,11 +15422,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -15022,8 +15459,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -15153,9 +15590,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -15262,10 +15699,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -15336,7 +15773,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -15351,7 +15788,7 @@ while int(pal)<1000000:
 							print (" ")
 							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
 							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
+							print (" ")							
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
@@ -15396,8 +15833,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -15450,8 +15885,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -15479,8 +15912,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -15498,15 +15929,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-						print (" ")
-						print (" ")
+					print (" ")
+					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -15552,14 +15982,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -15569,25 +16045,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==8:
-		lvlm=8+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=315+30*lvlm
+			forcem=87+8*lvlm
+			defensem=50+5*lvlm
+			vitessem=22+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=6050+650*lvlm
+			forcem=19+2*lvlm
+			defensem=31+3*lvlm
+			vitessem=22+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=810+115*lvlm
+			forcem=155+5*lvlm
+			defensem=34+2*lvlm
+			vitessem=22+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=315+30*lvlm
+			forcem=72+6*lvlm
+			defensem=76+8*lvlm
+			vitessem=22+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=315+30*lvlm
+			forcem=61+4*lvlm
+			defensem=30+2*lvlm
+			vitessem=48+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -15595,11 +16100,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -15810,8 +16315,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -15831,11 +16336,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -15868,8 +16373,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -15960,7 +16465,7 @@ while int(pal)<1000000:
 							print (" ")
 							print ("vos blessures infligées à l'adversaire vous font enrager !")
 							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
+							print (" ")							
 							coup=input("[enter]")
 							print (" ")
 							print (" ")
@@ -15999,9 +16504,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -16104,14 +16609,14 @@ while int(pal)<1000000:
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
 							print ("Vous vous transformez en démon !")
-							print (" ")
+							print (" ")	
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -16182,7 +16687,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -16242,8 +16747,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -16296,8 +16799,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -16325,8 +16826,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -16344,15 +16843,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-						print (" ")
-						print (" ")
+					print (" ")
+					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -16398,14 +16896,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -16415,25 +16959,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==9:
-		lvlm=9+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="demon malsain lvl "+str(lvlm)
+			viem=345+30*lvlm
+			forcem=95+8*lvlm
+			defensem=55+5*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==2:
+			nomm="garde immortel lvl "+str(lvlm)
+			viem=6700+650*lvlm
+			forcem=21+2*lvlm
+			defensem=34+3*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==3:
+			nomm="guerrier barbare lvl "+str(lvlm)
+			viem=925+115*lvlm
+			forcem=160+5*lvlm
+			defensem=36+2*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire de pierre lvl "+str(lvlm)
+			viem=345+30*lvlm
+			forcem=78+6*lvlm
+			defensem=84+8*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==5:
+			nomm="contrebandier lvl "+str(lvlm)
+			viem=345+30*lvlm
+			forcem=65+4*lvlm
+			defensem=32+2*lvlm
+			vitessem=52+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -16441,11 +17014,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -16656,8 +17229,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -16677,11 +17250,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -16714,8 +17287,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -16845,9 +17418,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -16954,10 +17527,10 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -17028,7 +17601,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -17088,8 +17661,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -17142,8 +17713,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -17171,8 +17740,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -17190,15 +17757,14 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-						print (" ")
-						print (" ")
+					print (" ")
+					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -17232,7 +17798,7 @@ while int(pal)<1000000:
 						print (" ")
 						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
 							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
+					print (" ")	
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
@@ -17244,14 +17810,60 @@ while int(pal)<1000000:
 				continuer=input("[enter]")
 				print (" ")
 				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
+				if int(choix5)==1:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous frappe avec une puissance obscure...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==2:
+					degatm=rituel_sanglant(viem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" lance rituel sanglant...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					viem=viem+degatm//3
+					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==3:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous met un violent coup de hache !")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print ("Vous saignez...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(vie//45)+" PV !")
+					vie=vie-vie//45
+					print (" ")
+					print (" ")
+				elif int(choix5)==4:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous lance un rocher...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
+				elif int(choix5)==5:
+					degatm=coup_demoniaque(forcem,defense)
+					vie=vie-degatm
+					print (str(nomm)+" vous poignarde...")
+					print (" ")
+					print (" ")
+					print (str(nom)+" perd "+str(degatm)+" PV !")
+					print (" ")
+					print (" ")
 				if int(vie)<=0:
 					print ("vous êtes mort...")
 					print (" ")
@@ -17261,25 +17873,54 @@ while int(pal)<1000000:
 					pass
 
 	elif int(choix1)==10:
-		lvlm=10+pal
+		if int(choix5)==1:
+			lvlm=1+paldemo
+		elif int(choix5)==2:
+			lvlm=1+palimmo
+		elif int(choix5)==3:
+			lvlm=1+palbarb
+		elif int(choix5)==4:
+			lvlm=1+palelem
+		elif int(choix5)==5:
+			lvlm=1+palfufu
 		tour=0
 		stackvit=1
-		nomm="demon primordial" 
-		viem=105+30*lvlm
-		forcem=32+8*lvlm
-		defensem=16+5*lvlm
-		vitessem=20+1*lvlm
+		bloodstack=0
+		degveng=0
+		if int(choix5)==1:
+			nomm="maître démoniaque lvl "+str(lvlm)
+			viem=345+35*lvlm
+			forcem=95+10*lvlm
+			defensem=55+6*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==2:
+			nomm="roi immortel lvl "+str(lvlm)
+			viem=6700+750*lvlm
+			forcem=21+2*lvlm
+			defensem=34+3*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==3:
+			nomm="seigneur barbare lvl "+str(lvlm)
+			viem=925+120*lvlm
+			forcem=160+7*lvlm
+			defensem=36+2*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==4:
+			nomm="elementaire instable lvl "+str(lvlm)
+			viem=345+30*lvlm
+			forcem=78+6*lvlm
+			defensem=84+10*lvlm
+			vitessem=23+1*lvlm
+		elif int(choix5)==5:
+			nomm="capitaine lvl "+str(lvlm)
+			viem=345+30*lvlm
+			forcem=65+4*lvlm
+			defensem=32+2*lvlm
+			vitessem=52+6*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		print (" ")
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
 		while int(vie)>0 and int(viem)>0:
 			print (" ")
 			print (" ")
@@ -17287,11 +17928,11 @@ while int(pal)<1000000:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -17502,8 +18143,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -17523,11 +18164,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -17560,8 +18201,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -17691,9 +18332,9 @@ while int(pal)<1000000:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -17796,14 +18437,14 @@ while int(pal)<1000000:
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
 							print ("Vous vous transformez en démon !")
-							print (" ")							
+							print (" ")
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -17874,7 +18515,7 @@ while int(pal)<1000000:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -17934,8 +18575,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -17988,8 +18627,6 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -18017,8 +18654,6 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -18036,20 +18671,18 @@ while int(pal)<1000000:
 						else:
 							pass
 				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160:
+					if int(lvl)>=160 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
 						print (" ")					
-					print ("vous ouvrez le coffre de loot...")
+					lot=input("vous ouvrez le coffre de loot...")
 					print (" ")
 					print (" ")
 					continuer=input("[enter]")
@@ -18106,6 +18739,7 @@ while int(pal)<1000000:
 						print ("[5] les 4")
 						leg=input()
 						print (" ")
+						print (" ")
 						if int(leg)==1:
 							print ("+"+str(40+pal)+" PV !")
 							lootpv=lootpv+40+pal
@@ -18130,8 +18764,6 @@ while int(pal)<1000000:
 					print (" ")
 					print (" ")
 					continuer=input("[enter]")
-					if int(pal)==60:
-						amedemo=1
 					pal=pal+10
 					exp=exp+lvlm
 					expmax=5*lvl+lvl*lvl
@@ -18160,9 +18792,20 @@ while int(pal)<1000000:
 							defenseup=defenseup+1
 						elif int(carac)==4:
 							vitesseup=vitesseup+1
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance !!!!!")
-							print (" ")
+						if int(keltu)==2 or int(norfend)==2 or int(exode)==2 or int(azzin)==2 or int(corrup)==2:
+							if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
+								print ("vous maîtrisez une nouvelle puissance !!!!!")
+								print (" ")
+					print (" ")
+					print (" ")
+					print ("  _________________")
+					print (" ()________________)")
+					print ("  |               |")
+					print ("  |     PALIER    |")
+					print ("  |     SUIVANT   |")
+					print ("  |_______________|")
+					print (" ()________________)")
+					print (" ")
 					print (" ")
 					continuer=input("[enter]")
 			elif int(a)==2:
@@ -18208,7 +18851,7 @@ while int(pal)<1000000:
 					print (" ")
 					pass
 
-
+	palvar=1
 	if os.path.isfile("sauv.txt")=="true":
 		os.remove("sauv.txt")
 	fw = open("sauv.txt","w")
@@ -18305,4 +18948,14 @@ while int(pal)<1000000:
 	fw.write(str(quete2))
 	fw.write("\n")
 	fw.write(str(expmax))
+	fw.write("\n")
+	fw.write(str(paldemo))
+	fw.write("\n")
+	fw.write(str(palimmo))
+	fw.write("\n")
+	fw.write(str(palbarb))
+	fw.write("\n")
+	fw.write(str(palelem))
+	fw.write("\n")
+	fw.write(str(palfufu))
 	fw.close()

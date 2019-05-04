@@ -99,7 +99,7 @@ def degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth):
 			degat=0
 	return degat
 def coup_demoniaque(forcem,defense):
-	degatm=forcem+forcem//40-defense
+	degatm=forcem-defense
 	if int(degatm)<0:
 		degatm=0
 	return degatm
@@ -110,6 +110,12 @@ def frappe_ombre(forcem,defense):
 	return degatm
 def destru_primo(forcem,defense):
 	degatm=forcem*5//2-defense
+	if int(degatm)<0:
+		degatm=0
+	return degatm
+
+def rituel_sanglant(viem,defense):
+	degatm=viem//100-defense
 	if int(degatm)<0:
 		degatm=0
 	return degatm
