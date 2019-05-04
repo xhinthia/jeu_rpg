@@ -556,9 +556,9 @@ while int(pal)<250:
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
 		viem=105+24*lvlm
-		forcem=33+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -1209,7 +1209,7 @@ while int(pal)<250:
 							viem=viem-degat
 							print (" ")
 							print (" ")
-							print* (str(nomm)+" perd "+str(degat)+" PV !")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(degat//4)+" PV !")
@@ -1324,6 +1324,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -1396,10 +1397,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		viem=107+24*lvlm
+		forcem=32+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -2165,6 +2166,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -2237,10 +2239,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
+		viem=109+24*lvlm
+		forcem=33+8*lvlm
 		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		vitessem=14+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -3006,6 +3008,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -3078,10 +3081,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
+		viem=111+24*lvlm
+		forcem=34+8*lvlm
 		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		vitessem=14+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -3847,6 +3850,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -3919,10 +3923,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		viem=113+24*lvlm
+		forcem=35+8*lvlm
+		defensem=17+3*lvlm
+		vitessem=15+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -4688,6 +4692,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -4760,10 +4765,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
+		viem=115+24*lvlm
+		forcem=35+8*lvlm
 		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		vitessem=17+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -5529,6 +5534,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -5601,10 +5607,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		viem=117+24*lvlm
+		forcem=37+6*lvlm
+		defensem=18+3*lvlm
+		vitessem=15+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -6370,6 +6376,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -6442,10 +6449,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		viem=119+24*lvlm
+		forcem=38+6*lvlm
+		defensem=18+3*lvlm
+		vitessem=15+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -7211,6 +7218,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -7283,10 +7291,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=105+24*lvlm
-		forcem=32+6*lvlm
-		defensem=16+3*lvlm
-		vitessem=20+1*lvlm
+		viem=121+24*lvlm
+		forcem=39+6*lvlm
+		defensem=19+3*lvlm
+		vitessem=16+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -8052,6 +8060,7 @@ while int(pal)<250:
 					print (" ")
 					print (" ")
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -8124,10 +8133,10 @@ while int(pal)<250:
 		bloodstack=0
 		degveng=0
 		nomm="demon primordial" 
-		viem=105+30*lvlm
-		forcem=32+8*lvlm
-		defensem=16+5*lvlm
-		vitessem=20+1*lvlm
+		viem=125+30*lvlm
+		forcem=41+10*lvlm
+		defensem=20+5*lvlm
+		vitessem=16+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -8891,6 +8900,7 @@ while int(pal)<250:
 					if int(corrup)==1:
 						chassedemo=chassedemo+1
 					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
@@ -9014,6 +9024,16 @@ while int(pal)<250:
 						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
 							print ("vous maîtrisez une nouvelle puissance !!!!!")
 							print (" ")
+					print (" ")
+					print (" ")
+					print ("  _________________")
+					print (" ()________________)")
+					print ("  |               |")
+					print ("  |     PALIER    |")
+					print ("  |     SUIVANT   |")
+					print ("  |_______________|")
+					print (" ()________________)")
+					print (" ")
 					print (" ")
 					continuer=input("[enter]")
 			elif int(a)==2:
