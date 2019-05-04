@@ -531,13 +531,13 @@ while int(pal)<250:
 	print (" ")
 	print (" ")
 
-	print ("[1] demon lvl "+str(1+pal)+"                            PV ("+str(nom)+") = "+str(96+32*vieup+lootpv))
-	print ("[2] demon lvl "+str(2+pal)+"                            force ("+str(nom)+") = "+str(32+8*forceup+lootforce))
-	print ("[3] demon lvl "+str(3+pal)+"                            defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
-	print ("[4] demon lvl "+str(4+pal)+"                            vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
+	print ("[1] demon lvl "+str(1+pal)+"							PV ("+str(nom)+") = "+str(96+32*vieup+lootpv))
+	print ("[2] demon lvl "+str(2+pal)+"							force ("+str(nom)+") = "+str(32+8*forceup+lootforce))
+	print ("[3] demon lvl "+str(3+pal)+"							defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
+	print ("[4] demon lvl "+str(4+pal)+"							vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
 	print ("[5] demon lvl "+str(5+pal))
-	print ("[6] demon lvl "+str(6+pal)+"                            niveau = "+str(lvl))
-	print ("[7] demon lvl "+str(7+pal)+"                            expérience = "+str(exp)+" / "+str(expmax))
+	print ("[6] demon lvl "+str(6+pal)+"							niveau = "+str(lvl))
+	print ("[7] demon lvl "+str(7+pal)+"							expérience = "+str(exp)+" / "+str(expmax))
 	print ("[8] demon lvl "+str(8+pal))
 	print ("[9] demon lvl "+str(9+pal))
 	if int(pal)==240:
@@ -570,11 +570,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -785,8 +785,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -806,11 +806,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -843,8 +843,10 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -974,9 +976,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -1083,10 +1085,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -1157,7 +1159,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -1412,11 +1414,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -1627,8 +1629,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -1648,11 +1650,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -1685,8 +1687,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -1816,9 +1818,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -1925,10 +1927,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -1999,7 +2001,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -2254,11 +2256,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -2469,8 +2471,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -2490,11 +2492,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -2527,8 +2529,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -2658,9 +2660,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -2767,10 +2769,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -2841,7 +2843,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -3096,11 +3098,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -3311,8 +3313,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -3332,11 +3334,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -3369,8 +3371,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -3500,9 +3502,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -3609,10 +3611,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -3683,7 +3685,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -3938,11 +3940,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -4153,8 +4155,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -4174,11 +4176,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -4211,8 +4213,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -4342,9 +4344,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -4451,10 +4453,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -4525,7 +4527,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -4780,11 +4782,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -4995,8 +4997,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -5016,11 +5018,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -5053,8 +5055,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -5184,9 +5186,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -5293,10 +5295,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -5367,7 +5369,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -5622,11 +5624,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -5837,8 +5839,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -5858,11 +5860,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -5895,8 +5897,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -6026,9 +6028,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -6135,10 +6137,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -6209,7 +6211,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -6464,11 +6466,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -6679,8 +6681,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -6700,11 +6702,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -6737,8 +6739,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -6868,9 +6870,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -6977,10 +6979,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -7051,7 +7053,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -7306,11 +7308,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -7521,8 +7523,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -7542,11 +7544,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -7579,8 +7581,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -7710,9 +7712,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -7819,10 +7821,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -7893,7 +7895,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
@@ -8148,11 +8150,11 @@ while int(pal)<250:
 			print (" ")
 			print ("___________________________________________________________________________________________________________________________________")
 			print ("                                                                           ")
-			print ("                          "+str(nomm)+"                            "+str(nom))
-			print ("                          PV = "+str(viem)+"                          PV = "+str(vie))
-			print ("                          force = "+str(forcem)+"                     force = "+str(force))
-			print ("                          defense = "+str(defensem)+"                 defense = "+str(defense))
-			print ("                          vitesse = "+str(vitessem)+"                 vitesse = "+str(vitesse))
+			print ("					"+str(nomm)+"                     "+str(nom))
+			print ("					PV = "+str(viem)+"                         PV = "+str(vie))
+			print ("					force = "+str(forcem)+"                    force = "+str(force))
+			print ("					defense = "+str(defensem)+"                defense = "+str(defense))
+			print ("					vitesse = "+str(vitessem)+"                vitesse = "+str(vitesse))
 			print ("___________________________________________________________________________________________________________________________________")
 			print (" ")
 			print (" ")
@@ -8363,8 +8365,8 @@ while int(pal)<250:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff//2
-							print (str(nom)+" gagne "+str(debuff//2)+" de force !")
+							force=force+debuff*2//5
+							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -8384,11 +8386,11 @@ while int(pal)<250:
 							continuer=input("[enter]")
 						elif int(choix3)==3 and int(lvl)>=140:
 							buff=renforcement(force,renfo)
-							vie=vie+buff*3
-							defense=defense+buff*3//2
+							vie=vie+buff*4
+							defense=defense+buff*7//4
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(buff*3)+" PV !             "+str(nom)+" gagne "+str(buff*3//2)+" de defense !")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !		"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
 							print (" ")
 							print (" ")
 							force=force-buff*2
@@ -8421,8 +8423,8 @@ while int(pal)<250:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//3)+" de force !")
-							forcem=forcem+forcem//3
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
 							print (" ")
 							print (" ")
 							anean=anean+1
@@ -8552,9 +8554,9 @@ while int(pal)<250:
 							print (str(nom)+" gagne "+str(buff)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str(defense//8)+" de defense !")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
 							vie=vie+buff
-							defense=defense-defense//8
+							defense=defense-defense//4
 							print (" ")
 							jeu=1
 							print (" ")
@@ -8661,10 +8663,10 @@ while int(pal)<250:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							vie=vie+vitesse*5
-							force=force+vitesse*3
-							defense=defense+vitesse*2
-							print (str(nom)+" gagne "+str(vitesse*5)+" PV !     "+str(nom)+" gagne "+str(vitesse*3)+" de force !     "+str(nom)+" gagne "+str(vitesse*2)+" de defense !")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
@@ -8735,7 +8737,7 @@ while int(pal)<250:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//6)+" PV !")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
