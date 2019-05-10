@@ -507,7 +507,7 @@ elif pml=="non":
 else:
 	exit()
 
-while int(pal)<250:
+while int(pal)<150:
 	totalpv=96+32*vieup+lootpv
 	frost=32+8*forceup+lootforce
 	armuleg=16+4*defenseup+lootdefense
@@ -546,7 +546,7 @@ while int(pal)<250:
 	print ("[7] demon lvl "+str(7+pal)+"							expérience = "+str(exp)+" / "+str(expmax))
 	print ("[8] demon lvl "+str(8+pal))
 	print ("[9] demon lvl "+str(9+pal))
-	if int(pal)==240:
+	if int(pal)==140:
 		print ("[10] demon primordial lvl "+str(10+pal)+" , gardien de la porte")
 	else:
 		print ("[10] demon primordial lvl "+str(10+pal))
@@ -9391,11 +9391,11 @@ if int(quete2)==0:
 	print (" ")
 	print ("'Ne t'inquiète pas tu peux voyager sans limite à travers les portails...'")
 	print (" ")
-	paldemo=250
-	palimmo=250
-	palbarb=250
-	palelem=250
-	palfufu=250
+	paldemo=150
+	palimmo=150
+	palbarb=150
+	palelem=150
+	palfufu=150
 	quete2=1
 	continuer=input("[enter]")
 print (" ")
@@ -9732,11 +9732,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -9770,7 +9770,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -9804,7 +9804,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -9838,7 +9838,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -9872,11 +9872,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -9906,7 +9906,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -9935,7 +9935,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -9965,7 +9965,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -9996,11 +9996,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -10033,7 +10033,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -10061,7 +10061,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -10097,7 +10097,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -10129,11 +10129,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -10163,7 +10163,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -10178,7 +10178,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -10207,7 +10207,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -10229,11 +10229,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -10259,7 +10259,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -10286,7 +10286,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -10298,7 +10298,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -10453,7 +10453,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -10485,8 +10485,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -10511,7 +10509,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -10648,11 +10646,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -10686,7 +10684,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -10720,7 +10718,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -10754,7 +10752,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -10788,11 +10786,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -10822,7 +10820,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -10851,7 +10849,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -10881,7 +10879,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -10910,11 +10908,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -10947,7 +10945,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -10975,7 +10973,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -11011,7 +11009,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -11043,11 +11041,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -11077,7 +11075,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -11092,7 +11090,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -11121,7 +11119,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -11143,11 +11141,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -11173,7 +11171,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -11200,7 +11198,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -11212,7 +11210,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -11367,7 +11365,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -11399,8 +11397,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -11425,7 +11421,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -11562,11 +11558,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -11600,7 +11596,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -11634,7 +11630,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -11668,7 +11664,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -11702,11 +11698,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -11736,7 +11732,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -11765,7 +11761,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -11795,7 +11791,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -11824,11 +11820,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -11861,7 +11857,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -11889,7 +11885,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -11925,7 +11921,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -11957,11 +11953,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -11991,7 +11987,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -12006,7 +12002,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -12035,7 +12031,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -12057,11 +12053,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -12087,7 +12083,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -12114,7 +12110,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -12126,7 +12122,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -12281,7 +12277,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -12313,8 +12309,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -12339,7 +12333,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -12476,11 +12470,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -12514,7 +12508,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -12548,7 +12542,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -12582,7 +12576,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -12616,11 +12610,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -12650,7 +12644,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -12679,7 +12673,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -12709,7 +12703,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -12738,11 +12732,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -12775,7 +12769,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -12803,7 +12797,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -12839,7 +12833,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -12871,11 +12865,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -12905,7 +12899,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -12920,7 +12914,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -12949,7 +12943,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -12971,11 +12965,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -13001,7 +12995,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -13028,7 +13022,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -13040,7 +13034,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -13195,7 +13189,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -13227,8 +13221,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -13253,7 +13245,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -13390,11 +13382,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -13428,7 +13420,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -13462,7 +13454,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -13496,7 +13488,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -13530,11 +13522,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -13564,7 +13556,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -13593,7 +13585,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -13623,7 +13615,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -13652,11 +13644,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -13689,7 +13681,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -13717,7 +13709,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -13753,7 +13745,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -13785,11 +13777,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -13819,7 +13811,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -13834,7 +13826,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -13863,7 +13855,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -13885,11 +13877,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -13915,7 +13907,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -13942,7 +13934,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -13954,7 +13946,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -14109,7 +14101,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -14141,8 +14133,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -14167,7 +14157,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -14303,11 +14293,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -14341,7 +14331,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -14375,7 +14365,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -14409,7 +14399,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -14443,11 +14433,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -14477,7 +14467,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -14506,7 +14496,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -14536,7 +14526,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -14565,11 +14555,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -14602,7 +14592,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -14630,7 +14620,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -14666,7 +14656,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -14698,11 +14688,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -14732,7 +14722,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -14747,7 +14737,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -14776,7 +14766,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -14798,11 +14788,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -14828,7 +14818,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -14855,7 +14845,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -14867,7 +14857,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -15022,7 +15012,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -15054,8 +15044,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -15080,7 +15068,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -15217,11 +15205,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -15255,7 +15243,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -15289,7 +15277,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -15323,7 +15311,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -15357,11 +15345,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -15391,7 +15379,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -15420,7 +15408,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -15450,7 +15438,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -15479,11 +15467,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -15516,7 +15504,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -15544,7 +15532,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -15580,7 +15568,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -15612,11 +15600,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -15646,7 +15634,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -15661,7 +15649,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -15690,7 +15678,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -15712,11 +15700,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -15742,7 +15730,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -15769,7 +15757,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -15781,7 +15769,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -15936,7 +15924,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -15968,8 +15956,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -15994,7 +15980,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -16131,11 +16117,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -16169,7 +16155,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -16203,7 +16189,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -16237,7 +16223,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -16271,11 +16257,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -16305,7 +16291,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -16334,7 +16320,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -16364,7 +16350,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -16393,11 +16379,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -16430,7 +16416,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -16458,7 +16444,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -16494,7 +16480,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -16526,11 +16512,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -16560,7 +16546,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -16575,7 +16561,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -16604,7 +16590,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -16626,11 +16612,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -16656,7 +16642,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -16683,7 +16669,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -16695,7 +16681,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -16850,7 +16836,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -16882,8 +16868,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -16908,7 +16892,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -17045,11 +17029,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -17083,7 +17067,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -17117,7 +17101,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -17151,7 +17135,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -17185,11 +17169,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -17219,7 +17203,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -17248,7 +17232,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -17278,7 +17262,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -17307,11 +17291,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -17344,7 +17328,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -17372,7 +17356,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -17408,7 +17392,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -17440,11 +17424,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -17474,7 +17458,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -17489,7 +17473,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -17518,7 +17502,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -17540,11 +17524,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -17570,7 +17554,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -17597,7 +17581,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -17609,7 +17593,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -17764,7 +17748,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -17796,8 +17780,6 @@ while int(pal)<1000000:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==120 or int(lvl)==140 or int(lvl)==160:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")	
 					continuer=input("[enter]")
 					print (" ")
@@ -17822,7 +17804,7 @@ while int(pal)<1000000:
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
-					print (str(nomm)+" lance rituel sanglant...")
+					print (str(nomm)+" utilise rituel sanglant...")
 					print (" ")
 					print (" ")
 					print (str(nom)+" perd "+str(degatm)+" PV !")
@@ -17959,11 +17941,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] pacte de sang")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] transfert")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] absorption")
 						choix3=input()
 						if int(choix3)==1:
@@ -17997,7 +17979,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -18031,7 +18013,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -18065,7 +18047,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -18099,11 +18081,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] renforcement")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] aneantissement")
 						choix3=input()
 						if int(choix3)==1:
@@ -18133,7 +18115,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -18162,7 +18144,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -18192,7 +18174,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -18221,11 +18203,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] onde de choc")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] berserker")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] dernier souffle")
 						choix3=input()
 						if int(choix3)==1:
@@ -18258,7 +18240,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -18286,7 +18268,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -18322,7 +18304,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -18354,11 +18336,11 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] préméditation")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] serie meutriere")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] transformation")
 						choix3=input()
 						if int(choix3)==1:
@@ -18388,7 +18370,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -18403,7 +18385,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -18432,7 +18414,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -18454,11 +18436,11 @@ while int(pal)<1000000:
 							jeu=1
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=120:
+						if int(lvl)>=75:
 							print ("[2] drainage")
-						if int(lvl)>=140:
+						if int(lvl)>=80:
 							print ("[3] conversion")
-						if int(lvl)>=160:
+						if int(lvl)>=90:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						if int(choix3)==1:
@@ -18484,7 +18466,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==2 and int(lvl)>=120:
+						elif int(choix3)==2 and int(lvl)>=75:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -18511,7 +18493,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif int(choix3)==3 and int(lvl)>=140:
+						elif int(choix3)==3 and int(lvl)>=80:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -18523,7 +18505,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif int(choix3)==4 and int(lvl)>=160:
+						elif int(choix3)==4 and int(lvl)>=90:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -18677,7 +18659,7 @@ while int(pal)<1000000:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=160 and int(corrup)==2:
+					if int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
