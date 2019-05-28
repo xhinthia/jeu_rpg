@@ -3,6 +3,7 @@ import os.path
 import random
 import sys
 from sorts import *
+from autre import *
 
 print ("Avez-vous une sauvegarde ? [oui]/[non]")
 pml=input()
@@ -137,266 +138,8 @@ elif pml=="non":
 	quete2=0
 	expmax=5*lvl+lvl*lvl
 	if int(tuto)==0:
-		print ("Vous voici dans le tutoriel, vous allez apprendre les bases du jeu...")
-		print (" ")
-		print (" ")
-		print ("Afin d'intéragir dans le jeu merci de remplir uniquement les renseignements demandés entre crochets")
-		print (" ")
-		print ("Par exemple : [enter] à la vue de ceci, pour continuer vous n'avez qu'à appuyer sur 'Entrée'")
-		continuer=input("[enter]")
-		print (" ")
-		print ("Ou encore : [1] frappe pour effectuer une frappe il vous suffit de renseigner '1' et d'appuyer sur 'Entrée'")
-		continuer=input("[1]")
-		print (" ")
-		print (" ")
-		print ("votre personnage dispose de 4 caractéristiques différentes :")
-		print (" ")
-		print ("- la vie : si elle tombe à 0 vous êtes mort")
-		print ("- la force : permet d'augmenter vos dégats")
-		print ("- la defense : permet de réduire les dégats subis")
-		print ("- la vitesse : augmente vos chances de jouer")
-		continuer=input("[enter]")
-		print (" ")
-		print ("A chaque nouveau tour, la vitesse (celle du monstre et la votre) determine vos chances de jouer")
-		print (" ")
-		print ("Cela reste statistique, il est tout à fait possible donc de jouer 3 fois de suite avec une vitesse égale à celle du monstre et inversement")
-		continuer=input("[enter]")
-		print (" ")
-		print ("Quand vous réussissez un combat, vous récupérez tous vos PV (points de vie) ainsi que de l'expérience qui dépend du niveau du monstre")
-		print (" ")
-		print ("Une fois que vous avez récolté suffisamment d'expérience, vous montez d'un niveau")
-		print (" ")
-		print ("vous avez alors le choix d'augmenter une de vos 4 caractéristiques")
-		continuer=input("[enter]")
-		print (" ")
-		print (" ")
-		print ("une sauvegarde automatique enregistre votre progression à chaque fin de combat")
-		print (" ")
-		print ("9 monstres de niveaux progressifs vous sont proposés ainsi qu'un boss de palier")
-		continuer=input("[enter]")
-		print (" ")
-		print ("progressez en battant les monstres de plus en plus fort pour essayer de vaincre le boss et ainsi passer au palier supérieur")
-		print (" ")
-		print ("Si vous tuez le boss, vous aurez le droit d'ouvrir son coffre qui renferme de puissants objets")
-		continuer=input("[enter]")
-		print (" ")
-		print (" ")
-		print (" ")
-		print ("Bon voyons un peu comment vous vous débrouillez en combat !")
-		continuer=input("[enter]")
-		print (" ")
-		print (" ")
-		nomm="poutch"
-		viem=1000
-		forcem=5
-		defensem=5
-		vitessem=1
-		print (nomm)
-		print ("PV = "+str(viem))
-		print ("force = "+str(forcem))
-		print ("defense = "+str(defensem))
-		print ("vitesse = "+str(vitessem))
-		print (" ")
-		print (" ")
-		print ("[1] sanguinaire")
-		tutoriel=input()
-		if int(tutoriel)==1:
-			print (" ")
-			print (" ")
-			print (str(nomm)+" perd 20 PV !")
-			viem=viem-20
-			print (" ")
-			print (" ")
-			print (str(nom)+" gagne 5 PV !")
-			print (" ")
-			continuer=input("[enter]")
-			print (" ")
-			print (" ")
-			print ("Bien joué ! Vous venez d'utiliser votre premier sort !")
-			print (" ")
-			print ("sanguinaire est un sort très fort, il cause des dégats selon vos points de vie max")
-			print (" ")
-			print ("Et vous fait regagner une partie des dégats infligés sous forme de PV !")
-			print (" ")
-			print (" ")
-			print ("Essayons le prochain sort !")
-			print (" ")
-			continuer=input("[enter]")
-			print (" ")
-			print (" ")
-			print ("[2] devaster")
-			tutoriel=input()
-			if int(tutoriel)==2:
-				print (" ")				
-				print (" ")
-				print (str(nomm)+" perd 25 PV !")
-				viem=viem-25
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				print ("Bravo ! vous avez utiliser votre deuxième compétence !")
-				print (" ")
-				print ("devaster est un sort qui inflige beaucoup de dégats en fonction de votre force")
-				print (" ")
-				print (" ")
-				print ("Suivant !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				print ("[3] coup de bouclier")
-				tutoriel=input()
-				if int(tutoriel)==3:
-					print (" ")
-					print (" ")
-					print (str(nomm)+" perd 17 PV !")
-					viem=viem-17
-					print (" ")
-					print (" ")
-					print (str(nomm)+" perd 4 de defense !")
-					defensem=defensem-2
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-					print ("coup de bouclier permet d'effectuer des dégats en fonction de votre force et de votre defense")
-					print (" ")
-					print ("tout en diminuant la defense de votre adversaire !")
-					print (" ")
-					print ("comme votre defense réduit les dégats ennemis, vos dégats sont réduits par la defense des monstres")
-					print (" ")
-					print (" ")
-					print ("Le dernier sort !")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-					print ("[4] enchainement")
-					tutoriel=input()
-					if int(tutoriel)==4:
-						print (" ")
-						print (" ")
-						print (str(nomm)+"perd 13 PV !")
-						viem=viem-13
-						print (" ")
-						print (" ")
-						print ("Votre combo passe à 2")
-						print (" ")
-						continuer=input("[enter]")
-						print (" ")
-						print (" ")
-						print ("Euh... C'est quoi ce sort nul ?")
-						print (" ")
-						print ("Relances le !")
-						print (" ")
-						print (" ")
-						print ("[4] enchainement")
-						tutoriel=input()
-						if int(tutoriel)==4:
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd 21 PV !")
-							viem=viem-21
-							print (" ")
-							print (" ")
-							print ("votre combo passe à 3")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print ("C'est bien mieux !")
-							print (" ")
-							print ("Et ca sera de plus en plus fort... Au plus ton combo monte au plus enchainement fait de dégats !")
-							print (" ")
-							print ("Un sort puissant si tu as beaucoup de vitesse, en plus ses dégats augmentent en fonction de ta vitesse et de ta force!")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print ("Le tutoriel s'achève ici, tu es prêt à commencer ton ascension dans les paliers !")
-							print (" ")
-							print ("Ah oui une derniere chose ! Quand tu fais un sort, celui-ci monte d'un niveau...")
-							print (" ")
-							print ("Et arrivé à un certain niveau, ton sort devient plus fort !")
-							print (" ")
-							continuer=input("[enter] Terminer le tutoriel")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							print (" ")
-							tuto=1
+		tuto_detail(nom)
+		tuto=1
 
 
 	print ("Nos plus grands champions vous proposent des défis pour prouver votre détermination")
@@ -1390,7 +1133,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -2232,7 +1977,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -3074,7 +2821,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -3916,7 +3665,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -4758,7 +4509,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -5600,7 +5353,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -6442,7 +6197,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -7284,7 +7041,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -8126,7 +7885,9 @@ while int(pal)<150:
 				print (str(nom)+" perd "+str(degatm)+" PV !")
 				print (" ")
 				print (" ")
+				continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -9067,6 +8828,7 @@ while int(pal)<150:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(capa)==2:
 					degatm=destru_primo(forcem,defense)
 					vie=vie-degatm
@@ -9081,7 +8843,9 @@ while int(pal)<150:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -10506,6 +10270,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -10518,6 +10283,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -10533,6 +10299,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -10542,6 +10309,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -10551,7 +10319,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -11418,6 +11188,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -11430,6 +11201,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -11445,6 +11217,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -11454,6 +11227,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -11463,7 +11237,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -12330,6 +12106,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -12342,6 +12119,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -12357,6 +12135,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -12366,6 +12145,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -12375,7 +12155,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -13242,6 +13024,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -13254,6 +13037,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -13269,6 +13053,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -13278,6 +13063,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -13287,7 +13073,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -14154,6 +13942,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -14166,6 +13955,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -14181,6 +13971,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -14190,6 +13981,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -14199,7 +13991,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -15065,6 +14859,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -15077,6 +14872,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -15092,6 +14888,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -15101,6 +14898,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -15110,7 +14908,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -15977,6 +15777,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -15989,6 +15790,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -16004,6 +15806,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -16013,6 +15816,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -16022,7 +15826,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -16889,6 +16695,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -16901,6 +16708,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -16916,6 +16724,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -16925,6 +16734,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -16934,7 +16744,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -17801,6 +17613,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					degatm=rituel_sanglant(viem,defense)
 					vie=vie-degatm
@@ -17813,6 +17626,7 @@ while int(pal)<1000000:
 					print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -17828,6 +17642,7 @@ while int(pal)<1000000:
 					vie=vie-vie//45
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -17837,6 +17652,7 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					degatm=coup_demoniaque(forcem,defense)
 					vie=vie-degatm
@@ -17846,7 +17662,9 @@ while int(pal)<1000000:
 					print (str(nom)+" perd "+str(degatm)+" PV !")
 					print (" ")
 					print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -19144,6 +18962,7 @@ while int(pal)<1000000:
 						print (str(nom)+" perd "+str(degatm)+" PV !")
 						print (" ")
 						print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==2:
 					if int(capa)==1:
 						degatm=attaque_boss(viem,forcem,defense,choix5)
@@ -19178,6 +18997,7 @@ while int(pal)<1000000:
 						viem=viem-degatm//2
 						print (" ")
 						print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==3:
 					if int(capa)==1:
 						degatm=attaque_boss(viem,forcem,defense,choix5)
@@ -19203,6 +19023,7 @@ while int(pal)<1000000:
 						forcem=forcem+forcem//5
 						print (" ")
 						print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==4:
 					if int(capa)==1:
 						buff=instabilite_elem(forcem,defensem,vitessem)
@@ -19233,6 +19054,7 @@ while int(pal)<1000000:
 						print (str(nom)+" perd "+str(degatm)+" PV !")
 						print (" ")
 						print (" ")
+					continuer=input("[enter]")
 				elif int(choix5)==5:
 					if int(capa)==1:
 						degatm=attaque_boss(viem,forcem,defense,choix5)
@@ -19259,7 +19081,9 @@ while int(pal)<1000000:
 						print (str(nom)+" perd "+str(degatm)+" PV !")
 						print (" ")
 						print (" ")
+					continuer=input("[enter]")
 				if int(vie)<=0:
+					print (" ")
 					print ("vous êtes mort...")
 					print (" ")
 					mort=input("[enter]")
@@ -19374,3 +19198,4 @@ while int(pal)<1000000:
 	fw.write("\n")
 	fw.write(str(palfufu))
 	fw.close()
+
