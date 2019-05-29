@@ -22,7 +22,7 @@ def tuto_detail(nom):
 	print ("- la vitesse : vous jouez plus vite")
 	continuer=input("[enter]")
 	print (" ")
-	print ("Vous pouvez jouer une fois que votre jauge d'attaque dépasse les 100%. Cette jauge dépend directement de votre vitesse !)
+	print ("Vous pouvez jouer une fois que votre jauge d'attaque dépasse les 100%. Cette jauge dépend directement de votre vitesse !")
 	print (" ")
 	print ("Au plus vous avez de vitesse, au plus votre jauge se remplit vite. Si votre jauge dépasse 100%, vous pouvez jouer et le surplus sera conservé")
 	print (" ")
