@@ -67,6 +67,7 @@ if pml=="oui":
 		palbarb=int(sauveg[49])
 		palelem=int(sauveg[50])
 		palfufu=int(sauveg[51])
+		wb=int(sauveg[52])
 	print (" __________________")
 	print ("()_________________)")
 	print ("|                 |")
@@ -136,7 +137,7 @@ elif pml=="non":
 	ame=0
 	tuto=0
 	quete2=0
-	expmax=5*lvl+lvl*lvl
+	expmax=5*lvl+lvl
 	if int(tuto)==0:
 		tuto_detail(nom)
 		tuto=1
@@ -290,7 +291,7 @@ while int(pal)<100:
 		print ("quête : "+str(gulvit)+"/60 vitesse atteinte")
 	print (" ")
 	print (" ")
-
+	expmax=5*lvl+lvl
 	print ("[1] demon lvl "+str(1+pal)+"							PV ("+str(nom)+") = "+str(96+32*vieup+lootpv))
 	print ("[2] demon lvl "+str(2+pal)+"							force ("+str(nom)+") = "+str(32+8*forceup+lootforce))
 	print ("[3] demon lvl "+str(3+pal)+"							defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
@@ -367,11 +368,11 @@ while int(pal)<100:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -409,7 +410,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -443,7 +444,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -477,7 +478,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -509,13 +510,15 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -549,7 +552,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -559,8 +562,8 @@ while int(pal)<100:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -578,7 +581,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -608,7 +611,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -637,13 +640,15 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -680,7 +685,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -708,7 +713,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -744,7 +749,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -774,13 +779,15 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -814,7 +821,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -829,7 +836,7 @@ while int(pal)<100:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -858,7 +865,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -878,13 +885,15 @@ while int(pal)<100:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -914,7 +923,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -941,7 +950,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -953,7 +962,7 @@ while int(pal)<100:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -985,7 +994,9 @@ while int(pal)<100:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+								continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -1118,13 +1129,13 @@ while int(pal)<100:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
+					if int(pal)>=70 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -1154,8 +1165,6 @@ while int(pal)<100:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
 					print (" ")
 					continuer=input("[enter]")
 					print (" ")
@@ -1195,9 +1204,7081 @@ while int(pal)<100:
 		bloodstack=0
 		degveng=0
 		nomm="demon lvl "+str(lvlm)
-		viem=115+24*lvlm
-		forcem=36+8*lvlm
-		defensem=17+3*lvlm
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="3":
+		lvlm=3+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="4":
+		lvlm=4+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="5":
+		lvlm=5+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="6":
+		lvlm=6+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="7":
+		lvlm=7+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="8":
+		lvlm=8+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="9":
+		lvlm=9+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon lvl "+str(lvlm)
+		viem=105+24*lvlm
+		forcem=31+8*lvlm
+		defensem=15+3*lvlm
+		vitessem=14+1*lvlm
+		vie=96+32*vieup+lootpv
+		force=32+8*forceup+lootforce
+		defense=16+4*defenseup+lootdefense
+		vitesse=16+4*vitesseup+lootvitesse
+		bat=0
+		batm=0
+		while int(vie)>0 and int(viem)>0:
+			while int(bat)<100 and int(batm)<100:
+				bat=bat+vitesse
+				batm=batm+vitessem
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("			"+str(nom))
+			print ("			PV = "+str(vie))
+			print ("			force = "+str(force))
+			print ("			defense = "+str(defense))
+			print ("			vitesse = "+str(vitesse))
+			print ("			jauge d'attaque = "+str(bat)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print ("									"+str(nomm))
+			print ("									PV = "+str(viem))
+			print ("									force = "+str(forcem))
+			print ("									defense = "+str(defensem))
+			print ("									vitesse = "+str(vitessem))
+			print ("									jauge d'attaque = "+str(batm)+"%")
+			print ("___________________________________________________________________________________________________________________________________")
+			print (" ")
+			print (" ")
+			print (" ")
+			print (" ")
+			if int(bat)>=100:
+				jeu=0
+				bat=bat-100
+				print (" ")
+				print ("A vous de jouer !")
+				print (" ")
+				while int(jeu)==0:
+					if int(keltu)==2:
+						print ("[1] toucher sanglant")
+						if int(pal)>=50:
+							print ("[2] pacte de sang")
+						if int(pal)>=60:
+							print ("[3] transfert")
+						if int(pal)>=70:
+							print ("[4] absorption")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							jeu=1
+							ritsang=ritsang+1
+							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+								print ("-----------------------------------------------------------------------------------------")
+								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
+								print ("-----------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("-------------------------------------------------------------------------------------------")
+								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
+								print ("-------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=pacte_sang(defensem,pacte)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
+							print (" ")
+							print (" ")
+							vie=vie-degat
+							print (str(nom)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(defensem)+" de defense !")
+							defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							pacte=pacte+1
+							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              PACTE DE SANG LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("------------------------------------------------------------------------------------------")
+								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
+								print ("------------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=transfert(defense,trans)
+							print (" ")
+							print (" ")
+							print ("vous sacrifiez votre armure pour augmenter votre vie !")
+							print (" ")
+							print (" ")
+							vie=vie+buff
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense)+" de defense !")
+							defense=0
+							jeu=1
+							print (" ")
+							print (" ")
+							bloodstack=bloodstack+1
+							print ("stack de sang = "+str(bloodstack))	
+							print (" ")
+							print (" ")
+							trans=trans+1
+							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              TRANSFERT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(trans)+"e TRANSFERT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=absorption(vie,defensem,bloodstack,abso)
+							print (" ")
+							print (" ")
+							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
+							print ("et infligez un coup dévastateur à votre adversaire !!!")
+							print (" ")
+							coup=input("[enter]")
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							bloodstack=0
+							print ("stack de sang = "+str(bloodstack))
+							print (" ")
+							print (" ")
+							abso=abso+1
+							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ABSORPTION LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(norfend)==2:
+						print ("[1] frappe du fléau")
+						if int(pal)>=50:
+							print ("[2] poigne de la mort")
+						if int(pal)>=60:
+							print ("[3] renforcement")
+						if int(pal)>=70:
+							print ("[4] aneantissement")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//10)+" de force !")
+							force=force+degat//10
+							jeu=1
+							print (" ")
+							print (" ")
+							mourne=mourne+1
+							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							debuff=poigne_mort(forcem,poigne)
+							forcem=forcem-debuff
+							if int(forcem)<0:
+								forcem=0
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(debuff)+" de force !")
+							print (" ")
+							print (" ")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							print (" ")
+							jeu=1
+							print (" ")
+							poigne=poigne+1
+							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							buff=renforcement(force,renfo)
+							vie=vie+buff*4
+							defense=defense+buff*7//4
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
+							print (" ")
+							print (" ")
+							force=force-buff*2
+							if int(force)<0:
+								force=0
+							print (str(nom)+" perd "+str(buff*2)+" de force !")
+							jeu=1
+							print (" ")
+							print (" ")
+							renfo=renfo+1
+							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              RENFORCEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=aneantissement(force,forcem,defensem,anean)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							print (str(nom)+" perd "+str(degat//10)+" de force !")
+							force=force-degat//10
+							if int(force)<0:
+								force=0
+							print (" ")
+							print (" ")
+							anean=anean+1
+							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(exode)==2:
+						print ("[1] heurt de bouclier")
+						if int(pal)>=50:
+							print ("[2] onde de choc")
+						if int(pal)>=60:
+							print ("[3] berserker")
+						if int(pal)>=70:
+							print ("[4] dernier souffle")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
+							defensem=defensem-degat//8
+							if int(defensem)<0:
+								defensem=0
+							jeu=1
+							print (" ")
+							print (" ")
+							war=war+1
+							if int(war)==500 or int(war)==2000 or int(war)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=onde_choc(defense,defensem,onde)
+							viem=viem-degat
+							degveng=degveng+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
+							vitessem=vitessem-vitessem//10
+							print (" ")
+							jeu=1
+							print (" ")
+							onde=onde+1
+							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ONDE DE CHOC LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=vengeance(degveng,veng)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("vos blessures infligées à l'adversaire vous font enrager !")
+							print ("vous utilisez toute cette rage dans un coup destructeur...")
+							print (" ")
+							coup=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !!")
+							print (" ")
+							print (" ")
+							print ("vous subissez le contrecoup...")
+							print (" ")
+							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
+							vie=vie-(degveng-defense)
+							print (" ")
+							degveng=0
+							jeu=1
+							print (" ")
+							veng=veng+1
+							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              VENGEANCE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(veng)+"e VENGEANCE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							buff=dernier_souffle(defense,souffle)
+							print ("vous sacrifiez votre defense pour gagner de la vie !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(buff)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(defense//4)+" de defense !")
+							vie=vie+buff
+							defense=defense-defense//4
+							print (" ")
+							jeu=1
+							print (" ")
+							souffle=souffle+1
+							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						else:
+							pass
+					elif int(azzin)==2:
+						print ("[1] danse de l'ombre")
+						if int(pal)>=50:
+							print ("[2] préméditation")
+						if int(pal)>=60:
+							print ("[3] serie meutriere")
+						if int(pal)>=70:
+							print ("[4] transformation")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							oth=oth+1
+							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							print (" ")
+							print (" ")
+							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-stackvit*stackvit
+							stackvit=stackvit*2
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+						elif str(choix3)=="3" and int(pal)>=60:
+							degat=serie_meurtriere(stackvit,defensem,serie)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=0
+							print ("Votre combo retombe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							serie=serie+1
+							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=70:
+							print (" ")
+							print (" ")
+							print ("vous canalisez une puissance démoniaque...")
+							print ("Vous vous transformez en démon !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							vie=vie+vitesse*4
+							force=force+vitesse*13//10
+							defense=defense+vitesse*3//4
+							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
+							print (" ")
+							print (" ")
+							vitesse=vitesse-vitesse*3//4
+							jeu=1
+						else:
+							pass
+					elif int(corrup)==2:
+						print ("[1] ombreflamme")
+						if int(pal)>=50:
+							print ("[2] drainage")
+						if int(pal)>=60:
+							print ("[3] conversion")
+						if int(pal)>=70:
+							print ("[4] feu de l'âme")
+						choix3=input()
+						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
+							print (" ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix3)=="1":
+							degat=ombreflamme(force,ombre)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							ombre=ombre+1
+							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              OMBREFLAMME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="2" and int(pal)>=50:
+							degat=drainage(force,drain)
+							viem=viem-degat
+							vie=vie+degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							jeu=1
+							drain=drain+1
+							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DRAINAGE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(drain)+"e DRAINAGE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=60:
+							vie=vie-(96+34*vieup+lootpv)//5
+							print (" ")
+							print (" ")
+							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+							print (" ")
+							force=force*3//2
+							print (" ")
+							jeu=1
+						elif str(choix3)=="4" and int(pal)>=70:
+							degat=feu_ame(force,ame,lvlm,feu)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
+							print ("Vous brûlez l'adversaire avec des flammes noires !")
+							print (" ")
+							continuer=input("[enter]")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							ame=0
+							print("Votre stock d'âme démoniaque passe à "+str(ame))
+							print (" ")
+							print (" ")
+							jeu=1
+							feu=feu+1
+							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              FEU DE L'AME LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+								continuer=input("[enter]")
+						else:
+							pass
+					else:
+						print ("[1] sanguinaire")
+						print ("[2] devaster")
+						print ("[3] coup de bouclier")
+						print ("[4] enchainement")
+						choix2=input()
+						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
+							print (" ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
+							print (" ")
+						if str(choix2)=="1":
+							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nom)+" gagne "+str(degat//4)+" PV !")
+							vie=vie+degat//4
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//4
+							degpv=degpv+1
+							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              SANGUINAIRE LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="2":
+							degat=degat_force(force,defensem,degfor,norfend,mourne)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							jeu=1
+							print (" ")
+							degfor=degfor+1
+							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              DEVASTER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degfor)+"e DEVASTER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")	
+						elif str(choix2)=="3":
+							degat=degat_defense(force,defense,defensem,degdef,exode,war)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
+							defensem=defensem-degat//10
+							if int(defensem)<0:
+								defensem=0
+							print (" ")
+							jeu=1
+							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
+							degdef=degdef+1
+							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+						elif str(choix2)=="4":
+							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
+							viem=viem-degat
+							print (" ")
+							print (" ")
+							print (str(nomm)+" perd "+str(degat)+" PV !")
+							print (" ")
+							print (" ")
+							stackvit=stackvit+1
+							print ("Votre combo passe à "+str(stackvit))
+							jeu=1
+							print (" ")
+							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
+							degvit=degvit+1
+							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              ENCHAINEMENT LVL UP !!!                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							else:
+								print ("--------------------------------------------------------------------------------------")
+								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
+								print ("--------------------------------------------------------------------------------------")
+								print (" ")
+								print (" ")
+							continuer=input("[enter]")
+				if int(viem)<=0:
+					if int(corrup)==1:
+						chassedemo=chassedemo+1
+					print (" ")
+					print (" ")
+					print ("vous avez vaincu "+str(nomm)+" !!!")
+					print (" ")
+					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
+					print (" ")
+					print (" ")
+					if int(pal)>=70 and int(corrup)==2:
+						ame=ame+1
+						print ("Votre stock d'âme passe à "+str(ame))
+						print (" ")
+						print (" ")
+					exp=exp+lvlm
+					expmax=5*lvl+lvl
+					if int(exp)>=int(expmax):
+						lvl=lvl+1
+						print ("<><><><><><><><>")
+						print ("              ")
+						print ("   NIVEAU "+str(lvl)+"   ")
+						print ("              ")
+						print ("<><><><><><><><>")
+						print (" ")
+						print (" ")
+						exp=0
+						print ("[1] +32 PV")
+						print ("[2] +8 force")
+						print ("[3] +4 defense")
+						print ("[4] +4 vitesse")
+						carac=input()
+						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
+							print (" ")
+							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							print (" ")
+						if str(carac)=="1":
+							vieup=vieup+1
+						elif str(carac)=="2":
+							forceup=forceup+1
+						elif str(carac)=="3":
+							defenseup=defenseup+1
+						elif str(carac)=="4":
+							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+					print (" ")
+					continuer=input("[enter]")
+					print (" ")
+					print (" ")
+			elif int(batm)>=100:
+				tour=tour+1
+				batm=batm-100
+				print (" ")
+				print (" ")
+				print (str(nomm)+" va jouer !")
+				print (" ")
+				continuer=input("[enter]")
+				print (" ")
+				print (" ")
+				degatm=coup_demoniaque(forcem,defense)
+				vie=vie-degatm
+				print (str(nomm)+" vous frappe avec une puissance obscure...")
+				print (" ")
+				print (" ")
+				print (str(nom)+" perd "+str(degatm)+" PV !")
+				print (" ")
+				print (" ")
+				continuer=input("[enter]")
+				if int(vie)<=0:
+					print (" ")
+					print ("vous êtes mort...")
+					print (" ")
+					mort=input("[enter]")
+					print (" ")
+					print (" ")
+					pass
+
+	elif str(choix1)=="10":
+		lvlm=10+pal
+		tour=0
+		stackvit=1
+		bloodstack=0
+		degveng=0
+		nomm="demon primordial lvl "+str(lvlm)
+		viem=115+27*lvlm
+		forcem=34+9*lvlm
+		defensem=16+4*lvlm
 		vitessem=15+1*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
@@ -1243,11 +8324,11 @@ while int(pal)<100:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -1285,7 +8366,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -1319,7 +8400,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -1353,7 +8434,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -1385,13 +8466,15 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -1425,7 +8508,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -1435,8 +8518,8 @@ while int(pal)<100:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -1454,7 +8537,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -1484,7 +8567,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -1513,13 +8596,15 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -1556,7 +8641,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -1584,7 +8669,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -1620,7 +8705,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -1650,13 +8735,15 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -1690,7 +8777,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -1705,7 +8792,7 @@ while int(pal)<100:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -1734,7 +8821,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -1754,13 +8841,15 @@ while int(pal)<100:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -1790,7 +8879,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -1817,7 +8906,7 @@ while int(pal)<100:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -1829,7 +8918,7 @@ while int(pal)<100:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -1861,7 +8950,9 @@ while int(pal)<100:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -1994,7011 +9085,7 @@ while int(pal)<100:
 					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
 					print (" ")
 					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="3":
-		lvlm=3+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=125+24*lvlm
-		forcem=41+8*lvlm
-		defensem=19+3*lvlm
-		vitessem=16+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="4":
-		lvlm=4+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=135+24*lvlm
-		forcem=46+8*lvlm
-		defensem=21+3*lvlm
-		vitessem=17+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="5":
-		lvlm=5+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=145+24*lvlm
-		forcem=51+8*lvlm
-		defensem=23+3*lvlm
-		vitessem=18+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="6":
-		lvlm=6+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=155+24*lvlm
-		forcem=56+8*lvlm
-		defensem=25+3*lvlm
-		vitessem=19+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="7":
-		lvlm=7+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=165+24*lvlm
-		forcem=61+8*lvlm
-		defensem=27+3*lvlm
-		vitessem=20+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="8":
-		lvlm=8+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=175+24*lvlm
-		forcem=66+8*lvlm
-		defensem=29+3*lvlm
-		vitessem=21+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						while str(carac)!="1" and str(carac)!="2" and str(carac)!="3" and str(carac)!="4":
-							print (" ")
-							carac=input("Vous devez choisir un chiffre entre '1' et '4' : ")
-							print (" ")
-						if str(carac)=="1":
-							vieup=vieup+1
-						elif str(carac)=="2":
-							forceup=forceup+1
-						elif str(carac)=="3":
-							defenseup=defenseup+1
-						elif str(carac)=="4":
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="10":
-		lvlm=10+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon primordial lvl "+str(lvlm)
-		viem=185+30*lvlm
-		forcem=71+10*lvlm
-		defensem=31+4*lvlm
-		vitessem=22+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
-						ame=ame+1
-						print ("Votre stock d'âme passe à "+str(ame))
-						print (" ")
-						print (" ")
-					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
-					if int(exp)>=int(expmax):
-						lvl=lvl+1
-						print ("<><><><><><><><>")
-						print ("              ")
-						print ("   NIVEAU "+str(lvl)+"   ")
-						print ("              ")
-						print ("<><><><><><><><>")
-						print (" ")
-						print (" ")
-						exp=0
-						print ("[1] +32 PV")
-						print ("[2] +8 force")
-						print ("[3] +4 defense")
-						print ("[4] +4 vitesse")
-						carac=input()
-						if int(carac)==1:
-							vieup=vieup+1
-						elif int(carac)==2:
-							forceup=forceup+1
-						elif int(carac)==3:
-							defenseup=defenseup+1
-						elif int(carac)==4:
-							vitesseup=vitesseup+1
-						print (" ")
-						print (" ")
-						if int(lvl)==75 or int(lvl)==80 or int(lvl)==90:
-							print ("vous maîtrisez une nouvelle puissance...")
-					print (" ")
-					continuer=input("[enter]")
-					print (" ")
-					print (" ")
-			elif int(batm)>=100:
-				tour=tour+1
-				batm=batm-100
-				print (" ")
-				print (" ")
-				print (str(nomm)+" va jouer !")
-				print (" ")
-				continuer=input("[enter]")
-				print (" ")
-				print (" ")
-				degatm=coup_demoniaque(forcem,defense)
-				vie=vie-degatm
-				print (str(nomm)+" vous frappe avec une puissance obscure...")
-				print (" ")
-				print (" ")
-				print (str(nom)+" perd "+str(degatm)+" PV !")
-				print (" ")
-				print (" ")
-				continuer=input("[enter]")
-				if int(vie)<=0:
-					print (" ")
-					print ("vous êtes mort...")
-					print (" ")
-					mort=input("[enter]")
-					print (" ")
-					print (" ")
-					pass
-
-	elif str(choix1)=="9":
-		lvlm=9+pal
-		tour=0
-		stackvit=1
-		bloodstack=0
-		degveng=0
-		nomm="demon lvl "+str(lvlm)
-		viem=185+24*lvlm
-		forcem=71+8*lvlm
-		defensem=31+3*lvlm
-		vitessem=22+1*lvlm
-		vie=96+32*vieup+lootpv
-		force=32+8*forceup+lootforce
-		defense=16+4*defenseup+lootdefense
-		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
-		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("			"+str(nom))
-			print ("			PV = "+str(vie))
-			print ("			force = "+str(force))
-			print ("			defense = "+str(defense))
-			print ("			vitesse = "+str(vitesse))
-			print ("			jauge d'attaque = "+str(bat)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print ("									"+str(nomm))
-			print ("									PV = "+str(viem))
-			print ("									force = "+str(forcem))
-			print ("									defense = "+str(defensem))
-			print ("									vitesse = "+str(vitessem))
-			print ("									jauge d'attaque = "+str(batm)+"%")
-			print ("___________________________________________________________________________________________________________________________________")
-			print (" ")
-			print (" ")
-			print (" ")
-			print (" ")
-			if int(bat)>=100:
-				jeu=0
-				bat=bat-100
-				print (" ")
-				print ("A vous de jouer !")
-				print (" ")
-				while int(jeu)==0:
-					if int(keltu)==2:
-						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
-							print ("[2] pacte de sang")
-						if int(lvl)>=65:
-							print ("[3] transfert")
-						if int(lvl)>=80:
-							print ("[4] absorption")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							jeu=1
-							ritsang=ritsang+1
-							if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
-								print ("-----------------------------------------------------------------------------------------")
-								print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
-								print ("-----------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("-------------------------------------------------------------------------------------------")
-								print ("                              "+str(ritsang)+"e TOUCHER SANGLANT !                       ")
-								print ("-------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=pacte_sang(defensem,pacte)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez une partie de votre vie pour détruire l'armure de l'adversaire !")
-							print (" ")
-							print (" ")
-							vie=vie-degat
-							print (str(nom)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(defensem)+" de defense !")
-							defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							pacte=pacte+1
-							if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              PACTE DE SANG LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("------------------------------------------------------------------------------------------")
-								print ("                             "+str(pacte)+"e PACTE DE SANG !                              ")
-								print ("------------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=transfert(defense,trans)
-							print (" ")
-							print (" ")
-							print ("vous sacrifiez votre armure pour augmenter votre vie !")
-							print (" ")
-							print (" ")
-							vie=vie+buff
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense)+" de defense !")
-							defense=0
-							jeu=1
-							print (" ")
-							print (" ")
-							bloodstack=bloodstack+1
-							print ("stack de sang = "+str(bloodstack))	
-							print (" ")
-							print (" ")
-							trans=trans+1
-							if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              TRANSFERT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(trans)+"e TRANSFERT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=absorption(vie,defensem,bloodstack,abso)
-							print (" ")
-							print (" ")
-							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("et infligez un coup dévastateur à votre adversaire !!!")
-							print (" ")
-							coup=input("[enter]")
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							bloodstack=0
-							print ("stack de sang = "+str(bloodstack))
-							print (" ")
-							print (" ")
-							abso=abso+1
-							if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(norfend)==2:
-						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
-							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
-							print ("[3] renforcement")
-						if int(lvl)>=80:
-							print ("[4] aneantissement")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
-							jeu=1
-							print (" ")
-							print (" ")
-							mourne=mourne+1
-							if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(mourne)+"e FRAPPE DU FLEAU !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							debuff=poigne_mort(forcem,poigne)
-							forcem=forcem-debuff
-							if int(forcem)<0:
-								forcem=0
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(debuff)+" de force !")
-							print (" ")
-							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
-							print (" ")
-							jeu=1
-							print (" ")
-							poigne=poigne+1
-							if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(poigne)+"e POIGNE DE LA MORT !            ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							buff=renforcement(force,renfo)
-							vie=vie+buff*4
-							defense=defense+buff*7//4
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff*4)+" PV !			"+str(nom)+" gagne "+str(buff*7//4)+" de defense !")
-							print (" ")
-							print (" ")
-							force=force-buff*2
-							if int(force)<0:
-								force=0
-							print (str(nom)+" perd "+str(buff*2)+" de force !")
-							jeu=1
-							print (" ")
-							print (" ")
-							renfo=renfo+1
-							if int(renfo)==500 or int(renfo)==2000 or int(renfo)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              RENFORCEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(renfo)+"e RENFORCEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=aneantissement(force,forcem,defensem,anean)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
-							if int(force)<0:
-								force=0
-							print (" ")
-							print (" ")
-							anean=anean+1
-							if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ANEANTISSEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(anean)+"e ANEANTISSEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(exode)==2:
-						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
-							print ("[2] onde de choc")
-						if int(lvl)>=65:
-							print ("[3] berserker")
-						if int(lvl)>=80:
-							print ("[4] dernier souffle")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
-							if int(defensem)<0:
-								defensem=0
-							jeu=1
-							print (" ")
-							print (" ")
-							war=war+1
-							if int(war)==500 or int(war)==2000 or int(war)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(war)+"e HEURT DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=onde_choc(defense,defensem,onde)
-							viem=viem-degat
-							degveng=degveng+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(vitessem//10)+" de vitesse !")
-							vitessem=vitessem-vitessem//10
-							print (" ")
-							jeu=1
-							print (" ")
-							onde=onde+1
-							if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ONDE DE CHOC LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(onde)+"e ONDE DE CHOC !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=vengeance(degveng,veng)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("vos blessures infligées à l'adversaire vous font enrager !")
-							print ("vous utilisez toute cette rage dans un coup destructeur...")
-							print (" ")
-							coup=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !!")
-							print (" ")
-							print (" ")
-							print ("vous subissez le contrecoup...")
-							print (" ")
-							print (str(nom)+" perd "+str(degveng-defense)+" PV !")
-							vie=vie-(degveng-defense)
-							print (" ")
-							degveng=0
-							jeu=1
-							print (" ")
-							veng=veng+1
-							if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              VENGEANCE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(veng)+"e VENGEANCE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							buff=dernier_souffle(defense,souffle)
-							print ("vous sacrifiez votre defense pour gagner de la vie !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(buff)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(defense//4)+" de defense !")
-							vie=vie+buff
-							defense=defense-defense//4
-							print (" ")
-							jeu=1
-							print (" ")
-							souffle=souffle+1
-							if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(souffle)+"e DERNIER SOUFFLE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-					elif int(azzin)==2:
-						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
-							print ("[2] préméditation")
-						if int(lvl)>=65:
-							print ("[3] serie meutriere")
-						if int(lvl)>=80:
-							print ("[4] transformation")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							oth=oth+1
-							if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(oth)+"e DANSE DE L'OMBRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							print (" ")
-							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-stackvit*stackvit
-							stackvit=stackvit*2
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							degat=serie_meurtriere(stackvit,defensem,serie)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous utilisez vos points de combo pour infliger un coup surpuissant !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=0
-							print ("Votre combo retombe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							serie=serie+1
-							if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(serie)+"e SERIE MEURTRIERE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
-							print (" ")
-							print (" ")
-							print ("vous canalisez une puissance démoniaque...")
-							print ("Vous vous transformez en démon !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							vie=vie+vitesse*4
-							force=force+vitesse*13//10
-							defense=defense+vitesse*3//4
-							print (str(nom)+" gagne "+str(vitesse*4)+" PV !		"+str(nom)+" gagne "+str(vitesse*13//10)+" de force !		"+str(nom)+" gagne "+str(vitesse*3//4)+" de defense !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str(vitesse*3//4)+" de vitesse !")
-							print (" ")
-							print (" ")
-							vitesse=vitesse-vitesse*3//4
-							jeu=1
-					elif int(corrup)==2:
-						print ("[1] ombreflamme")
-						if int(lvl)>=55:
-							print ("[2] drainage")
-						if int(lvl)>=65:
-							print ("[3] conversion")
-						if int(lvl)>=80:
-							print ("[4] feu de l'âme")
-						choix3=input()
-						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
-							print (" ")
-							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							ombre=ombre+1
-							if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              OMBREFLAMME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ombre)+"e OMBREFLAMME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
-							degat=drainage(force,drain)
-							viem=viem-degat
-							vie=vie+degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							jeu=1
-							drain=drain+1
-							if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DRAINAGE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(drain)+"e DRAINAGE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
-							vie=vie-(96+34*vieup+lootpv)//5
-							print (" ")
-							print (" ")
-							print (str(nom)+" perd "+str((96+32*vieup+lootpv)//5)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(force*3//2)+" de force !")
-							print (" ")
-							force=force*3//2
-							print (" ")
-							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
-							degat=feu_ame(force,ame,lvlm,feu)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print ("Vous canalisez la puissance de toutes les âmes dans votre poing...")
-							print ("Vous brûlez l'adversaire avec des flammes noires !")
-							print (" ")
-							continuer=input("[enter]")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							ame=0
-							print("Votre stock d'âme démoniaque passe à "+str(ame))
-							print (" ")
-							print (" ")
-							jeu=1
-							feu=feu+1
-							if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              FEU DE L'AME LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(feu)+"e FEU DE L'AME !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")		
-					else:
-						print ("[1] sanguinaire")
-						print ("[2] devaster")
-						print ("[3] coup de bouclier")
-						print ("[4] enchainement")
-						choix2=input()
-						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
-							print (" ")
-							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
-							print (" ")
-						if str(choix2)=="1":
-							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nom)+" gagne "+str(degat//4)+" PV !")
-							vie=vie+degat//4
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(keltu)==1:
-								immortal=immortal+degat//4
-							degpv=degpv+1
-							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              SANGUINAIRE LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degpv)+"e SANGUINAIRE !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="2":
-							degat=degat_force(force,defensem,degfor,norfend,mourne)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							jeu=1
-							print (" ")
-							degfor=degfor+1
-							if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              DEVASTER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degfor)+"e DEVASTER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")	
-						elif str(choix2)=="3":
-							degat=degat_defense(force,defense,defensem,degdef,exode,war)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
-							if int(defensem)<0:
-								defensem=0
-							print (" ")
-							jeu=1
-							print (" ")
-							if int(exode)==1:
-								armudemo=armudemo+degat//10
-							degdef=degdef+1
-							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degdef)+"e COUP DE BOUCLIER !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-						elif str(choix2)=="4":
-							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
-							viem=viem-degat
-							print (" ")
-							print (" ")
-							print (str(nomm)+" perd "+str(degat)+" PV !")
-							print (" ")
-							print (" ")
-							stackvit=stackvit+1
-							print ("Votre combo passe à "+str(stackvit))
-							jeu=1
-							print (" ")
-							print (" ")
-							if int(azzin)==1:
-								agilistack=agilistack+stackvit
-							degvit=degvit+1
-							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ENCHAINEMENT LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(degvit)+"e ENCHAINEMENT !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							continuer=input("[enter]")
-				if int(viem)<=0:
-					if int(corrup)==1:
-						chassedemo=chassedemo+1
-					print (" ")
-					print (" ")
-					print ("vous avez vaincu "+str(nomm)+" !!!")
-					print (" ")
-					print ("vous gagnez "+str(lvlm)+" points d'experiences !")
-					print (" ")
-					print (" ")
-					if int(lvl)>=80 and int(corrup)==2:
+					if int(pal)>=70 and int(corrup)==2:
 						ame=ame+1
 						print ("Votre stock d'âme passe à "+str(ame))
 						print (" ")
@@ -9093,7 +9180,7 @@ while int(pal)<100:
 						amedemo=1
 					pal=pal+10
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -9123,7 +9210,7 @@ while int(pal)<100:
 							vitesseup=vitesseup+1
 						print (" ")
 						print (" ")
-						if int(lvl)==55 or int(lvl)==65 or int(lvl)==80:
+						if int(pal)==50 or int(pal)==60 or int(pal)==70:
 							print ("vous maîtrisez une nouvelle puissance...")
 							print (" ")
 					print (" ")
@@ -9293,13 +9380,12 @@ while int(pal)<100:
 		print (" ")
 		print ("Pour vous recompenser, Kel'Thuzad vous transforme en liche...")
 		print (" ")
-		print ("passif : convertis une partie de vos PV en force, defense et vitesse")
+		print ("Convertis une partie de vos PV en force, defense et vitesse")
 		print (" ")
-		print (" ")
-		lootforce=lootforce+(96+32*vieup+lootpv)//20
-		lootdefense=lootdefense+(96+32*vieup+lootpv)//50
-		lootvitesse=lootvitesse+(96+32*vieup+lootpv)//55
-		lootpv=lootpv-(96+32*vieup+lootpv)//20-(96+32*vieup+lootpv)//50-(96+32*vieup+lootpv)//55
+		lootforce=lootforce+(96+32*vieup+lootpv)//25
+		lootdefense=lootdefense+(96+32*vieup+lootpv)//55
+		lootvitesse=lootvitesse+(96+32*vieup+lootpv)//60
+		lootpv=lootpv-(96+32*vieup+lootpv)//25-(96+32*vieup+lootpv)//55-(96+32*vieup+lootpv)//60
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		print (" ")
 		kel=input("[enter]")
@@ -9314,13 +9400,12 @@ while int(pal)<100:
 		print (" ")
 		print ("Pour vous recompenser, vous vous transformez en chevalier de la mort...")
 		print (" ")
-		print ("passif : convertis une partie de votre force en vie, defense et vitesse")
+		print ("Convertis une partie de votre force en vie, defense et vitesse")
 		print (" ")
-		print (" ")
-		lootpv=lootpv+(32+8*forceup+lootforce)*5//8
-		lootdefense=lootdefense+(32+8*forceup+lootforce)//13
-		lootvitesse=lootvitesse+(32+8*forceup+lootforce)//16
-		lootforce=lootforce-(32+8*forceup+lootforce)*5//8-(32+8*forceup+lootforce)//13-(32+8*forceup+lootforce)//16
+		lootpv=lootpv+(32+8*forceup+lootforce)*5//10
+		lootdefense=lootdefense+(32+8*forceup+lootforce)//15
+		lootvitesse=lootvitesse+(32+8*forceup+lootforce)//18
+		lootforce=lootforce-(32+8*forceup+lootforce)*5//10-(32+8*forceup+lootforce)//15-(32+8*forceup+lootforce)//18
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		print (" ")
 		nor=input("[enter]")
@@ -9335,13 +9420,12 @@ while int(pal)<100:
 		print (" ")
 		print ("Pour vous recompenser, Thrall vous transforme en guerrier...")
 		print (" ")
-		print ("passif = convertis une partie de votre defense en vie, force et vitesse")
+		print ("Convertis une partie de votre defense en vie, force et vitesse")
 		print (" ")
-		print (" ")
-		lootpv=lootpv+(16+4*defenseup+lootdefense)*5//4
-		lootforce=lootforce+(16+4*defenseup+lootdefense)*4//9
-		lootvitesse=lootvitesse+(16+4*defenseup+lootdefense)//8
-		lootdefense=lootdefense-(16+4*defenseup+lootdefense)*5//4-(16+4*defenseup+lootdefense)*4//9-(16+4*defenseup+lootdefense)//8
+		lootpv=lootpv+(16+4*defenseup+lootdefense)*5//5
+		lootforce=lootforce+(16+4*defenseup+lootdefense)*4//10
+		lootvitesse=lootvitesse+(16+4*defenseup+lootdefense)//9
+		lootdefense=lootdefense-(16+4*defenseup+lootdefense)*5//5-(16+4*defenseup+lootdefense)*4//10-(16+4*defenseup+lootdefense)//9
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		print (" ")
 		exo=input("[enter]")
@@ -9356,13 +9440,13 @@ while int(pal)<100:
 		print (" ")
 		print ("Pour vous recompenser, Illidan vous transforme en chasseur de démons...")
 		print (" ")
-		print ("passif = convertis une partie de votre vitesse en vie, force et defense")
+		print ("Convertis une partie de votre vitesse en vie, force et defense")
 		print (" ")
 		print (" ")
-		lootpv=lootpv+(16+4*vitesseup+lootvitesse)*5//4
-		lootforce=lootforce+(16+4*vitesseup+lootvitesse)*4//9
-		lootdefense=lootdefense+(16+4*vitesseup+lootvitesse)//8
-		lootvitesse=lootvitesse-(16+4*vitesseup+lootvitesse)*5//4-(16+4*vitesseup+lootvitesse)*4//9-(16+4*vitesseup+lootvitesse)//8
+		lootpv=lootpv+(16+4*vitesseup+lootvitesse)*5//5
+		lootforce=lootforce+(16+4*vitesseup+lootvitesse)*4//10
+		lootdefense=lootdefense+(16+4*vitesseup+lootvitesse)//9
+		lootvitesse=lootvitesse-(16+4*vitesseup+lootvitesse)*5//5-(16+4*vitesseup+lootvitesse)*4//10-(16+4*vitesseup+lootvitesse)//9
 		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
 		print (" ")
 		azz=input("[enter]")
@@ -9493,6 +9577,7 @@ if int(quete2)==0:
 	palelem=100
 	palfufu=100
 	quete2=1
+	wb=0
 	continuer=input("[enter]")
 print (" ")
 print (" ")
@@ -9550,11 +9635,14 @@ print (" ")
 print (" ")
 print (" ")
 while int(pal)<1000000:
+	expmax=5*lvl+lvl
 	print ("[1] royaume des démons (caractéristiques équilibrées)")
 	print ("[2] lac des immortels (conseil : avoir beaucoup de PV)")
 	print ("[3] terres des barbares (conseil : avoir beaucoup d'armure)")
 	print ("[4] montagnes des elementaires (conseil : avoir beaucoup de force)")
 	print ("[5] îles des pirates (conseil : avoir beaucoup de vitesse)")
+	if int(wb)==1:
+		print ("[6] World Boss")
 	print ("[0] quitter")
 	choix5=input()
 	while str(choix5)!="1" and str(choix5)!="2" and str(choix5)!="3" and str(choix5)!="4" and str(choix5)!="5" and str(choix5)!="0":
@@ -9569,8 +9657,8 @@ while int(pal)<1000000:
 		print ("[3] demon malsain lvl "+str(3+pal)+"             defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
 		print ("[4] demon malsain lvl "+str(4+pal)+"             vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
 		print ("[5] demon malsain lvl "+str(5+pal))
-		print ("[6] demon malsain lvl "+str(6+pal))
-		print ("[7] demon malsain lvl "+str(7+pal))
+		print ("[6] demon malsain lvl "+str(6+pal)+"             niveau = "+str(lvl))
+		print ("[7] demon malsain lvl "+str(7+pal)+"             experience = "+str(exp)+" / "+str(expmax))
 		print ("[8] demon malsain lvl "+str(8+pal))
 		print ("[9] demon malsain lvl "+str(9+pal))
 		print ("[10] maître demoniaque lvl "+str(10+pal))
@@ -9581,8 +9669,8 @@ while int(pal)<1000000:
 		print ("[3] garde immortel lvl "+str(3+pal)+"             defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
 		print ("[4] garde immortel lvl "+str(4+pal)+"             vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
 		print ("[5] garde immortel lvl "+str(5+pal))
-		print ("[6] garde immortel lvl "+str(6+pal))
-		print ("[7] garde immortel lvl "+str(7+pal))
+		print ("[6] garde immortel lvl "+str(6+pal)+"             niveau = "+str(lvl))
+		print ("[7] garde immortel lvl "+str(7+pal)+"             experience = "+str(exp)+" / "+str(expmax))
 		print ("[8] garde immortel lvl "+str(8+pal))
 		print ("[9] garde immortel lvl "+str(9+pal))
 		print ("[10] roi immortel lvl "+str(10+pal))
@@ -9593,8 +9681,8 @@ while int(pal)<1000000:
 		print ("[3] guerrier barbare lvl "+str(3+pal)+"             defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
 		print ("[4] guerrier barbare lvl "+str(4+pal)+"             vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
 		print ("[5] guerrier barbare lvl "+str(5+pal))
-		print ("[6] guerrier barbare lvl "+str(6+pal))
-		print ("[7] guerrier barbare lvl "+str(7+pal))
+		print ("[6] guerrier barbare lvl "+str(6+pal)+"             niveau = "+str(lvl))
+		print ("[7] guerrier barbare lvl "+str(7+pal)+"             experience = "+str(exp)+" / "+str(expmax))
 		print ("[8] guerrier barbare lvl "+str(8+pal))
 		print ("[9] guerrier barbare lvl "+str(9+pal))
 		print ("[10] seigneur barbare lvl "+str(10+pal))
@@ -9605,8 +9693,8 @@ while int(pal)<1000000:
 		print ("[3] elementaire de pierre lvl "+str(3+pal)+"             defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
 		print ("[4] elementaire de pierre lvl "+str(4+pal)+"             vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
 		print ("[5] elementaire de pierre lvl "+str(5+pal))
-		print ("[6] elementaire de pierre lvl "+str(6+pal))
-		print ("[7] elementaire de pierre lvl "+str(7+pal))
+		print ("[6] elementaire de pierre lvl "+str(6+pal)+"             niveau = "+str(lvl))
+		print ("[7] elementaire de pierre lvl "+str(7+pal)+"             experience = "+str(exp)+" / "+str(expmax))
 		print ("[8] elementaire de pierre lvl "+str(8+pal))
 		print ("[9] elementaire de pierre  lvl "+str(9+pal))
 		print ("[10] elementaire instable lvl "+str(10+pal))
@@ -9617,12 +9705,15 @@ while int(pal)<1000000:
 		print ("[3] contrebandier lvl "+str(3+pal)+"             defense ("+str(nom)+") = "+str(16+4*defenseup+lootdefense))
 		print ("[4] contrebandier lvl "+str(4+pal)+"             vitesse ("+str(nom)+") = "+str(16+4*vitesseup+lootvitesse))
 		print ("[5] contrebandier lvl "+str(5+pal))
-		print ("[6] contrebandier lvl "+str(6+pal))
-		print ("[7] contrebandier lvl "+str(7+pal))
+		print ("[6] contrebandier lvl "+str(6+pal)+"             niveau = "+str(lvl))
+		print ("[7] contrebandier lvl "+str(7+pal)+"             experience = "+str(exp)+" / "+str(expmax))
 		print ("[8] contrebandier lvl "+str(8+pal))
 		print ("[9] contrebandier lvl "+str(9+pal))
 		print ("[10] capitaine lvl "+str(10+pal))
 		print ("[0] changer de portail")
+	elif str(choix5)=="6" and int(wb)==1:
+		print ("En dev")
+		pass
 	choix1=input()
 	while str(choix1)!="0" and str(choix1)!="1" and str(choix1)!="2" and str(choix1)!="3" and str(choix1)!="4" and str(choix1)!="5":
 		print (" ")
@@ -9647,20 +9738,20 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=105+30*lvlm
-			forcem=31+8*lvlm
-			defensem=15+5*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1500+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=120+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
@@ -9719,11 +9810,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -9761,7 +9852,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -9795,7 +9886,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -9829,7 +9920,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -9861,13 +9952,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -9901,7 +9994,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -9911,8 +10004,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -9930,7 +10023,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -9960,7 +10053,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -9989,13 +10082,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -10032,7 +10127,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -10060,7 +10155,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -10096,7 +10191,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -10126,13 +10221,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -10166,7 +10263,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -10181,7 +10278,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -10210,7 +10307,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -10230,13 +10327,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -10266,7 +10365,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -10293,7 +10392,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -10305,7 +10404,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -10337,7 +10436,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -10470,7 +10571,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -10599,34 +10700,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=115+30*lvlm
-			forcem=36+8*lvlm
-			defensem=17+5*lvlm
-			vitessem=16+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1540+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=140+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=28+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=24+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -10671,11 +10772,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -10713,7 +10814,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -10747,7 +10848,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -10781,7 +10882,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -10813,13 +10914,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -10853,7 +10956,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -10863,8 +10966,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -10882,7 +10985,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -10912,7 +11015,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -10941,13 +11044,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -10984,7 +11089,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -11012,7 +11117,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -11048,7 +11153,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -11078,13 +11183,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -11118,7 +11225,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -11133,7 +11240,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -11162,7 +11269,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -11182,13 +11289,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -11218,7 +11327,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -11245,7 +11354,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -11257,7 +11366,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -11289,7 +11398,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -11422,7 +11533,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -11551,34 +11662,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=125+30*lvlm
-			forcem=41+8*lvlm
-			defensem=19+5*lvlm
-			vitessem=17+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1580+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=160+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=36+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=28+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -11623,11 +11734,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -11665,7 +11776,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -11699,7 +11810,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -11733,7 +11844,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -11765,13 +11876,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -11805,7 +11918,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -11815,8 +11928,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -11834,7 +11947,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -11864,7 +11977,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -11893,13 +12006,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -11936,7 +12051,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -11964,7 +12079,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -12000,7 +12115,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -12030,13 +12145,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -12070,7 +12187,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -12085,7 +12202,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -12114,7 +12231,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -12134,13 +12251,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -12170,7 +12289,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -12197,7 +12316,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -12209,7 +12328,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -12241,7 +12360,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -12374,7 +12495,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -12503,34 +12624,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=135+30*lvlm
-			forcem=46+8*lvlm
-			defensem=21+5*lvlm
-			vitessem=18+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1620+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=180+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=44+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=32+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -12575,11 +12696,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -12617,7 +12738,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -12651,7 +12772,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -12685,7 +12806,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -12717,13 +12838,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -12757,7 +12880,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -12767,8 +12890,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -12786,7 +12909,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -12816,7 +12939,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -12845,13 +12968,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -12888,7 +13013,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -12916,7 +13041,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -12952,7 +13077,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -12982,13 +13107,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -13022,7 +13149,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -13037,7 +13164,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -13066,7 +13193,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -13086,13 +13213,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -13122,7 +13251,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -13149,7 +13278,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -13161,7 +13290,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -13193,7 +13322,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -13326,7 +13457,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -13455,34 +13586,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=145+30*lvlm
-			forcem=51+8*lvlm
-			defensem=23+5*lvlm
-			vitessem=19+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1660+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=200+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=52+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=36+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -13527,11 +13658,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -13569,7 +13700,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -13603,7 +13734,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -13637,7 +13768,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -13669,13 +13800,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -13709,7 +13842,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -13719,8 +13852,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -13738,7 +13871,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -13768,7 +13901,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -13797,13 +13930,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -13840,7 +13975,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -13868,7 +14003,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -13904,7 +14039,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -13934,13 +14069,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -13974,7 +14111,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -13989,7 +14126,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -14018,7 +14155,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -14038,13 +14175,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -14074,7 +14213,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -14101,7 +14240,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -14113,7 +14252,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -14145,7 +14284,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -14278,7 +14419,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -14407,34 +14548,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=155+30*lvlm
-			forcem=56+8*lvlm
-			defensem=25+5*lvlm
-			vitessem=20+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1700+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=220+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=60+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=40+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -14479,11 +14620,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -14521,7 +14662,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -14555,7 +14696,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -14589,7 +14730,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -14621,13 +14762,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -14661,7 +14804,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -14671,8 +14814,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -14690,7 +14833,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -14720,7 +14863,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -14749,13 +14892,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -14792,7 +14937,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -14820,7 +14965,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -14856,7 +15001,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -14886,13 +15031,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -14926,7 +15073,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -14941,7 +15088,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -14970,7 +15117,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -14990,13 +15137,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -15026,7 +15175,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -15053,7 +15202,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -15065,7 +15214,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -15097,7 +15246,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -15230,7 +15381,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -15359,34 +15510,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=165+30*lvlm
-			forcem=61+8*lvlm
-			defensem=27+5*lvlm
-			vitessem=21+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1740+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=240+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=68+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=44+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -15431,11 +15582,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -15473,7 +15624,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -15507,7 +15658,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -15541,7 +15692,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -15573,13 +15724,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -15613,7 +15766,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -15623,8 +15776,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -15642,7 +15795,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -15672,7 +15825,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -15701,13 +15854,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -15744,7 +15899,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -15772,7 +15927,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -15808,7 +15963,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -15838,13 +15993,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -15878,7 +16035,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -15893,7 +16050,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -15922,7 +16079,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -15942,13 +16099,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -15978,7 +16137,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -16005,7 +16164,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -16017,7 +16176,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -16049,7 +16208,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -16182,7 +16343,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -16311,34 +16472,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=175+30*lvlm
-			forcem=66+8*lvlm
-			defensem=29+5*lvlm
-			vitessem=22+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1780+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=260+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=76+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=48+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -16383,11 +16544,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -16425,7 +16586,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -16459,7 +16620,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -16493,7 +16654,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -16525,13 +16686,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -16565,7 +16728,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -16575,8 +16738,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -16594,7 +16757,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -16624,7 +16787,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -16653,13 +16816,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -16696,7 +16861,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -16724,7 +16889,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -16760,7 +16925,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -16790,13 +16955,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -16830,7 +16997,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -16845,7 +17012,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -16874,7 +17041,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -16894,13 +17061,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -16930,7 +17099,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -16957,7 +17126,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -16969,7 +17138,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -17001,7 +17170,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -17134,7 +17305,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -17263,34 +17434,34 @@ while int(pal)<1000000:
 		degveng=0
 		if str(choix5)=="1":
 			nomm="demon malsain lvl "+str(lvlm)
-			viem=185+30*lvlm
-			forcem=71+8*lvlm
-			defensem=31+5*lvlm
-			vitessem=23+1*lvlm
+			viem=115+27*lvlm
+			forcem=34+9*lvlm
+			defensem=16+4*lvlm
+			vitessem=15+1*lvlm
 		elif str(choix5)=="2":
 			nomm="garde immortel lvl "+str(lvlm)
-			viem=1820+650*lvlm
+			viem=1500+600*lvlm
 			forcem=5+2*lvlm
 			defensem=10+3*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="3":
 			nomm="guerrier barbare lvl "+str(lvlm)
-			viem=105+115*lvlm
-			forcem=280+5*lvlm
+			viem=105+110*lvlm
+			forcem=87+7*lvlm
 			defensem=20+2*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="4":
 			nomm="elementaire de pierre lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=30+6*lvlm
-			defensem=84+8*lvlm
+			defensem=20+8*lvlm
 			vitessem=15+1*lvlm
 		elif str(choix5)=="5":
 			nomm="contrebandier lvl "+str(lvlm)
 			viem=105+30*lvlm
 			forcem=33+4*lvlm
 			defensem=16+2*lvlm
-			vitessem=52+4*lvlm
+			vitessem=20+4*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -17335,11 +17506,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -17377,7 +17548,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -17411,7 +17582,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -17445,7 +17616,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -17477,13 +17648,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -17517,7 +17690,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -17527,8 +17700,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -17546,7 +17719,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -17576,7 +17749,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -17605,13 +17778,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -17648,7 +17823,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -17676,7 +17851,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -17712,7 +17887,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -17742,13 +17917,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -17782,7 +17959,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -17797,7 +17974,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -17826,7 +18003,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -17846,13 +18023,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -17882,7 +18061,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -17909,7 +18088,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -17921,7 +18100,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -17953,7 +18132,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -18086,7 +18267,7 @@ while int(pal)<1000000:
 						print (" ")
 						print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -18199,50 +18380,50 @@ while int(pal)<1000000:
 					pass
 
 	elif str(choix1)=="10":
-		if int(choix5)==1:
+		if str(choix5)=="1":
 			lvlm=10+paldemo
-		elif int(choix5)==2:
+		elif str(choix5)=="2":
 			lvlm=10+palimmo
-		elif int(choix5)==3:
+		elif str(choix5)=="3":
 			lvlm=10+palbarb
-		elif int(choix5)==4:
+		elif str(choix5)=="4":
 			lvlm=10+palelem
-		elif int(choix5)==5:
+		elif str(choix5)=="5":
 			lvlm=10+palfufu
 		tour=0
 		stackvit=1
 		bloodstack=0
 		degveng=0
-		if int(choix5)==1:
+		if str(choix5)=="1":
 			nomm="maître démoniaque lvl "+str(lvlm)
-			viem=345+35*lvlm
-			forcem=95+10*lvlm
-			defensem=55+6*lvlm
-			vitessem=23+1*lvlm
-		elif int(choix5)==2:
+			viem=125+30*lvlm
+			forcem=39+10*lvlm
+			defensem=17+5*lvlm
+			vitessem=16+1*lvlm
+		elif str(choix5)=="2":
 			nomm="roi immortel lvl "+str(lvlm)
-			viem=6700+750*lvlm
-			forcem=21+2*lvlm
-			defensem=34+3*lvlm
-			vitessem=23+1*lvlm
-		elif int(choix5)==3:
+			viem=3000+700*lvlm
+			forcem=8+3*lvlm
+			defensem=12+4*lvlm
+			vitessem=16+1*lvlm
+		elif str(choix5)=="3":
 			nomm="seigneur barbare lvl "+str(lvlm)
-			viem=925+120*lvlm
-			forcem=160+7*lvlm
+			viem=125+120*lvlm
+			forcem=103+8*lvlm
 			defensem=36+2*lvlm
-			vitessem=23+1*lvlm
-		elif int(choix5)==4:
+			vitessem=16+1*lvlm
+		elif str(choix5)=="4":
 			nomm="elementaire instable lvl "+str(lvlm)
-			viem=345+30*lvlm
-			forcem=78+6*lvlm
-			defensem=84+10*lvlm
-			vitessem=23+1*lvlm
-		elif int(choix5)==5:
+			viem=120+32*lvlm
+			forcem=70+7*lvlm
+			defensem=30+10*lvlm
+			vitessem=16+1*lvlm
+		elif str(choix5)=="5":
 			nomm="capitaine lvl "+str(lvlm)
-			viem=345+30*lvlm
-			forcem=65+4*lvlm
-			defensem=32+2*lvlm
-			vitessem=52+6*lvlm
+			viem=115+32*lvlm
+			forcem=37+5*lvlm
+			defensem=18+3*lvlm
+			vitessem=25+6*lvlm
 		vie=96+32*vieup+lootpv
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
@@ -18285,11 +18466,11 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] toucher sanglant")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] pacte de sang")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] transfert")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -18327,7 +18508,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -18361,7 +18542,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -18395,7 +18576,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -18427,13 +18608,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(norfend)==2:
 						print ("[1] frappe du fléau")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] poigne de la mort")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] renforcement")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -18467,7 +18650,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -18477,8 +18660,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff*2//5
-							print (str(nom)+" gagne "+str(debuff*2//5)+" de force !")
+							force=force+debuff
+							print (str(nom)+" gagne "+str(debuff)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -18496,7 +18679,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							buff=renforcement(force,renfo)
 							vie=vie+buff*4
 							defense=defense+buff*7//4
@@ -18526,7 +18709,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -18553,13 +18736,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(exode)==2:
 						print ("[1] heurt de bouclier")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] onde de choc")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] berserker")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -18596,7 +18781,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -18624,7 +18809,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -18660,7 +18845,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -18690,13 +18875,15 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
+						else:
+							pass
 					elif int(azzin)==2:
 						print ("[1] danse de l'ombre")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] préméditation")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] serie meutriere")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -18730,7 +18917,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
@@ -18745,7 +18932,7 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -18774,7 +18961,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							print (" ")
 							print (" ")
 							print ("vous canalisez une puissance démoniaque...")
@@ -18794,13 +18981,15 @@ while int(pal)<1000000:
 							print (" ")
 							vitesse=vitesse-vitesse*3//4
 							jeu=1
+						else:
+							pass
 					elif int(corrup)==2:
 						print ("[1] ombreflamme")
-						if int(lvl)>=55:
+						if int(pal)>=50:
 							print ("[2] drainage")
-						if int(lvl)>=65:
+						if int(pal)>=60:
 							print ("[3] conversion")
-						if int(lvl)>=80:
+						if int(pal)>=70:
 							print ("[4] feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -18830,7 +19019,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(lvl)>=55:
+						elif str(choix3)=="2" and int(pal)>=50:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -18857,7 +19046,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(lvl)>=65:
+						elif str(choix3)=="3" and int(pal)>=60:
 							vie=vie-(96+34*vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -18869,7 +19058,7 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(lvl)>=80:
+						elif str(choix3)=="4" and int(pal)>=70:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -18901,7 +19090,9 @@ while int(pal)<1000000:
 								print ("--------------------------------------------------------------------------------------")
 								print (" ")
 								print (" ")
-							continuer=input("[enter]")		
+							continuer=input("[enter]")
+						else:
+							pass
 					else:
 						print ("[1] sanguinaire")
 						print ("[2] devaster")
@@ -19458,7 +19649,7 @@ while int(pal)<1000000:
 					elif str(choix5)=="5":
 						palfufu=palfufu+10
 					exp=exp+lvlm
-					expmax=5*lvl+lvl*lvl
+					expmax=5*lvl+lvl
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -19488,6 +19679,11 @@ while int(pal)<1000000:
 							defenseup=defenseup+1
 						elif str(carac)=="4":
 							vitesseup=vitesseup+1
+						print (" ")
+						print (" ")
+						if int(pal)==50 or int(pal)==60 or int(pal)==70:
+							print ("Vous maîtrisez une nouvelle puissance...")
+							print (" ")
 					print (" ")
 					print (" ")
 					print ("  _________________")
@@ -19500,6 +19696,12 @@ while int(pal)<1000000:
 					print (" ")
 					print (" ")
 					continuer=input("[enter]")
+					if int(paldemo)==150 or int(palimmo)==150 or int(palbarb)==150 or int(palelem)==150 or int(palfufu)==150:
+						wb=1
+						print ("Vos exploits attirent des adversaires légendaires...")
+						print (" ")
+						print ("Préparez-vous, le combat sera rude !")
+						print (" ")
 			elif int(batm)>=100:
 				batm=batm-100
 				tour=tour+1
@@ -19773,5 +19975,7 @@ while int(pal)<1000000:
 	fw.write(str(palelem))
 	fw.write("\n")
 	fw.write(str(palfufu))
+	fw.write("\n")
+	fw.write(str(wb))
 	fw.close()
 

@@ -215,13 +215,13 @@ def absorption(vie,defensem,bloodstack,abso):
 def poigne_mort(forcem,poigne):
 	print (" ")
 	if int(poigne)<500:
-		debuff=forcem//20
+		debuff=forcem//11
 	elif int(poigne)>=500 and int(poigne)<2000:
-		debuff=forcem//19
+		debuff=forcem//9
 	elif int(poigne)>=2000 and int(poigne)<5000:
-		debuff=forcem//17
+		debuff=forcem//7
 	elif int(poigne)>=5000:
-		debuff=forcem//14
+		debuff=forcem//5
 	if int(debuff)<0:
 		debuff=0
 	return debuff
@@ -229,13 +229,13 @@ def poigne_mort(forcem,poigne):
 def renforcement(force,renfo):
 	print (" ")
 	if int(renfo)<500:
-		buff=force//10
-	elif int(renfo)>=500 and int(renfo)<2000:
-		buff=force//8
-	elif int(renfo)>=2000 and int(renfo)<5000:
 		buff=force//6
+	elif int(renfo)>=500 and int(renfo)<2000:
+		buff=force//4
+	elif int(renfo)>=2000 and int(renfo)<5000:
+		buff=force//2
 	elif int(renfo)>=5000:
-		buff=force//3
+		buff=force
 	if int(buff)<0:
 		buff=0
 	return buff
