@@ -328,12 +328,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -359,9 +362,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -1169,9 +1172,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -1212,12 +1215,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -1243,9 +1249,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -2053,9 +2059,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -2096,12 +2102,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -2127,9 +2136,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -2937,9 +2946,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -2980,12 +2989,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -3011,9 +3023,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -3821,9 +3833,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -3864,12 +3876,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -3895,9 +3910,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -4705,9 +4720,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -4748,12 +4763,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -4779,9 +4797,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -5589,9 +5607,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -5632,12 +5650,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -5663,9 +5684,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -6473,9 +6494,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -6516,12 +6537,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -6547,9 +6571,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -7357,9 +7381,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -7400,12 +7424,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -7431,9 +7458,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -8241,9 +8268,9 @@ while int(pal)<100:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -8284,12 +8311,15 @@ while int(pal)<100:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -8315,9 +8345,9 @@ while int(pal)<100:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -9225,9 +9255,9 @@ while int(pal)<100:
 					print (" ")
 					print (" ")
 					continuer=input("[enter]")
-			elif int(batm)>=100:
+			elif int(atbm)>=int(atbmax):
 				tour=tour+1
-				batm=batm-100
+				atbm=atbm-atbmax
 				print (" ")
 				print (" ")
 				print (str(nomm)+" va jouer !")
@@ -9770,12 +9800,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -9801,9 +9834,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -10605,8 +10638,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -10732,12 +10765,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -10763,9 +10799,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -11567,8 +11603,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -11694,12 +11730,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -11725,9 +11764,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -12529,8 +12568,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -12656,12 +12695,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -12687,9 +12729,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -13491,8 +13533,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -13618,12 +13660,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -13649,9 +13694,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -14453,8 +14498,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -14580,12 +14625,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -14611,9 +14659,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -15415,8 +15463,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -15542,12 +15590,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -15573,9 +15624,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -16377,8 +16428,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -16504,12 +16555,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -16535,9 +16589,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -17339,8 +17393,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -17466,12 +17520,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -17497,9 +17554,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
 				jeu=0
-				bat=bat-100
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -18301,8 +18358,8 @@ while int(pal)<1000000:
 					continuer=input("[enter]")
 					print (" ")
 					print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
@@ -18428,12 +18485,15 @@ while int(pal)<1000000:
 		force=32+8*forceup+lootforce
 		defense=16+4*defenseup+lootdefense
 		vitesse=16+4*vitesseup+lootvitesse
-		bat=0
-		batm=0
+		atb=0
+		atbm=0
+		atbmax=vitesse*vitessem
 		while int(vie)>0 and int(viem)>0:
-			while int(bat)<100 and int(batm)<100:
-				bat=bat+vitesse
-				batm=batm+vitessem
+			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
+				atb=atb+vitesse
+				atbm=atbm+vitessem
+			bat=atb*100//atbmax
+			batm=atbm*100//atbmax
 			print (" ")
 			print (" ")
 			print (" ")
@@ -18459,7 +18519,9 @@ while int(pal)<1000000:
 			print (" ")
 			print (" ")
 			print (" ")
-			if int(bat)>=100:
+			if int(atb)>=int(atbmax):
+				jeu=0
+				atb=atb-atbmax
 				print (" ")
 				print ("A vous de jouer !")
 				print (" ")
@@ -19702,8 +19764,8 @@ while int(pal)<1000000:
 						print (" ")
 						print ("Préparez-vous, le combat sera rude !")
 						print (" ")
-			elif int(batm)>=100:
-				batm=batm-100
+			elif int(atbm)>=int(atbmax):
+				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
 				print (" ")
