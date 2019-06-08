@@ -2,24 +2,24 @@ def degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang):
 	print (" ")
 	if int(keltu)==2:
 		if int(ritsang)<500:
-			degat=(96+32*vieup+lootpv)*5//14-defensem
+			degat=(110+vieup+lootpv)*5//14-defensem
 		elif int(ritsang)>=500 and int(ritsang)<2000:
-			degat=(96+32*vieup+lootpv)*3//7-defensem
+			degat=(110+vieup+lootpv)*3//7-defensem
 		elif int(ritsang)>=2000 and int(ritsang)<5000:
-			degat=(96+32*vieup+lootpv)//2-defensem
+			degat=(110+vieup+lootpv)//2-defensem
 		elif int(ritsang)>=5000:
-			degat=(96+32*vieup+lootpv)*3//5-defensem
+			degat=(110+vieup+lootpv)*3//5-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degpv)<500:
-			degat=(force+96+32*vieup+lootpv)*2//9-defensem
+			degat=(110+vieup+lootpv)*3//10-defensem
 		elif int(degpv)>=500 and int(degpv)<2000:
-			degat=(force+96+32*vieup+lootpv)*3//11-defensem
+			degat=(force+110+vieup+lootpv)*3//11-defensem
 		elif int(degpv)>=2000 and int(degpv)<5000:
-			degat=(force+96+32*vieup+lootpv)*5//14-defensem
+			degat=(force+110+vieup+lootpv)*5//14-defensem
 		elif int(degpv)>=5000:
-			degat=(force+96+32*vieup+lootpv)//2-defensem
+			degat=(force+110+vieup+lootpv)//2-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
