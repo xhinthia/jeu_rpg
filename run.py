@@ -2206,16 +2206,16 @@ while int(pal)<1000000:
 				while int(jeu)==0:
 					if int(keltu)==2:
 						print ("[1] Toucher sanglant")
-						if int(pal)>=50:
+						if int(pal)>=40:
 							print ("[2] Pacte de sang")
-						if int(pal)>=60:
+						if int(pal)>=50:
 							print ("[3] Transfert")
-						if int(pal)>=70:
+						if int(pal)>=60:
 							print ("[4] Absorption")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
 							print (" ")
-							choix3=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
 							print (" ")
 						if str(choix3)=="1":
 							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
@@ -2248,7 +2248,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(pal)>=50:
+						elif str(choix3)=="2" and int(pal)>=40:
 							degat=pacte_sang(defensem,pacte)
 							print (" ")
 							print (" ")
@@ -2282,7 +2282,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(pal)>=60:
+						elif str(choix3)=="3" and int(pal)>=50:
 							buff=transfert(defense,trans)
 							print (" ")
 							print (" ")
@@ -2316,7 +2316,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(pal)>=70:
+						elif str(choix3)=="4" and int(pal)>=60:
 							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
@@ -2352,16 +2352,16 @@ while int(pal)<1000000:
 							pass
 					elif int(norfend)==2:
 						print ("[1] Frappe du fléau")
-						if int(pal)>=50:
+						if int(pal)>=40:
 							print ("[2] Poigne de la mort")
-						if int(pal)>=60:
+						if int(pal)>=50:
 							print ("[3] Renforcement")
-						if int(pal)>=70:
+						if int(pal)>=60:
 							print ("[4] Aneantissement")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
 							print (" ")
-							choix3=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
 							print (" ")
 						if str(choix3)=="1":
 							degat=degat_force(force,defensem,degfor,norfend,mourne)
@@ -2390,7 +2390,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(pal)>=50:
+						elif str(choix3)=="2" and int(pal)>=40:
 							debuff=poigne_mort(forcem,poigne)
 							forcem=forcem-debuff
 							if int(forcem)<0:
@@ -2400,8 +2400,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(debuff)+" de force !")
 							print (" ")
 							print (" ")
-							force=force+debuff
-							print (str(nom)+" gagne "+str(debuff)+" de force !")
+							force=force+debuff*2
+							print (str(nom)+" gagne "+str(debuff*2)+" de force !")
 							print (" ")
 							jeu=1
 							print (" ")
@@ -2419,7 +2419,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(pal)>=60:
+						elif str(choix3)=="3" and int(pal)>=50:
 							print (" ")
 							print (" ")
 							print (str(nom)+" gagne "+str(force*2)+" de force !")
@@ -2430,7 +2430,7 @@ while int(pal)<1000000:
 							vitesse=vitesse//2
 							jeu=1
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(pal)>=70:
+						elif str(choix3)=="4" and int(pal)>=60:
 							degat=aneantissement(force,forcem,defensem,anean)
 							viem=viem-degat
 							print (" ")
@@ -2463,16 +2463,16 @@ while int(pal)<1000000:
 							pass
 					elif int(exode)==2:
 						print ("[1] Heurt de bouclier")
-						if int(pal)>=50:
+						if int(pal)>=40:
 							print ("[2] Onde de choc")
-						if int(pal)>=60:
+						if int(pal)>=50:
 							print ("[3] Berserker")
-						if int(pal)>=70:
+						if int(pal)>=60:
 							print ("[4] Dernier souffle")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
 							print (" ")
-							choix3=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
 							print (" ")
 						if str(choix3)=="1":
 							degat=degat_defense(force,defense,defensem,degdef,exode,war)
@@ -2483,8 +2483,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-							defensem=defensem-degat//8
+							print (str(nomm)+" perd "+str(degat//5)+" de defense !")
+							defensem=defensem-degat//5
 							if int(defensem)<0:
 								defensem=0
 							jeu=1
@@ -2504,7 +2504,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(pal)>=50:
+						elif str(choix3)=="2" and int(pal)>=40:
 							degat=onde_choc(defense,defensem,onde)
 							viem=viem-degat
 							degveng=degveng+degat
@@ -2532,7 +2532,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(pal)>=60:
+						elif str(choix3)=="3" and int(pal)>=50:
 							degat=vengeance(degveng,veng)
 							viem=viem-degat
 							print (" ")
@@ -2568,7 +2568,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(pal)>=70:
+						elif str(choix3)=="4" and int(pal)>=60:
 							print (" ")
 							print (" ")
 							buff=dernier_souffle(defense,souffle)
@@ -2602,16 +2602,16 @@ while int(pal)<1000000:
 							pass
 					elif int(azzin)==2:
 						print ("[1] Danse de l'ombre")
-						if int(pal)>=50:
+						if int(pal)>=40:
 							print ("[2] Préméditation")
-						if int(pal)>=60:
+						if int(pal)>=50:
 							print ("[3] Serie meutriere")
-						if int(pal)>=70:
+						if int(pal)>=60:
 							print ("[4] Transformation")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
 							print (" ")
-							choix3=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
 							print (" ")
 						if str(choix3)=="1":
 							degat=degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth)
@@ -2640,10 +2640,10 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(pal)>=50:
+						elif str(choix3)=="2" and int(pal)>=40:
 							print (" ")
 							print (" ")
-							print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+							print ("Vous sacrifiez votre vitesse votre augmenter grandement votre combo...")
 							print (" ")
 							print (" ")
 							print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
@@ -2655,7 +2655,8 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
-						elif str(choix3)=="3" and int(pal)>=60:
+							continuer=input("[enter]")
+						elif str(choix3)=="3" and int(pal)>=50:
 							degat=serie_meurtriere(stackvit,defensem,serie)
 							viem=viem-degat
 							print (" ")
@@ -2684,7 +2685,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="4" and int(pal)>=70:
+						elif str(choix3)=="4" and int(pal)>=60:
 							print (" ")
 							print (" ")
 							print ("Vous canalisez une puissance démoniaque...")
@@ -2708,16 +2709,16 @@ while int(pal)<1000000:
 							pass
 					elif int(corrup)==2:
 						print ("[1] Ombreflamme")
-						if int(pal)>=50:
+						if int(pal)>=40:
 							print ("[2] Drainage")
-						if int(pal)>=60:
+						if int(pal)>=50:
 							print ("[3] Conversion")
-						if int(pal)>=70:
+						if int(pal)>=60:
 							print ("[4] Feu de l'âme")
 						choix3=input()
 						while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
 							print (" ")
-							choix3=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
 							print (" ")
 						if str(choix3)=="1":
 							degat=ombreflamme(force,vitesse,ombre)
@@ -2742,7 +2743,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="2" and int(pal)>=50:
+						elif str(choix3)=="2" and int(pal)>=40:
 							degat=drainage(force,drain)
 							viem=viem-degat
 							vie=vie+degat
@@ -2769,7 +2770,7 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						elif str(choix3)=="3" and int(pal)>=60:
+						elif str(choix3)=="3" and int(pal)>=50:
 							vie=vie-(110+vieup+lootpv)//5
 							print (" ")
 							print (" ")
@@ -2781,7 +2782,8 @@ while int(pal)<1000000:
 							force=force*3//2
 							print (" ")
 							jeu=1
-						elif str(choix3)=="4" and int(pal)>=70:
+							continuer=input("[enter]")
+						elif str(choix3)=="4" and int(pal)>=60:
 							degat=feu_ame(force,ame,lvlm,feu)
 							viem=viem-degat
 							print (" ")
@@ -2824,7 +2826,7 @@ while int(pal)<1000000:
 						choix2=input()
 						while str(choix2)!="1" and str(choix2)!="2" and str(choix2)!="3" and str(choix2)!="4":
 							print (" ")
-							choix2=input("Vous devez choisir un chiffre entre '1' et '4' : ")
+							choix2=input("Taper le bon chiffre pour effectuer votre sort : ")
 							print (" ")
 						if str(choix2)=="1":
 							degat=degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang)
@@ -2839,6 +2841,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
+							if int(keltu)==1:
+								immortal=immortal+degat//3
 							degpv=degpv+1
 							if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -2884,13 +2888,15 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-							defensem=defensem-degat//10
+							print (str(nomm)+" perd "+str(degat//4)+" de defense !")
+							defensem=defensem-degat//4
 							if int(defensem)<0:
 								defensem=0
 							print (" ")
 							jeu=1
 							print (" ")
+							if int(exode)==1:
+								armudemo=armudemo+degat//10
 							degdef=degdef+1
 							if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -2918,6 +2924,8 @@ while int(pal)<1000000:
 							jeu=1
 							print (" ")
 							print (" ")
+							if int(azzin)==1:
+								agilistack=agilistack+stackvit
 							degvit=degvit+1
 							if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
 								print ("--------------------------------------------------------------------------------------")
@@ -2932,8 +2940,8 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-						else:
-							pass
+							else:
+								pass
 				if int(viem)<=0:
 					print (" ")
 					print (" ")
