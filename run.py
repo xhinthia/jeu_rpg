@@ -184,12 +184,12 @@ elif pml=="non":
 	print (" ")
 	if str(quete)=="1":
 		keltu=1
-		print ("Montrez la preuve de votre immortalité... (gagner 100 000 PV)")
+		print ("Montrez la preuve de votre immortalité... (gagner 50 000 PV)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
 		immortal=0
-		print ("Egaler la vie de Kel'Thuzad... (atteindre 900 PV)")
+		print ("Egaler la vie de Kel'Thuzad... (atteindre 1070 PV)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
@@ -200,11 +200,11 @@ elif pml=="non":
 		print (" ")
 	elif str(quete)=="2":
 		norfend=1
-		print ("Augmenter votre force pour manier Frostmourne... (atteindre 250 force)")
+		print ("Augmenter votre force pour manier Frostmourne... (atteindre 278 force)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
-		print ("Arracher l'âme d'un puissant demon pour nourrir Frostmourne... (tuer le demon primordial lvl 30)")
+		print ("Arracher l'âme d'un puissant demon pour nourrir Frostmourne... (tuer le demon primordial lvl 20)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
@@ -216,12 +216,12 @@ elif pml=="non":
 		print (" ")
 	elif str(quete)=="3":
 		exode=1
-		print ("Detruire les armures démoniaques... (enlever 25 000 defense)")
+		print ("Detruire les armures démoniaques... (enlever 10 000 defense)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
 		armudemo=0
-		print ("Forger une armure légendaire pour Thrall... (atteindre 110 defense)")
+		print ("Forger une armure légendaire pour Thrall... (atteindre 139 defense)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
@@ -231,11 +231,11 @@ elif pml=="non":
 		print (" ")
 	elif str(quete)=="4":
 		azzin=1
-		print ("Deplacer vous plus vite qu'Illidan... (atteindre 110 vitesse)")
+		print ("Deplacer vous plus vite qu'Illidan... (atteindre 139 vitesse)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
-		print ("Prouver votre agilité au combat... (effectuer 2 000 combos)")
+		print ("Prouver votre agilité au combat... (effectuer 3 000 combos)")
 		print (" ")
 		continuer=input("[enter]")
 		agilistack=0
@@ -246,12 +246,12 @@ elif pml=="non":
 		print (" ")
 	elif str(quete)=="5":
 		corrup=1
-		print ("Eliminer des demons pour chasser la corruption... (tuer 3 000 demons)")
+		print ("Eliminer des demons pour chasser la corruption... (tuer 2 000 demons)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
 		chassedemo=0
-		print ("Terroriser Gul'Dan par votre puissance... (atteindre 420 PV, 120 force, 60 defense et 60 vitesse)")
+		print ("Terroriser Gul'Dan par votre puissance... (atteindre 590 PV, 158 force, 79 defense et 79 vitesse)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
@@ -272,26 +272,108 @@ while int(pal)<100:
 	guldef=19+defenseup+lootdefense
 	gulvit=19+vitesseup+lootvitesse
 	if int(keltu)==1:
-		print ("Quête : "+str(immortal)+"/100 000 PV gagnés")
-		print ("Quête : "+str(totalpv)+"/900 PV atteint")
+		print ("Quête : "+str(immortal)+"/50 000 PV gagnés")
+		print ("Quête : "+str(totalpv)+"/1070 PV atteint")
 	elif int(norfend)==1:
-		print ("Quête : "+str(amedemo)+"/1 demon primordial lvl 30 tué")
-		print ("Quête : "+str(frost)+"/250 force atteinte")
+		print ("Quête : "+str(amedemo)+"/1 demon primordial lvl 20 tué")
+		print ("Quête : "+str(frost)+"/278 force atteinte")
 	elif int(exode)==1:
-		print ("Quête : "+str(armudemo)+"/25 000 defense enlevée")
-		print ("Quête : "+str(armuleg)+"/110 defense atteinte")
+		print ("Quête : "+str(armudemo)+"/10 000 defense enlevée")
+		print ("Quête : "+str(armuleg)+"/139 defense atteinte")
 	elif int(azzin)==1:
-		print ("Quête : "+str(vitilli)+"/110 vitesse atteinte")
-		print ("Quête : "+str(agilistack)+"/2 000 stack")
+		print ("Quête : "+str(vitilli)+"/139 vitesse atteinte")
+		print ("Quête : "+str(agilistack)+"/3 000 stack")
 	elif int(corrup)==1:
-		print ("Quête : "+str(chassedemo)+"/3 000 démons tués")
-		print ("Quête : "+str(gulpv)+"/420 PV atteint")
-		print ("Quête : "+str(gulfor)+"/120 force atteinte")
-		print ("Quête : "+str(guldef)+"/60 defense atteinte")
-		print ("Quête : "+str(gulvit)+"/60 vitesse atteinte")
+		print ("Quête : "+str(chassedemo)+"/2 000 démons tués")
+		print ("Quête : "+str(gulpv)+"/590 PV atteint")
+		print ("Quête : "+str(gulfor)+"/158 force atteinte")
+		print ("Quête : "+str(guldef)+"/79 defense atteinte")
+		print ("Quête : "+str(gulvit)+"/79 vitesse atteinte")
 	print (" ")
 	print (" ")
 	expmax=5*lvl+lvl
+	if int(immortal)>=50000 and int(totalpv)>=1070 and int(keltu)==1:
+		keltu=2
+		immortal=0
+		print (" ")
+		print (" ")
+		print ("Vous avez terminé la quête de Kel'Thuzad !!!")
+		print (" ")
+		print ("Pour vous recompenser, Kel'Thuzad vous transforme en liche...")
+		print (" ")
+		print ("Convertis une partie de vos PV en force, defense et vitesse")
+		print (" ")
+		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
+		print (" ")
+		kel=input("[enter]")
+		print (" ")
+		print (" ")
+	elif int(frost)>=278 and int(amedemo)==1 and int(norfend)==1:
+		norfend=2
+		amedemo=0
+		print (" ")
+		print (" ")
+		print ("Vous avez terminé la quête de Frostmourne !!!")
+		print (" ")
+		print ("Pour vous recompenser, vous vous transformez en chevalier de la mort...")
+		print (" ")
+		print ("Convertis une partie de votre force en vie, defense et vitesse")
+		print (" ")
+		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
+		print (" ")
+		nor=input("[enter]")
+		print (" ")
+		print (" ")
+	elif int(armudemo)>=10000 and int(armuleg)>=139 and int(exode)==1:
+		exode=2
+		armudemo=0
+		print (" ")
+		print (" ")
+		print ("Vous avez terminé la quête de Thrall !!!")
+		print (" ")
+		print ("Pour vous recompenser, Thrall vous transforme en guerrier...")
+		print (" ")
+		print ("Convertis une partie de votre defense en vie, force et vitesse")
+		print (" ")
+		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
+		print (" ")
+		exo=input("[enter]")
+		print (" ")
+		print (" ")
+	elif int(vitilli)>=139 and int(agilistack)>=3000 and int(azzin)==1:
+		azzin=2
+		agilistack=0
+		print (" ")
+		print (" ")
+		print ("Vous avez terminé la quête d'Illidan !!!")
+		print (" ")
+		print ("Pour vous recompenser, Illidan vous transforme en chasseur de démons...")
+		print (" ")
+		print ("Convertis une partie de votre vitesse en vie, force et defense")
+		print (" ")
+		print (" ")
+		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
+		print (" ")
+		azz=input("[enter]")
+		print (" ")
+		print (" ")
+	elif int(chassedemo)>=2000 and int(gulpv)>=590 and int(gulfor)>=158 and int(guldef)>=79 and int(gulvit)>=79 and int(corrup)==1:
+		corrup=2
+		chassedemo=0
+		print (" ")
+		print (" ")
+		print ("Vous avez terminé la quête de Gul'Dan !!!")
+		print (" ")
+		print ("Pour vous recompenser, Gul'Dan vous transforme en démoniste...")
+		print (" ")
+		print ("vous devenez corrompu, vos attaques ignorent la defense de l'adversaire")
+		print (" ")
+		print (" ")
+		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
+		print (" ")
+		corr=input("[enter]")
+		print (" ")
+		print (" ")
 	if int(keltu)==2:
 		print ("[1] Demon lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
 		print ("[2] Demon lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((110+vieup+lootpv)//32)+")")
@@ -396,6 +478,7 @@ while int(pal)<100:
 		force=38+forceup+lootforce
 		defense=19+defenseup+lootdefense
 		vitesse=19+vitesseup+lootvitesse
+	maladie=0
 	atb=0
 	atbm=0
 	atbmax=vitesse*vitessem
@@ -439,11 +522,11 @@ while int(pal)<100:
 			while int(jeu)==0:
 				if int(keltu)==2:
 					print ("[1] Toucher sanglant")
-					if int(pal)>=50:
+					if int(pal)>=40:
 						print ("[2] Pacte de sang")
-					if int(pal)>=60:
+					if int(pal)>=50:
 						print ("[3] Transfert")
-					if int(pal)>=70:
+					if int(pal)>=60:
 						print ("[4] Absorption")
 					choix3=input()
 					while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -481,7 +564,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="2" and int(pal)>=50:
+					elif str(choix3)=="2" and int(pal)>=40:
 						degat=pacte_sang(defensem,pacte)
 						print (" ")
 						print (" ")
@@ -515,7 +598,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="3" and int(pal)>=60:
+					elif str(choix3)=="3" and int(pal)>=50:
 						buff=transfert(defense,trans)
 						print (" ")
 						print (" ")
@@ -549,7 +632,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="4" and int(pal)>=70:
+					elif str(choix3)=="4" and int(pal)>=60:
 						degat=absorption(vie,defensem,bloodstack,abso)
 						print (" ")
 						print (" ")
@@ -585,11 +668,11 @@ while int(pal)<100:
 						pass
 				elif int(norfend)==2:
 					print ("[1] Frappe du fléau")
-					if int(pal)>=50:
+					if int(pal)>=40:
 						print ("[2] Poigne de la mort")
-					if int(pal)>=60:
+					if int(pal)>=50:
 						print ("[3] Renforcement")
-					if int(pal)>=70:
+					if int(pal)>=60:
 						print ("[4] Aneantissement")
 					choix3=input()
 					while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -604,8 +687,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str(degat//10)+" de force !")
-						force=force+degat//10
+						maladie=maladie+degat//10
+						print (str(nomm)+" souffre d'une maladie (-"+str(maladie)+" PV)")
 						jeu=1
 						print (" ")
 						print (" ")
@@ -623,7 +706,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="2" and int(pal)>=50:
+					elif str(choix3)=="2" and int(pal)>=40:
 						debuff=poigne_mort(forcem,poigne)
 						forcem=forcem-debuff
 						if int(forcem)<0:
@@ -633,8 +716,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(debuff)+" de force !")
 						print (" ")
 						print (" ")
-						force=force+debuff
-						print (str(nom)+" gagne "+str(debuff)+" de force !")
+						force=force+debuff*2
+						print (str(nom)+" gagne "+str(debuff*2)+" de force !")
 						print (" ")
 						jeu=1
 						print (" ")
@@ -652,7 +735,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="3" and int(pal)>=60:
+					elif str(choix3)=="3" and int(pal)>=50:
 						print (" ")
 						print (" ")
 						print (str(nom)+" gagne "+str(force*2)+" de force !")
@@ -663,7 +746,7 @@ while int(pal)<100:
 						vitesse=vitesse//2
 						jeu=1
 						continuer=input("[enter]")
-					elif str(choix3)=="4" and int(pal)>=70:
+					elif str(choix3)=="4" and int(pal)>=60:
 						degat=aneantissement(force,forcem,defensem,anean)
 						viem=viem-degat
 						print (" ")
@@ -696,11 +779,11 @@ while int(pal)<100:
 						pass
 				elif int(exode)==2:
 					print ("[1] Heurt de bouclier")
-					if int(pal)>=50:
+					if int(pal)>=40:
 						print ("[2] Onde de choc")
-					if int(pal)>=60:
+					if int(pal)>=50:
 						print ("[3] Berserker")
-					if int(pal)>=70:
+					if int(pal)>=60:
 						print ("[4] Dernier souffle")
 					choix3=input()
 					while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -716,8 +799,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nomm)+" perd "+str(degat//8)+" de defense !")
-						defensem=defensem-degat//8
+						print (str(nomm)+" perd "+str(degat//5)+" de defense !")
+						defensem=defensem-degat//5
 						if int(defensem)<0:
 							defensem=0
 						jeu=1
@@ -737,7 +820,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="2" and int(pal)>=50:
+					elif str(choix3)=="2" and int(pal)>=40:
 						degat=onde_choc(defense,defensem,onde)
 						viem=viem-degat
 						degveng=degveng+degat
@@ -765,7 +848,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="3" and int(pal)>=60:
+					elif str(choix3)=="3" and int(pal)>=50:
 						degat=vengeance(degveng,veng)
 						viem=viem-degat
 						print (" ")
@@ -801,7 +884,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="4" and int(pal)>=70:
+					elif str(choix3)=="4" and int(pal)>=60:
 						print (" ")
 						print (" ")
 						buff=dernier_souffle(defense,souffle)
@@ -835,11 +918,11 @@ while int(pal)<100:
 						pass
 				elif int(azzin)==2:
 					print ("[1] Danse de l'ombre")
-					if int(pal)>=50:
+					if int(pal)>=40:
 						print ("[2] Préméditation")
-					if int(pal)>=60:
+					if int(pal)>=50:
 						print ("[3] Serie meutriere")
-					if int(pal)>=70:
+					if int(pal)>=60:
 						print ("[4] Transformation")
 					choix3=input()
 					while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -873,10 +956,10 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="2" and int(pal)>=50:
+					elif str(choix3)=="2" and int(pal)>=40:
 						print (" ")
 						print (" ")
-						print ("Vous planifiez votre prochain coup mais pendant votre réflexion votre vitesse diminue...")
+						print ("Vous sacrifiez votre vitesse votre augmenter grandement votre combo...")
 						print (" ")
 						print (" ")
 						print (str(nom)+" perd "+str(stackvit*stackvit)+" de vitesse !")
@@ -889,7 +972,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="3" and int(pal)>=60:
+					elif str(choix3)=="3" and int(pal)>=50:
 						degat=serie_meurtriere(stackvit,defensem,serie)
 						viem=viem-degat
 						print (" ")
@@ -918,7 +1001,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="4" and int(pal)>=70:
+					elif str(choix3)=="4" and int(pal)>=60:
 						print (" ")
 						print (" ")
 						print ("Vous canalisez une puissance démoniaque...")
@@ -942,11 +1025,11 @@ while int(pal)<100:
 						pass
 				elif int(corrup)==2:
 					print ("[1] Ombreflamme")
-					if int(pal)>=50:
+					if int(pal)>=40:
 						print ("[2] Drainage")
-					if int(pal)>=60:
+					if int(pal)>=50:
 						print ("[3] Conversion")
-					if int(pal)>=70:
+					if int(pal)>=60:
 						print ("[4] Feu de l'âme")
 					choix3=input()
 					while str(choix3)!="1" and str(choix3)!="2" and str(choix3)!="3" and str(choix3)!="4":
@@ -954,7 +1037,7 @@ while int(pal)<100:
 						choix3=input("Taper le bon chiffre pour effectuer votre sort : ")
 						print (" ")
 					if str(choix3)=="1":
-						degat=ombreflamme(force,ombre)
+						degat=ombreflamme(force,vitesse,ombre)
 						viem=viem-degat
 						print (" ")
 						print (" ")
@@ -976,7 +1059,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="2" and int(pal)>=50:
+					elif str(choix3)=="2" and int(pal)>=40:
 						degat=drainage(force,drain)
 						viem=viem-degat
 						vie=vie+degat
@@ -1003,7 +1086,7 @@ while int(pal)<100:
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
-					elif str(choix3)=="3" and int(pal)>=60:
+					elif str(choix3)=="3" and int(pal)>=50:
 						vie=vie-(110+vieup+lootpv)//5
 						print (" ")
 						print (" ")
@@ -1016,7 +1099,7 @@ while int(pal)<100:
 						print (" ")
 						jeu=1
 						continuer=input("[enter]")
-					elif str(choix3)=="4" and int(pal)>=70:
+					elif str(choix3)=="4" and int(pal)>=60:
 						degat=feu_ame(force,ame,lvlm,feu)
 						viem=viem-degat
 						print (" ")
@@ -1121,8 +1204,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nomm)+" perd "+str(degat//10)+" de defense !")
-						defensem=defensem-degat//10
+						print (str(nomm)+" perd "+str(degat//4)+" de defense !")
+						defensem=defensem-degat//4
 						if int(defensem)<0:
 							defensem=0
 						print (" ")
@@ -1185,7 +1268,7 @@ while int(pal)<100:
 				print ("Vous gagnez "+str(lvlm)+" points d'experiences !")
 				print (" ")
 				print (" ")
-				if int(pal)>=70 and int(corrup)==2:
+				if int(pal)>=60 and int(corrup)==2:
 					ame=ame+1
 					print ("Votre stock d'âme passe à "+str(ame))
 					print (" ")
@@ -1262,7 +1345,7 @@ while int(pal)<100:
 				print (" ")
 				print (" ")
 				if str(choix1)=="10":
-					if int(pal)==20:
+					if int(pal)==10:
 						amedemo=1
 					pal=pal+10
 					lot=input("Vous ouvrez le coffre de loot...")
@@ -1351,7 +1434,7 @@ while int(pal)<100:
 					print (" ")
 					print (" ")
 					continuer=input("[enter]")
-					if int(pal)==50 or int(pal)==60 or int(pal)==70:
+					if int(pal)==40 or int(pal)==50 or int(pal)==60:
 						print ("Vous maîtrisez une nouvelle puissance...")
 						print (" ")
 					print (" ")
@@ -1367,6 +1450,13 @@ while int(pal)<100:
 					print (" ")
 					continuer=input("[enter]")
 		elif int(atbm)>=int(atbmax):
+			if int(maladie)!=0:
+				print (" ")
+				print (" ")
+				print (str(nomm)+" perd "+str(maladie)+" PV à cause de la maladie...")
+				maladie=0
+				print (" ")
+				continuer=input("[enter]")
 			tour=tour+1
 			atbm=atbm-atbmax
 			print (" ")
@@ -1522,89 +1612,7 @@ while int(pal)<100:
 	fw.write("\n")
 	fw.write(str(expmax))
 	fw.close()
-	
-	if int(immortal)>=100000 and int(totalpv)>=900 and int(keltu)==1:
-		keltu=2
-		immortal=0
-		print (" ")
-		print (" ")
-		print ("Vous avez terminé la quête de Kel'Thuzad !!!")
-		print (" ")
-		print ("Pour vous recompenser, Kel'Thuzad vous transforme en liche...")
-		print (" ")
-		print ("Convertis une partie de vos PV en force, defense et vitesse")
-		print (" ")
-		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
-		print (" ")
-		kel=input("[enter]")
-		print (" ")
-		print (" ")
-	elif int(frost)>=250 and int(amedemo)==1 and int(norfend)==1:
-		norfend=2
-		amedemo=0
-		print (" ")
-		print (" ")
-		print ("Vous avez terminé la quête de Frostmourne !!!")
-		print (" ")
-		print ("Pour vous recompenser, vous vous transformez en chevalier de la mort...")
-		print (" ")
-		print ("Convertis une partie de votre force en vie, defense et vitesse")
-		print (" ")
-		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
-		print (" ")
-		nor=input("[enter]")
-		print (" ")
-		print (" ")
-	elif int(armudemo)>=25000 and int(armuleg)>=110 and int(exode)==1:
-		exode=2
-		armudemo=0
-		print (" ")
-		print (" ")
-		print ("Vous avez terminé la quête de Thrall !!!")
-		print (" ")
-		print ("Pour vous recompenser, Thrall vous transforme en guerrier...")
-		print (" ")
-		print ("Convertis une partie de votre defense en vie, force et vitesse")
-		print (" ")
-		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
-		print (" ")
-		exo=input("[enter]")
-		print (" ")
-		print (" ")
-	elif int(vitilli)>=110 and int(agilistack)>=2000 and int(azzin)==1:
-		azzin=2
-		agilistack=0
-		print (" ")
-		print (" ")
-		print ("Vous avez terminé la quête d'Illidan !!!")
-		print (" ")
-		print ("Pour vous recompenser, Illidan vous transforme en chasseur de démons...")
-		print (" ")
-		print ("Convertis une partie de votre vitesse en vie, force et defense")
-		print (" ")
-		print (" ")
-		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
-		print (" ")
-		azz=input("[enter]")
-		print (" ")
-		print (" ")
-	elif int(chassedemo)>=3000 and int(gulpv)>=420 and int(gulfor)>=120 and int(guldef)>=60 and int(gulvit)>=60 and int(corrup)==1:
-		corrup=2
-		chassedemo=0
-		print (" ")
-		print (" ")
-		print ("Vous avez terminé la quête de Gul'Dan !!!")
-		print (" ")
-		print ("Pour vous recompenser, Gul'Dan vous transforme en démoniste...")
-		print (" ")
-		print ("vous devenez corrompu, vos attaques ignorent la defense de l'adversaire")
-		print (" ")
-		print (" ")
-		print ("Continuer votre progression pour pouvoir utiliser l'ensemble de vos nouveaux pouvoirs !")
-		print (" ")
-		corr=input("[enter]")
-		print (" ")
-		print (" ")
+
 ############################################################################################################################################################
 ############################################################################################################################################################
 ############################################################################################################################################################
@@ -2157,6 +2165,7 @@ while int(pal)<1000000:
 		atb=0
 		atbm=0
 		atbmax=vitesse*vitessem
+		maladie=0
 		while int(vie)>0 and int(viem)>0:
 			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
 				atb=atb+vitesse
@@ -2362,8 +2371,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(degat//10)+" de force !")
-							force=force+degat//10
+							maladie=maladie+degat//10
+							print (str(nomm)+" souffre d'une maladie (-"+str(maladie)+" PV)")
 							jeu=1
 							print (" ")
 							print (" ")
@@ -2711,7 +2720,7 @@ while int(pal)<1000000:
 							choix3=input("Vous devez choisir un chiffre entre '1' et '4' : ")
 							print (" ")
 						if str(choix3)=="1":
-							degat=ombreflamme(force,ombre)
+							degat=ombreflamme(force,vitesse,ombre)
 							viem=viem-degat
 							print (" ")
 							print (" ")
@@ -3454,6 +3463,13 @@ while int(pal)<1000000:
 					print (" ")
 					print (" ")
 			elif int(atbm)>=int(atbmax):
+				if int(maladie)!=0:
+					print (" ")
+					print (" ")
+					print (str(nomm)+" perd "+str(maladie)+" PV à cause de la maladie...")
+					maladie=0
+					print (" ")
+					continuer=input("[enter]")
 				atbm=atbm-atbmax
 				tour=tour+1
 				print (" ")
