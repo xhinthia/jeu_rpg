@@ -440,9 +440,9 @@ while int(pal)<100:
 	if str(choix1)=="10":
 		nomm="Demon primordial lvl "+str(lvlm)
 		viem=415+240*lvlm
-		forcem=41+2*lvlm
-		defensem=27+7*lvlm
-		vitessem=7+1*lvlm
+		forcem=(41+3*lvlm)//2
+		defensem=27+8*lvlm
+		vitessem=(15+1*lvlm)//2
 	else:
 		nomm="Demon lvl "+str(lvlm)
 		viem=415+120*lvlm
