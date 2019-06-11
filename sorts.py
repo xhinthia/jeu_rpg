@@ -2,24 +2,24 @@ def degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang):
 	print (" ")
 	if int(keltu)==2:
 		if int(ritsang)<500:
-			degat=(110+vieup+lootpv)*3//10-defensem
+			degat=(110+vieup+lootpv)*12//10-defensem
 		elif int(ritsang)>=500 and int(ritsang)<2000:
-			degat=(110+vieup+lootpv)*5//16-defensem
+			degat=(110+vieup+lootpv)*13//10-defensem
 		elif int(ritsang)>=2000 and int(ritsang)<5000:
-			degat=(110+vieup+lootpv)*5//15-defensem
+			degat=(110+vieup+lootpv)*14//10-defensem
 		elif int(ritsang)>=5000:
-			degat=(110+vieup+lootpv)*5//14-defensem
+			degat=(110+vieup+lootpv)*15//10-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degpv)<500:
-			degat=(110+vieup+lootpv)//4-defensem
+			degat=(110+vieup+lootpv)-defensem
 		elif int(degpv)>=500 and int(degpv)<2000:
-			degat=(110+vieup+lootpv)*5//19-defensem
+			degat=(110+vieup+lootpv)*11//10-defensem
 		elif int(degpv)>=2000 and int(degpv)<5000:
-			degat=(110+vieup+lootpv)*5//18-defensem
+			degat=(110+vieup+lootpv)*12//10-defensem
 		elif int(degpv)>=5000:
-			degat=(110+vieup+lootpv)*5//17-defensem
+			degat=(110+vieup+lootpv)*13//10-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
@@ -27,24 +27,24 @@ def degat_force(force,defensem,degfor,norfend,mourne):
 	print (" ")
 	if int(norfend)==2:
 		if int(mourne)<500:
-			degat=force*19//10-defensem
+			degat=force*50//10-defensem
 		elif int(mourne)>=500 and int(mourne)<2000:
-			degat=force*20//10-defensem
+			degat=force*54//10-defensem
 		elif int(mourne)>=2000 and int(mourne)<5000:
-			degat=force*21//10-defensem
+			degat=force*58//10-defensem
 		elif int(mourne)>=5000:
-			degat=force*22//10-defensem
+			degat=force*62//10-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degfor)<500:
-			degat=force*17//10-defensem
+			degat=force*42//10-defensem
 		elif int(degfor)>=500 and int(degfor)<2000:
-			degat=force*18//10-defensem
+			degat=force*46//10-defensem
 		elif int(degfor)>=2000 and int(degfor)<5000:
-			degat=force*19//10-defensem
+			degat=force*50//10-defensem
 		elif int(degfor)>=5000:
-			degat=force*20//10-defensem
+			degat=force*54//10-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
@@ -52,24 +52,24 @@ def degat_defense(force,defense,defensem,degdef,exode,war):
 	print (" ")
 	if int(exode)==2:
 		if int(war)<500:
-			degat=(defense+defense)*13//10-defensem
+			degat=defense*96//10-defensem
 		elif int(war)>=500 and int(war)<2000:
-			degat=(defense+defense)*14//10-defensem
+			degat=defense*104//10-defensem
 		elif int(war)>=2000 and int(war)<5000:
-			degat=(defense+defense)*15//10-defensem
+			degat=defense*112//10-defensem
 		elif int(war)>=5000:
-			degat=(defense+defense)*16//10-defensem
+			degat=defense*120//10-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degdef)<500:
-			degat=(defense+defense)*11//10-defensem
+			degat=defense*80//10-defensem
 		elif int(degdef)>=500 and int(degdef)<2000:
-			degat=(defense+defense)*12//10-defensem
+			degat=defense*88//10-defensem
 		elif int(degdef)>=2000 and int(degdef)<5000:
-			degat=(defense+defense)*13//10-defensem
+			degat=defense*96//10-defensem
 		elif int(degdef)>=5000:
-			degat=(defense+defense)*14//10-defensem
+			degat=defense*104//10-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
@@ -77,24 +77,24 @@ def degat_vitesse(force,vitesse,stackvit,defensem,degvit,azzin,oth):
 	print (" ")
 	if int(azzin)==2:
 		if int(oth)<500:
-			degat=(vitesse*stackvit+force//stackvit)*11//(20+stackvit)-defensem
+			degat=vitesse*(92+stackvit)//10-defensem
 		elif int(oth)>=500 and int(oth)<2000:
-			degat=(vitesse*stackvit+force//stackvit)*12//(20+stackvit)-defensem
+			degat=vitesse*(100+stackvit)//10-defensem
 		elif int(oth)>=2000 and int(oth)<5000:
-			degat=(vitesse*stackvit+force//stackvit)*13//(20+stackvit)-defensem
+			degat=vitesse*(108+stackvit)//10-defensem
 		elif int(oth)>=5000:
-			degat=(vitesse*stackvit+force//stackvit)*14//(20+stackvit)-defensem
+			degat=vitesse*(116+stackvit)//10-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degvit)<500:
-			degat=(vitesse*stackvit+force//stackvit)*9//(20+stackvit)-defensem
+			degat=vitesse*(76+stackvit)//10-defensem
 		elif int(degvit)>=500 and int(degvit)<2000:
-			degat=(vitesse*stackvit+force//stackvit)*10//(20+stackvit)-defensem
+			degat=vitesse*(84+stackvit)//10-defensem
 		elif int(degvit)>=2000 and int(degvit)<5000:
-			degat=(vitesse*stackvit+force//stackvit)*11//(20+stackvit)-defensem
+			degat=vitesse*(92+stackvit)//10-defensem
 		elif int(degvit)>=5000:
-			degat=(vitesse*stackvit+force//stackvit)*12//(20+stackvit)-defensem
+			degat=vitesse*(100+stackvit)//10-defensem
 		if int(degat)<0:
 			degat=0
 	return degat

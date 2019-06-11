@@ -439,16 +439,16 @@ while int(pal)<100:
 		lvlm=10+pal
 	if str(choix1)=="10":
 		nomm="Demon primordial lvl "+str(lvlm)
-		viem=115+48*lvlm
-		forcem=34+3*lvlm
-		defensem=16+3*lvlm
-		vitessem=10+1*lvlm
+		viem=415+240*lvlm
+		forcem=41+3*lvlm
+		defensem=27+8*lvlm
+		vitessem=7+1*lvlm
 	else:
 		nomm="Demon lvl "+str(lvlm)
-		viem=105+21*lvlm
-		forcem=31+7*lvlm
-		defensem=15+2*lvlm
-		vitessem=14+1*lvlm
+		viem=415+120*lvlm
+		forcem=41+5*lvlm
+		defensem=27+8*lvlm
+		vitessem=15+2*lvlm
 	tour=0
 	stackvit=1
 	bloodstack=0
