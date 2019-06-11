@@ -440,15 +440,15 @@ while int(pal)<100:
 	if str(choix1)=="10":
 		nomm="Demon primordial lvl "+str(lvlm)
 		viem=415+240*lvlm
-		forcem=41+3*lvlm
+		forcem=41+2*lvlm
 		defensem=27+8*lvlm
 		vitessem=7+1*lvlm
 	else:
 		nomm="Demon lvl "+str(lvlm)
 		viem=415+120*lvlm
-		forcem=41+5*lvlm
+		forcem=41+4*lvlm
 		defensem=27+8*lvlm
-		vitessem=15+2*lvlm
+		vitessem=15+1*lvlm
 	tour=0
 	stackvit=1
 	bloodstack=0
@@ -551,7 +551,7 @@ while int(pal)<100:
 						print (" ")
 						jeu=1
 						ritsang=ritsang+1
-						if int(ritsang)==500 or int(ritsang)==2000 or int(ritsang)==5000:
+						if int(ritsang)==200 or int(ritsang)==400 or int(ritsang)==600:
 							print ("-----------------------------------------------------------------------------------------")
 							print ("                              TOUCHER SANGLANT LVL UP !!!                              ")
 							print ("-----------------------------------------------------------------------------------------")
@@ -585,7 +585,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						pacte=pacte+1
-						if int(pacte)==500 or int(pacte)==2000 or int(pacte)==5000:
+						if int(pacte)==200 or int(pacte)==400 or int(pacte)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              PACTE DE SANG LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -619,7 +619,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						trans=trans+1
-						if int(trans)==500 or int(trans)==2000 or int(trans)==5000:
+						if int(trans)==200 or int(trans)==400 or int(trans)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              TRANSFERT LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -651,7 +651,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						abso=abso+1
-						if int(abso)==500 or int(abso)==2000 or int(abso)==5000:
+						if int(abso)==200 or int(abso)==400 or int(abso)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              ABSORPTION LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -693,7 +693,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						mourne=mourne+1
-						if int(mourne)==500 or int(mourne)==2000 or int(mourne)==5000:
+						if int(mourne)==200 or int(mourne)==400 or int(mourne)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              FRAPPE DU FLEAU LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -722,7 +722,7 @@ while int(pal)<100:
 						jeu=1
 						print (" ")
 						poigne=poigne+1
-						if int(poigne)==500 or int(poigne)==2000 or int(poigne)==5000:
+						if int(poigne)==200 or int(poigne)==400 or int(poigne)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              POIGNE DE LA MORT LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -762,7 +762,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						anean=anean+1
-						if int(anean)==500 or int(anean)==2000 or int(anean)==5000:
+						if int(anean)==200 or int(anean)==400 or int(anean)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              ANEANTISSEMENT LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -807,7 +807,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						war=war+1
-						if int(war)==500 or int(war)==2000 or int(war)==5000:
+						if int(war)==200 or int(war)==400 or int(war)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              HEURT DE BOUCLIER LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -835,7 +835,7 @@ while int(pal)<100:
 						jeu=1
 						print (" ")
 						onde=onde+1
-						if int(onde)==500 or int(onde)==2000 or int(onde)==5000:
+						if int(onde)==200 or int(onde)==400 or int(onde)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              ONDE DE CHOC LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -871,7 +871,7 @@ while int(pal)<100:
 						jeu=1
 						print (" ")
 						veng=veng+1
-						if int(veng)==500 or int(veng)==2000 or int(veng)==5000:
+						if int(veng)==200 or int(veng)==400 or int(veng)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              VENGEANCE LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -901,7 +901,7 @@ while int(pal)<100:
 						jeu=1
 						print (" ")
 						souffle=souffle+1
-						if int(souffle)==500 or int(souffle)==2000 or int(souffle)==5000:
+						if int(souffle)==200 or int(souffle)==400 or int(souffle)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              DERNIER SOUFFLE LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -943,7 +943,7 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						oth=oth+1
-						if int(oth)==500 or int(oth)==2000 or int(oth)==5000:
+						if int(oth)==200 or int(oth)==400 or int(oth)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              DANSE DE L'OMBRE LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -988,7 +988,7 @@ while int(pal)<100:
 						jeu=1
 						print (" ")
 						serie=serie+1
-						if int(serie)==500 or int(serie)==2000 or int(serie)==5000:
+						if int(serie)==200 or int(serie)==400 or int(serie)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              SERIE MEURTRIERE LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1046,7 +1046,7 @@ while int(pal)<100:
 						print (" ")
 						jeu=1
 						ombre=ombre+1
-						if int(ombre)==500 or int(ombre)==2000 or int(ombre)==5000:
+						if int(ombre)==200 or int(ombre)==400 or int(ombre)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              OMBREFLAMME LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1073,7 +1073,7 @@ while int(pal)<100:
 						print (" ")
 						jeu=1
 						drain=drain+1
-						if int(drain)==500 or int(drain)==2000 or int(drain)==5000:
+						if int(drain)==200 or int(drain)==400 or int(drain)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              DRAINAGE LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1119,7 +1119,7 @@ while int(pal)<100:
 						print (" ")
 						jeu=1
 						feu=feu+1
-						if int(feu)==500 or int(feu)==2000 or int(feu)==5000:
+						if int(feu)==200 or int(feu)==400 or int(feu)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              FEU DE L'AME LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1160,7 +1160,7 @@ while int(pal)<100:
 						if int(keltu)==1:
 							immortal=immortal+degat//3
 						degpv=degpv+1
-						if int(degpv)==500 or int(degpv)==2000 or int(degpv)==5000:
+						if int(degpv)==200 or int(degpv)==400 or int(degpv)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              SANGUINAIRE LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1183,7 +1183,7 @@ while int(pal)<100:
 						jeu=1
 						print (" ")
 						degfor=degfor+1
-						if int(degfor)==500 or int(degfor)==2000 or int(degfor)==5000:
+						if int(degfor)==200 or int(degfor)==400 or int(degfor)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              DEVASTER LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1214,7 +1214,7 @@ while int(pal)<100:
 						if int(exode)==1:
 							armudemo=armudemo+degat//10
 						degdef=degdef+1
-						if int(degdef)==500 or int(degdef)==2000 or int(degdef)==5000:
+						if int(degdef)==200 or int(degdef)==400 or int(degdef)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              COUP DE BOUCLIER LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")
@@ -1243,7 +1243,7 @@ while int(pal)<100:
 						if int(azzin)==1:
 							agilistack=agilistack+stackvit
 						degvit=degvit+1
-						if int(degvit)==500 or int(degvit)==2000 or int(degvit)==5000:
+						if int(degvit)==200 or int(degvit)==400 or int(degvit)==600:
 							print ("--------------------------------------------------------------------------------------")
 							print ("                              ENCHAINEMENT LVL UP !!!                              ")
 							print ("--------------------------------------------------------------------------------------")

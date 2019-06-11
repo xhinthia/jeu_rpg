@@ -1,24 +1,24 @@
 def degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang):
 	print (" ")
 	if int(keltu)==2:
-		if int(ritsang)<500:
+		if int(ritsang)<200:
 			degat=(110+vieup+lootpv)*12//10-defensem
-		elif int(ritsang)>=500 and int(ritsang)<2000:
+		elif int(ritsang)>=200 and int(ritsang)<400:
 			degat=(110+vieup+lootpv)*13//10-defensem
-		elif int(ritsang)>=2000 and int(ritsang)<5000:
+		elif int(ritsang)>=400 and int(ritsang)<600:
 			degat=(110+vieup+lootpv)*14//10-defensem
-		elif int(ritsang)>=5000:
+		elif int(ritsang)>=600:
 			degat=(110+vieup+lootpv)*15//10-defensem
 		if int(degat)<0:
 			degat=0
 	else:
-		if int(degpv)<500:
+		if int(degpv)<200:
 			degat=(110+vieup+lootpv)-defensem
-		elif int(degpv)>=500 and int(degpv)<2000:
+		elif int(degpv)>=200 and int(degpv)<400:
 			degat=(110+vieup+lootpv)*11//10-defensem
-		elif int(degpv)>=2000 and int(degpv)<5000:
+		elif int(degpv)>=400 and int(degpv)<600:
 			degat=(110+vieup+lootpv)*12//10-defensem
-		elif int(degpv)>=5000:
+		elif int(degpv)>=600:
 			degat=(110+vieup+lootpv)*13//10-defensem
 		if int(degat)<0:
 			degat=0
