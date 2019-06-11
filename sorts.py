@@ -175,11 +175,11 @@ def pacte_sang(defensem,pacte):
 	if int(pacte)<200:
 		degat=defensem
 	elif int(pacte)>=200 and int(pacte)<400:
-		degat=defensem*95//100
+		degat=defensem*9//10
 	elif int(pacte)>=400 and int(pacte)<600:
-		degat=defensem*88//100
+		degat=defensem*8//10
 	elif int(pacte)>=600:
-		degat=defensem*78//100
+		degat=defensem*7//10
 	if int(degat)<0:
 		degat=0
 	return degat
@@ -187,13 +187,13 @@ def pacte_sang(defensem,pacte):
 def transfert(defense,trans):
 	print (" ")
 	if int(trans)<200:
-		buff=defense*3
+		buff=defense*4
 	elif int(trans)>=200 and int(trans)<400:
-		buff=defense*35//10
+		buff=defense*45//10
 	elif int(trans)>=400 and int(trans)<600:
-		buff=defense*40/10
-	elif int(trans)>=600:
 		buff=defense*5
+	elif int(trans)>=600:
+		buff=defense*55//10
 	if int(buff)<0:
 		buff=0
 	return buff

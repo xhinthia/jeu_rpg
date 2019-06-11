@@ -204,7 +204,7 @@ elif pml=="non":
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
-		print ("Arracher l'âme d'un puissant demon pour nourrir Frostmourne... (tuer le demon primordial lvl 20)")
+		print ("Arracher l'âme d'un puissant demon pour nourrir Frostmourne... (tuer le demon primordial lvl 30)")
 		print (" ")
 		continuer=input("[enter]")
 		print (" ")
@@ -275,7 +275,7 @@ while int(pal)<100:
 		print ("Quête : "+str(immortal)+"/50 000 PV gagnés")
 		print ("Quête : "+str(totalpv)+"/1070 PV atteint")
 	elif int(norfend)==1:
-		print ("Quête : "+str(amedemo)+"/1 demon primordial lvl 20 tué")
+		print ("Quête : "+str(amedemo)+"/1 demon primordial lvl 30 tué")
 		print ("Quête : "+str(frost)+"/278 force atteinte")
 	elif int(exode)==1:
 		print ("Quête : "+str(armudemo)+"/10 000 defense enlevée")
@@ -541,8 +541,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str(degat//2)+" PV !")
-						vie=vie+degat//2
+						print (str(nom)+" gagne "+str(degat//3)+" PV !")
+						vie=vie+degat//3
 						print (" ")
 						print (" ")
 						bloodstack=bloodstack+1
@@ -1345,7 +1345,7 @@ while int(pal)<100:
 				print (" ")
 				print (" ")
 				if str(choix1)=="10":
-					if int(pal)==10:
+					if int(pal)==20:
 						amedemo=1
 					pal=pal+10
 					lot=input("Vous ouvrez le coffre de loot...")
@@ -2225,8 +2225,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(degat//2)+" PV !")
-							vie=vie+degat//2
+							print (str(nom)+" gagne "+str(degat//3)+" PV !")
+							vie=vie+degat//3
 							print (" ")
 							print (" ")
 							bloodstack=bloodstack+1
