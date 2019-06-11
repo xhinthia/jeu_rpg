@@ -1,25 +1,27 @@
+import random
+
 def degat_pv(force,vieup,lootpv,defensem,degpv,keltu,ritsang):
 	print (" ")
 	if int(keltu)==2:
 		if int(ritsang)<200:
-			degat=(110+vieup+lootpv)*10//10-defensem
+			degat=(110+vieup+lootpv)*4//10-defensem
 		elif int(ritsang)>=200 and int(ritsang)<400:
-			degat=(110+vieup+lootpv)*11//10-defensem
+			degat=(110+vieup+lootpv)*5//10-defensem
 		elif int(ritsang)>=400 and int(ritsang)<600:
-			degat=(110+vieup+lootpv)*12//10-defensem
+			degat=(110+vieup+lootpv)*6//10-defensem
 		elif int(ritsang)>=600:
-			degat=(110+vieup+lootpv)*13//10-defensem
+			degat=(110+vieup+lootpv)*7//10-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degpv)<200:
-			degat=(110+vieup+lootpv)-defensem
+			degat=(110+vieup+lootpv)*3//10-defensem
 		elif int(degpv)>=200 and int(degpv)<400:
-			degat=(110+vieup+lootpv)*11//10-defensem
+			degat=(110+vieup+lootpv)*4//10-defensem
 		elif int(degpv)>=400 and int(degpv)<600:
-			degat=(110+vieup+lootpv)*12//10-defensem
+			degat=(110+vieup+lootpv)*5//10-defensem
 		elif int(degpv)>=600:
-			degat=(110+vieup+lootpv)*13//10-defensem
+			degat=(110+vieup+lootpv)*6//10-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
@@ -187,29 +189,47 @@ def pacte_sang(defensem,pacte):
 def transfert(defense,trans):
 	print (" ")
 	if int(trans)<200:
-		buff=defense*4
+		buff=defense*10
 	elif int(trans)>=200 and int(trans)<400:
-		buff=defense*45//10
+		buff=defense*11
 	elif int(trans)>=400 and int(trans)<600:
-		buff=defense*5
+		buff=defense*12
 	elif int(trans)>=600:
-		buff=defense*55//10
+		buff=defense*13
 	if int(buff)<0:
 		buff=0
 	return buff
 
-def absorption(vie,defensem,bloodstack,abso):
+def absorption(lvl,vie,defensem,bloodstack,abso):
 	print (" ")
-	if i+nt(abso)<200:
-		degat=bloodstack*100*bloodstack-defensem
-	elif int(abso)>=200 and int(abso)<400:
-		degat=bloodstack*102*bloodstack-defensem
-	elif int(abso)>=400 and int(abso)<600:
-		degat=bloodstack*104*bloodstack-defensem
-	elif int(abso)>=600:
-		degat=bloodstack*107*bloodstack-defensem
-	if int(degat)<0:
-		degat=0
+	imax=(bloodstack*lvl)//10
+	liste = [47,49,51,53,55]
+	impec= [1,2,3,4,5,6,7,8,9]	
+	i=0
+	degat=0
+	while int(i)<int(imax):
+		a=random.choice(liste)
+		b=random.choice(impec)
+		if int(b)==1:
+			print ("-"+str(a)+" PV !")
+		elif int(b)==2:
+			print ("	-"+str(a)+" PV !")
+		elif int(b)==3:
+			print ("		-"+str(a)+" PV !")
+		elif int(b)==4:
+			print ("			-"+str(a)+" PV !")
+		elif int(b)==5:
+			print ("				-"+str(a)+" PV !")
+		elif int(b)==6:
+			print ("					-"+str(a)+" PV !")
+		elif int(b)==7:
+			print ("						-"+str(a)+" PV !")
+		elif int(b)==8:
+			print ("							-"+str(a)+" PV !")
+		elif int(b)==9:
+			print ("								-"+str(a)+" PV !")
+		i=i+1
+		degat=degat+a
 	return degat
 
 def poigne_mort(forcem,poigne):

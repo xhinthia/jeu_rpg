@@ -406,7 +406,7 @@ while int(pal)<100:
 	print ("[8] Demon lvl "+str(8+pal))
 	print ("[9] Demon lvl "+str(9+pal))
 	if int(pal)==90:
-		print ("[10] Demon primordial lvl "+str(10+pal)+" , gardien de la porte")
+		print ("[10] Demon infernal, gardien des portails")
 	else:
 		print ("[10] Demon primordial lvl "+str(10+pal))
 	print ("[0] quitter")
@@ -438,11 +438,18 @@ while int(pal)<100:
 	elif str(choix1)=="10":
 		lvlm=10+pal
 	if str(choix1)=="10":
-		nomm="Demon primordial lvl "+str(lvlm)
-		viem=415+240*lvlm
-		forcem=(41+3*lvlm)//2
-		defensem=27+8*lvlm
-		vitessem=(15+1*lvlm)//2
+		if int(pal)==90:
+			nomm="Demon infernal, gardien des portails"
+			viem=415+500*lvlm
+			forcem=(41+3*lvlm)//4
+			defensem=27+8*lvlm
+			vitessem=(15+1*lvlm)//4
+		else:
+			nomm="Demon primordial lvl "+str(lvlm)
+			viem=415+240*lvlm
+			forcem=(41+3*lvlm)//2
+			defensem=27+8*lvlm
+			vitessem=(15+1*lvlm)//2
 	else:
 		nomm="Demon lvl "+str(lvlm)
 		viem=415+120*lvlm
@@ -541,8 +548,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str(degat//3)+" PV !")
-						vie=vie+degat//3
+						print (str(nom)+" gagne "+str(degat//6)+" PV !")
+						vie=vie+degat//6
 						print (" ")
 						print (" ")
 						bloodstack=bloodstack+1
@@ -633,14 +640,17 @@ while int(pal)<100:
 							print (" ")
 						continuer=input("[enter]")
 					elif str(choix3)=="4" and int(pal)>=60:
-						degat=absorption(vie,defensem,bloodstack,abso)
 						print (" ")
 						print (" ")
 						print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-						print ("Et infligez un coup dévastateur à votre adversaire !!!")
+						print ("Et dans un coup violent, faites bouillir le sang de votre adversaire !!!")
 						print (" ")
 						coup=input("[enter]")
+						degat=absorption(lvl,vie,defensem,bloodstack,abso)
 						viem=viem-degat
+						print (" ")
+						print (" ")
+						continuer=input("[enter]")
 						print (" ")
 						print (" ")
 						print (str(nomm)+" perd "+str(degat)+" PV !")
@@ -651,18 +661,6 @@ while int(pal)<100:
 						print (" ")
 						print (" ")
 						abso=abso+1
-						if int(abso)==200 or int(abso)==400 or int(abso)==600:
-							print ("--------------------------------------------------------------------------------------")
-							print ("                              ABSORPTION LVL UP !!!                              ")
-							print ("--------------------------------------------------------------------------------------")
-							print (" ")
-							print (" ")
-						else:
-							print ("--------------------------------------------------------------------------------------")
-							print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-							print ("--------------------------------------------------------------------------------------")
-							print (" ")
-							print (" ")
 						continuer=input("[enter]")
 					else:
 						pass
@@ -1152,8 +1150,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str(degat//3)+" PV !")
-						vie=vie+degat//3
+						print (str(nom)+" gagne "+str(degat//8)+" PV !")
+						vie=vie+degat//8
 						print (" ")
 						jeu=1
 						print (" ")
@@ -2225,8 +2223,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
+							print (str(nom)+" gagne "+str(degat//6)+" PV !")
+							vie=vie+degat//6
 							print (" ")
 							print (" ")
 							bloodstack=bloodstack+1
@@ -2317,14 +2315,17 @@ while int(pal)<1000000:
 								print (" ")
 							continuer=input("[enter]")
 						elif str(choix3)=="4" and int(pal)>=60:
-							degat=absorption(vie,defensem,bloodstack,abso)
 							print (" ")
 							print (" ")
 							print ("Vous absorbez toutes les stacks de sang dans votre poing...")
-							print ("Et infligez un coup dévastateur à votre adversaire !!!")
+							print ("Et dans un coup violent, faites bouillir le sang de votre adversaire !!!")
 							print (" ")
 							coup=input("[enter]")
+							degat=absorption(lvl,vie,defensem,bloodstack,abso)
 							viem=viem-degat
+							print (" ")
+							print (" ")
+							continuer=input("[enter]")
 							print (" ")
 							print (" ")
 							print (str(nomm)+" perd "+str(degat)+" PV !")
@@ -2335,18 +2336,7 @@ while int(pal)<1000000:
 							print (" ")
 							print (" ")
 							abso=abso+1
-							if int(abso)==200 or int(abso)==400 or int(abso)==600:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              ABSORPTION LVL UP !!!                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
-							else:
-								print ("--------------------------------------------------------------------------------------")
-								print ("                              "+str(ABSO)+"e ABSORPTION !                              ")
-								print ("--------------------------------------------------------------------------------------")
-								print (" ")
-								print (" ")
+							jeu=1
 							continuer=input("[enter]")
 						else:
 							pass
@@ -2836,8 +2826,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str(degat//3)+" PV !")
-							vie=vie+degat//3
+							print (str(nom)+" gagne "+str(degat//8)+" PV !")
+							vie=vie+degat//8
 							print (" ")
 							jeu=1
 							print (" ")
