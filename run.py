@@ -439,8 +439,8 @@ while int(pal)<100:
 		lvlm=10+pal
 	if str(choix1)=="10":
 		nomm="Demon primordial lvl "+str(lvlm)
-		viem=115+25*lvlm
-		forcem=34+8*lvlm
+		viem=115+48*lvlm
+		forcem=34+3*lvlm
 		defensem=16+3*lvlm
 		vitessem=15+1*lvlm
 	else:
@@ -2940,8 +2940,8 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-							else:
-								pass
+						else:
+							pass
 				if int(viem)<=0:
 					print (" ")
 					print (" ")
