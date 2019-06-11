@@ -2940,8 +2940,8 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 							continuer=input("[enter]")
-							else:
-								pass
+						else:
+							pass
 				if int(viem)<=0:
 					print (" ")
 					print (" ")
