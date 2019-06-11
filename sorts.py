@@ -243,13 +243,13 @@ def renforcement(force,renfo):
 def aneantissement(force,forcem,defensem,anean):
 	print (" ")
 	if int(anean)<200:
-		degat=force*9//5-defensem
+		degat=force*200//40-defensem
 	elif int(anean)>=200 and int(anean)<400:
-		degat=force*2-defensem
+		degat=force*210//40-defensem
 	elif int(anean)>=400 and int(anean)<600:
-		degat=force*215//100-defensem
+		degat=force*220//40-defensem
 	elif int(anean)>=600:
-		degat=force*235//100-defensem
+		degat=force*230//40-defensem
 	if int(degat)<0:
 		degat=0
 	return degat	

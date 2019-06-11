@@ -755,8 +755,8 @@ while int(pal)<100:
 						print (" ")
 						jeu=1
 						print (" ")
-						print (str(nom)+" perd "+str(degat//10)+" de force !")
-						force=force-degat//10
+						print (str(nom)+" perd "+str((38+forceup+lootforce)*15//100)+" de force !")
+						force=force-(38+forceup+lootforce)*15//100
 						if int(force)<0:
 							force=0
 						print (" ")
@@ -2439,8 +2439,8 @@ while int(pal)<1000000:
 							print (" ")
 							jeu=1
 							print (" ")
-							print (str(nom)+" perd "+str(degat//10)+" de force !")
-							force=force-degat//10
+							print (str(nom)+" perd "+str((38+forceup+lootforce)*15//100)+" de force !")
+							force=force-(38+forceup+lootforce)*15//100
 							if int(force)<0:
 								force=0
 							print (" ")
