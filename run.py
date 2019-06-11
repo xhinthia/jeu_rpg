@@ -137,7 +137,7 @@ elif pml=="non":
 	ame=0
 	tuto=0
 	quete2=0
-	expmax=5*lvl+lvl
+	expmax=7*lvl
 	if int(tuto)==0:
 		tuto_detail(nom)
 		tuto=1
@@ -291,7 +291,7 @@ while int(pal)<100:
 		print ("Quête : "+str(gulvit)+"/79 vitesse atteinte")
 	print (" ")
 	print (" ")
-	expmax=5*lvl+lvl
+	expmax=8*lvl
 	if int(immortal)>=50000 and int(totalpv)>=1070 and int(keltu)==1:
 		keltu=2
 		immortal=0
@@ -1274,7 +1274,7 @@ while int(pal)<100:
 					print (" ")
 					print (" ")
 				exp=exp+lvlm
-				expmax=5*lvl+lvl
+				expmax=8*lvl				
 				if int(exp)>=int(expmax):
 					lvl=lvl+1
 					print ("<><><><><><><><>")
@@ -1284,7 +1284,7 @@ while int(pal)<100:
 					print ("<><><><><><><><>")
 					print (" ")
 					print (" ")
-					exp=0
+					exp=exp-expmax
 					if keltu==1 or keltu==2:
 						print ("+32 PV")
 						print ("+2 Force")
@@ -1779,7 +1779,7 @@ print (" ")
 print (" ")
 print (" ")
 while int(pal)<1000000:
-	expmax=5*lvl+lvl
+	expmax=8*lvl
 	print ("[1] Royaume des démons (caractéristiques équilibrées)")
 	print ("[2] Lac des immortels (conseil : avoir beaucoup de PV)")
 	print ("[3] Terres des barbares (conseil : avoir beaucoup d'armure)")
@@ -3400,7 +3400,7 @@ while int(pal)<1000000:
 							print ("Préparez-vous, le combat sera rude !")
 							print (" ")
 					exp=exp+lvlm
-					expmax=5*lvl+lvl
+					expmax=8*lvl					
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -3410,7 +3410,7 @@ while int(pal)<1000000:
 						print ("<><><><><><><><>")
 						print (" ")
 						print (" ")
-						exp=0
+						exp=exp-expmax
 						if keltu==1 or keltu==2:
 							print ("+24 PV")
 							print ("+2 Force")
