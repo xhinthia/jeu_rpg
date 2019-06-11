@@ -442,7 +442,7 @@ while int(pal)<100:
 		viem=115+48*lvlm
 		forcem=34+3*lvlm
 		defensem=16+3*lvlm
-		vitessem=15+1*lvlm
+		vitessem=10+1*lvlm
 	else:
 		nomm="Demon lvl "+str(lvlm)
 		viem=105+21*lvlm
