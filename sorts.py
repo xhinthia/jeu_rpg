@@ -4,24 +4,24 @@ def degat_pv(force,defensem,degpv,keltu,ritsang):
 	print (" ")
 	if int(keltu)==2:
 		if int(ritsang)<200:
-			degat=force*355//100-defensem
+			degat=force*350//100-defensem
 		elif int(ritsang)>=200 and int(ritsang)<400:
-			degat=force*365//100-defensem
+			degat=force*360//100-defensem
 		elif int(ritsang)>=400 and int(ritsang)<600:
-			degat=force*375//100-defensem
+			degat=force*370//100-defensem
 		elif int(ritsang)>=600:
-			degat=force*385//100-defensem
+			degat=force*380//100-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degpv)<200:
-			degat=force*350//100-defensem
+			degat=force*345//100-defensem
 		elif int(degpv)>=200 and int(degpv)<400:
-			degat=force*360//100-defensem
+			degat=force*355//100-defensem
 		elif int(degpv)>=400 and int(degpv)<600:
-			degat=force*370//100-defensem
+			degat=force*365//100-defensem
 		elif int(degpv)>=600:
-			degat=force*380//100-defensem
+			degat=force*375//100-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
@@ -54,24 +54,24 @@ def degat_defense(force,defensem,degdef,exode,war):
 	print (" ")
 	if int(exode)==2:
 		if int(war)<200:
-			degat=force*355//100-defensem
+			degat=force*345//100-defensem
 		elif int(war)>=200 and int(war)<400:
-			degat=force*365//100-defensem
+			degat=force*355//100-defensem
 		elif int(war)>=400 and int(war)<600:
-			degat=force*375//100-defensem
+			degat=force*365//100-defensem
 		elif int(war)>=600:
-			degat=force*385//100-defensem
+			degat=force*375//100-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degdef)<200:
-			degat=force*350//100-defensem
+			degat=force*340//100-defensem
 		elif int(degdef)>=200 and int(degdef)<400:
-			degat=force*360//100-defensem
+			degat=force*350//100-defensem
 		elif int(degdef)>=400 and int(degdef)<600:
-			degat=force*370//100-defensem
+			degat=force*360//100-defensem
 		elif int(degdef)>=600:
-			degat=force*380//100-defensem
+			degat=force*370//100-defensem
 		if int(degat)<0:
 			degat=0
 	return degat
@@ -79,24 +79,24 @@ def degat_vitesse(force,stackvit,defensem,degvit,azzin,oth):
 	print (" ")
 	if int(azzin)==2:
 		if int(oth)<200:
-			degat=force*(350+22*stackvit)//100-defensem
+			degat=force*(320+22*stackvit)//100-defensem
 		elif int(oth)>=200 and int(oth)<400:
-			degat=force*(350+27*stackvit)//100-defensem
+			degat=force*(320+27*stackvit)//100-defensem
 		elif int(oth)>=400 and int(oth)<600:
-			degat=force*(350+32*stackvit)//100-defensem
+			degat=force*(320+32*stackvit)//100-defensem
 		elif int(oth)>=600:
-			degat=force*(350+35*stackvit)//100-defensem
+			degat=force*(320+35*stackvit)//100-defensem
 		if int(degat)<0:
 			degat=0
 	else:
 		if int(degvit)<200:
-			degat=force*(350+20*stackvit)//100-defensem
+			degat=force*(330+20*stackvit)//100-defensem
 		elif int(degvit)>=200 and int(degvit)<400:
-			degat=force*(360+20*stackvit)//100-defensem
+			degat=force*(340+20*stackvit)//100-defensem
 		elif int(degvit)>=400 and int(degvit)<600:
-			degat=force*(370+20*stackvit)//100-defensem
+			degat=force*(350+20*stackvit)//100-defensem
 		elif int(degvit)>=600:
-			degat=force*(380+20*stackvit)//100-defensem
+			degat=force*(360+20*stackvit)//100-defensem
 		if int(degat)<0:
 			degat=0
 	return degat

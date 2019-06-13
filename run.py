@@ -291,7 +291,7 @@ while int(pal)<100:
 		print ("Quête : "+str(gulvit)+"/1600 vitesse atteinte")
 	print (" ")
 	print (" ")
-	expmax=8*lvl
+	expmax=7*lvl
 	if int(immortal)>=100000 and int(totalpv)>=5250 and int(keltu)==1:
 		keltu=2
 		immortal=0
@@ -440,22 +440,22 @@ while int(pal)<100:
 	if str(choix1)=="10":
 		if int(pal)==90:
 			nomm="Demon infernal, gardien des portails"
-			viem=15750+1575*lvlm
-			forcem=250+25*lvlm
-			defensem=700+70*lvlm
-			vitessem=80+8*lvlm
+			viem=14175+1575*lvlm
+			forcem=225+25*lvlm
+			defensem=630+70*lvlm
+			vitessem=72+8*lvlm
 		else:
 			nomm="Demon primordial lvl "+str(lvlm)
-			viem=13125+1312*lvlm
-			forcem=300+30*lvlm
-			defensem=700+70*lvlm
-			vitessem=170+17*lvlm
+			viem=11813+1312*lvlm
+			forcem=270+30*lvlm
+			defensem=630+70*lvlm
+			vitessem=153+17*lvlm
 	else:
 		nomm="Demon lvl "+str(lvlm)
-		viem=10500+1050*lvlm
-		forcem=320+32*lvlm
-		defensem=700+70*lvlm
-		vitessem=350+35*lvlm
+		viem=9450+1050*lvlm
+		forcem=288+32*lvlm
+		defensem=630+70*lvlm
+		vitessem=315+35*lvlm
 	tour=0
 	stackvit=1
 	bloodstack=0
@@ -1276,7 +1276,7 @@ while int(pal)<100:
 				print (" ")
 				print (" ")
 				exp=exp+lvlm
-				expmax=8*lvl				
+				expmax=7*lvl				
 				if int(exp)>=int(expmax):
 					lvl=lvl+1
 					print ("<><><><><><><><>")
@@ -1781,7 +1781,7 @@ print (" ")
 print (" ")
 print (" ")
 while int(pal)<1000000:
-	expmax=8*lvl
+	expmax=7*lvl
 	print ("[1] Royaume des démons (caractéristiques équilibrées)")
 	print ("[2] Lac des immortels (conseil : avoir beaucoup de PV)")
 	print ("[3] Terres des barbares (conseil : avoir beaucoup d'armure)")
@@ -1799,30 +1799,30 @@ while int(pal)<1000000:
 		exit()
 	elif str(choix5)=="1":
 		if int(keltu)==2:
-			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((110+vieup+lootpv)//32)+")")
-			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((110+vieup+lootpv)//64)+")")
-			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((110+vieup+lootpv)//64)+")")
+			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((1200+vieup+lootpv)//25)+")")
+			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((1200+vieup+lootpv)//64)+")")
+			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((1200+vieup+lootpv)//64)+")")
 		elif int(norfend)==2:
-			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str((38+forceup+lootforce)//2)+")")
-			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((38+forceup+lootforce)//16)+")")
-			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((38+forceup+lootforce)//16)+")")
+			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((800+forceup+lootforce)//9)+")")
+			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((800+forceup+lootforce)//45)+")")
+			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((800+forceup+lootforce)//45)+")")
 		elif int(exode)==2:
-			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+defenseup+lootdefense)+")")
-			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+defenseup+lootdefense)//4)+")")
-			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((19+defenseup+lootdefense)//8)+")")
+			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
+			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
+			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
 		elif int(azzin)==2:
-			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+vitesseup+lootvitesse)+")")
-			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+vitesseup+lootvitesse)//4)+")")
-			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((19+vitesseup+lootvitesse)//8)+")")
-			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
+			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
+			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
-			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 
 		print ("[5] Demon malsain lvl "+str(5+pal))
 		print ("[6] Demon malsain lvl "+str(6+pal)+"				Niveau = "+str(lvl))
@@ -1833,30 +1833,30 @@ while int(pal)<1000000:
 		print ("[0] Changer de portail")
 	elif str(choix5)=="2":
 		if int(keltu)==2:
-			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((110+vieup+lootpv)//32)+")")
-			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((110+vieup+lootpv)//64)+")")
-			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((110+vieup+lootpv)//64)+")")
+			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((1200+vieup+lootpv)//25)+")")
+			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((1200+vieup+lootpv)//64)+")")
+			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((1200+vieup+lootpv)//64)+")")
 		elif int(norfend)==2:
-			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str((38+forceup+lootforce)//2)+")")
-			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((38+forceup+lootforce)//16)+")")
-			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((38+forceup+lootforce)//16)+")")
+			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((800+forceup+lootforce)//9)+")")
+			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((800+forceup+lootforce)//45)+")")
+			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((800+forceup+lootforce)//45)+")")
 		elif int(exode)==2:
-			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+defenseup+lootdefense)+")")
-			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+defenseup+lootdefense)//4)+")")
-			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((19+defenseup+lootdefense)//8)+")")
+			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
+			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
+			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
 		elif int(azzin)==2:
-			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+vitesseup+lootvitesse)+")")
-			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+vitesseup+lootvitesse)//4)+")")
-			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((19+vitesseup+lootvitesse)//8)+")")
-			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
+			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
+			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
-			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 
 		print ("[5] Garde immortel lvl "+str(5+pal))
 		print ("[6] Garde immortel lvl "+str(6+pal)+"				Niveau = "+str(lvl))
@@ -1868,30 +1868,30 @@ while int(pal)<1000000:
 
 	elif str(choix5)=="3":
 		if int(keltu)==2:
-			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((110+vieup+lootpv)//32)+")")
-			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((110+vieup+lootpv)//64)+")")
-			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((110+vieup+lootpv)//64)+")")
+			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((1200+vieup+lootpv)//25)+")")
+			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((1200+vieup+lootpv)//64)+")")
+			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((1200+vieup+lootpv)//64)+")")
 		elif int(norfend)==2:
-			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str((38+forceup+lootforce)//2)+")")
-			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((38+forceup+lootforce)//16)+")")
-			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((38+forceup+lootforce)//16)+")")
+			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((800+forceup+lootforce)//9)+")")
+			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((800+forceup+lootforce)//45)+")")
+			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((800+forceup+lootforce)//45)+")")
 		elif int(exode)==2:
-			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+defenseup+lootdefense)+")")
-			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+defenseup+lootdefense)//4)+")")
-			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((19+defenseup+lootdefense)//8)+")")
+			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
+			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
+			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
 		elif int(azzin)==2:
-			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+vitesseup+lootvitesse)+")")
-			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+vitesseup+lootvitesse)//4)+")")
-			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((19+vitesseup+lootvitesse)//8)+")")
-			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
+			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
+			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
-			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 
 		print ("[5] Guerrier barbare lvl "+str(5+pal))
 		print ("[6] Guerrier barbare lvl "+str(6+pal)+"				Niveau = "+str(lvl))
@@ -1903,30 +1903,30 @@ while int(pal)<1000000:
 
 	elif str(choix5)=="4":
 		if int(keltu)==2:
-			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((110+vieup+lootpv)//32)+")")
-			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((110+vieup+lootpv)//64)+")")
-			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((110+vieup+lootpv)//64)+")")
+			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((1200+vieup+lootpv)//25)+")")
+			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((1200+vieup+lootpv)//64)+")")
+			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((1200+vieup+lootpv)//64)+")")
 		elif int(norfend)==2:
-			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str((38+forceup+lootforce)//2)+")")
-			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((38+forceup+lootforce)//16)+")")
-			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((38+forceup+lootforce)//16)+")")
+			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((800+forceup+lootforce)//9)+")")
+			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((800+forceup+lootforce)//45)+")")
+			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((800+forceup+lootforce)//45)+")")
 		elif int(exode)==2:
-			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+defenseup+lootdefense)+")")
-			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+defenseup+lootdefense)//4)+")")
-			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((19+defenseup+lootdefense)//8)+")")
+			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
+			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
+			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
 		elif int(azzin)==2:
-			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+vitesseup+lootvitesse)+")")
-			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+vitesseup+lootvitesse)//4)+")")
-			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((19+vitesseup+lootvitesse)//8)+")")
-			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
+			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
+			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
-			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 
 		print ("[5] Elementaire de pierre lvl "+str(5+pal))
 		print ("[6] Elementaire de pierre lvl "+str(6+pal)+"				Niveau = "+str(lvl))
@@ -1938,30 +1938,30 @@ while int(pal)<1000000:
 
 	elif str(choix5)=="5":
 		if int(keltu)==2:
-			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((110+vieup+lootpv)//32)+")")
-			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((110+vieup+lootpv)//64)+")")
-			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((110+vieup+lootpv)//64)+")")
+			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((1200+vieup+lootpv)//25)+")")
+			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((1200+vieup+lootpv)//64)+")")
+			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((1200+vieup+lootpv)//64)+")")
 		elif int(norfend)==2:
-			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str((38+forceup+lootforce)//2)+")")
-			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((38+forceup+lootforce)//16)+")")
-			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((38+forceup+lootforce)//16)+")")
+			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((800+forceup+lootforce)//9)+")")
+			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((800+forceup+lootforce)//45)+")")
+			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((800+forceup+lootforce)//45)+")")
 		elif int(exode)==2:
-			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+defenseup+lootdefense)+")")
-			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+defenseup+lootdefense)//4)+")")
-			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse)+" (+"+str((19+defenseup+lootdefense)//8)+")")
+			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
+			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
+			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
 		elif int(azzin)==2:
-			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv)+" (+"+str(19+vitesseup+lootvitesse)+")")
-			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce)+" (+"+str((19+vitesseup+lootvitesse)//4)+")")
-			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense)+" (+"+str((19+vitesseup+lootvitesse)//8)+")")
-			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
+			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
+			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
-			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(110+vieup+lootpv))
-			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(38+forceup+lootforce))
-			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(19+defenseup+lootdefense))
-			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(19+vitesseup+lootvitesse))
+			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
+			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce))
+			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
+			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 
 		print ("[5] Contrebandier lvl "+str(5+pal))
 		print ("[6] Contrebandier lvl "+str(6+pal)+"				Niveau = "+str(lvl))
@@ -1982,10 +1982,10 @@ while int(pal)<1000000:
 		if str(choix5)=="1":
 			lvlm=10+paldemo
 			nomm="Maître démoniaque lvl "+str(lvlm)
-			viem=125+37*lvlm
-			forcem=39+9*lvlm
-			defensem=17+4*lvlm
-			vitessem=16+1*lvlm
+			viem=11900+1392*lvlm
+			forcem=270+32*lvlm
+			defensem=630+71*lvlm
+			vitessem=155+18*lvlm
 		elif str(choix5)=="2":
 			lvlm=10+palimmo
 			nomm="Roi immortel lvl "+str(lvlm)
@@ -2035,10 +2035,10 @@ while int(pal)<1000000:
 			elif str(choix1)=="9":
 				lvlm=9+paldemo
 			nomm="Demon malsain lvl "+str(lvlm)
-			viem=115+25*lvlm
-			forcem=34+8*lvlm
-			defensem=16+3*lvlm
-			vitessem=15+1*lvlm
+			viem=9450+1100*lvlm
+			forcem=290+35*lvlm
+			defensem=630+71*lvlm
+			vitessem=315+36*lvlm
 		elif str(choix5)=="2":
 			if str(choix1)=="1":
 				lvlm=1+palimmo
@@ -2059,10 +2059,10 @@ while int(pal)<1000000:
 			elif str(choix1)=="9":
 				lvlm=9+palimmo
 			nomm="Garde immortel lvl "+str(lvlm)
-			viem=1500+600*lvlm
+			viem=12500+10150*lvlm
 			forcem=5+2*lvlm
-			defensem=10+3*lvlm
-			vitessem=15+1*lvlm
+			defensem=10+1*lvlm
+			vitessem=42+4*lvlm
 		elif str(choix5)=="3":
 			if str(choix1)=="1":
 				lvlm=1+palbarb
@@ -2083,10 +2083,10 @@ while int(pal)<1000000:
 			elif str(choix1)=="9":
 				lvlm=9+palbarb
 			nomm="Guerrier barbare lvl "+str(lvlm)
-			viem=105+110*lvlm
-			forcem=87+7*lvlm
-			defensem=20+2*lvlm
-			vitessem=15+1*lvlm
+			viem=10584+1232*lvlm
+			forcem=545+70*lvlm
+			defensem=330+34*lvlm
+			vitessem=155+18*lvlm
 		elif str(choix5)=="4":
 			if str(choix1)=="1":
 				lvlm=1+palelem
@@ -2107,10 +2107,10 @@ while int(pal)<1000000:
 			elif str(choix1)=="9":
 				lvlm=9+palelem
 			nomm="Elementaire de pierre lvl "+str(lvlm)
-			viem=105+30*lvlm
-			forcem=30+6*lvlm
-			defensem=20+8*lvlm
-			vitessem=15+1*lvlm
+			viem=9450+1100*lvlm
+			forcem=140+16*lvlm
+			defensem=1210+140*lvlm
+			vitessem=315+36*lvlm
 		elif str(choix5)=="5":
 			if str(choix1)=="1":
 				lvlm=1+palfufu
@@ -2131,39 +2131,39 @@ while int(pal)<1000000:
 			elif str(choix1)=="9":
 				lvlm=9+palfufu
 			nomm="Contrebandier lvl "+str(lvlm)
-			viem=105+30*lvlm
-			forcem=33+4*lvlm
-			defensem=16+2*lvlm
-			vitessem=20+4*lvlm
+			viem=10584+1232*lvlm
+			forcem=145+17*lvlm
+			defensem=150+16*lvlm
+			vitessem=615+61*lvlm
 		tour=0
 		stackvit=1
 		bloodstack=0
 		degveng=0
 		if int(keltu)==2:
-			vie=110+vieup+lootpv
-			force=38+forceup+lootforce+(110+vieup+lootpv)//32
-			defense=19+defenseup+lootdefense+(110+vieup+lootpv)//64
-			vitesse=19+vitesseup+lootvitesse+(110+vieup+lootpv)//64
+			vie=1200+vieup+lootpv
+			force=800+forceup+lootforce+(1200+vieup+lootpv)//25
+			defense=400+defenseup+lootdefense+(1200+vieup+lootpv)//64
+			vitesse=400+vitesseup+lootvitesse+(1200+vieup+lootpv)//64
 		elif int(norfend)==2:
-			vie=110+vieup+lootpv+38+(forceup+lootforce)//2
-			force=38+forceup+lootforce
-			defense=19+defenseup+lootdefense+(38+forceup+lootforce)//16
-			vitesse=19+vitesseup+lootvitesse+(38+forceup+lootforce)//16
+			vie=1200+vieup+lootpv+(800+forceup+lootforce)//9
+			force=800+forceup+lootforce
+			defense=400+defenseup+lootdefense+(800+forceup+lootforce)//45
+			vitesse=400+vitesseup+lootvitesse+(800+forceup+lootforce)//45
 		elif int(exode)==2:
-			vie=110+vieup+lootpv+(19+defenseup+lootdefense)
-			force=38+forceup+lootforce+(19+defenseup+lootdefense)//4
-			defense=19+defenseup+lootdefense
-			vitesse=19+vitesseup+lootvitesse+(19+defenseup+lootdefense)//8
+			vie=1200+vieup+lootpv+(400+defenseup+lootdefense)*9//2
+			force=800+forceup+lootforce+(400+defenseup+lootdefense)//9
+			defense=400+defenseup+lootdefense
+			vitesse=400+vitesseup+lootvitesse+(400+defenseup+lootdefense)*45//2
 		elif int(azzin)==2:
-			vie=110+vieup+lootpv+(19+vitesseup+lootvitesse)
-			force=38+forceup+lootforce+(19+vitesseup+lootvitesse)//4
-			defense=19+defenseup+lootdefense+(19+vitesseup+lootvitesse)//8
-			vitesse=19+vitesseup+lootvitesse
+			vie=1200+vieup+lootpv+(400+vitesseup+lootvitesse)*9//2
+			force=800+forceup+lootforce+(400+vitesseup+lootvitesse)//9
+			defense=400+defenseup+lootdefense+(400+vitesseup+lootvitesse)*45//2
+			vitesse=400+vitesseup+lootvitesse
 		else:
-			vie=110+vieup+lootpv
-			force=38+forceup+lootforce
-			defense=19+defenseup+lootdefense
-			vitesse=19+vitesseup+lootvitesse
+			vie=1200+vieup+lootpv
+			force=800+forceup+lootforce
+			defense=400+defenseup+lootdefense
+			vitesse=400+vitesseup+lootvitesse
 		atb=0
 		atbm=0
 		atbmax=vitesse*vitessem
@@ -3402,7 +3402,7 @@ while int(pal)<1000000:
 							print ("Préparez-vous, le combat sera rude !")
 							print (" ")
 					exp=exp+lvlm
-					expmax=8*lvl					
+					expmax=7*lvl					
 					if int(exp)>=int(expmax):
 						lvl=lvl+1
 						print ("<><><><><><><><>")
@@ -3414,58 +3414,58 @@ while int(pal)<1000000:
 						print (" ")
 						exp=exp-expmax
 						if keltu==1 or keltu==2:
-							print ("+24 PV")
-							print ("+2 Force")
-							print ("+1 Defense")
-							print ("+1 Vitesse")
-							vieup=vieup+24
-							forceup=forceup+2
-							defenseup=defenseup+1
-							vitesseup=vitesseup+1
+							print ("+135 PV")
+							print ("+70 Force")
+							print ("+35 Defense")
+							print ("+35 Vitesse")
+							vieup=vieup+135
+							forceup=forceup+70
+							defenseup=defenseup+35
+							vitesseup=vitesseup+35
 							print (" ")
 							print (" ")
 						if norfend==1 or norfend==2:
-							print ("+8 PV")
-							print ("+6 Force")
-							print ("+1 Defense")
-							print ("+1 Vitesse")
-							vieup=vieup+8
-							forceup=forceup+6
-							defenseup=defenseup+1
-							vitesseup=vitesseup+1
+							print ("+105 PV")
+							print ("+90 Force")
+							print ("+35 Defense")
+							print ("+35 Vitesse")
+							vieup=vieup+105
+							forceup=forceup+90
+							defenseup=defenseup+35
+							vitesseup=vitesseup+35
 							print (" ")
 							print (" ")
 						if exode==1 or exode==2:
-							print ("+8 PV")
-							print ("+2 Force")
-							print ("+4 Defense")
-							print ("+1 Vitesse")
-							vieup=vieup+8
-							forceup=forceup+2
-							defenseup=defenseup+4
-							vitesseup=vitesseup+1
+							print ("+105 PV")
+							print ("+70 Force")
+							print ("+45 Defense")
+							print ("+35 Vitesse")
+							vieup=vieup+105
+							forceup=forceup+70
+							defenseup=defenseup+45
+							vitesseup=vitesseup+35
 							print (" ")
 							print (" ")
 						if azzin==1 or azzin==2:
-							print ("+8 PV")
-							print ("+2 Force")
-							print ("+1 Defense")
-							print ("+4 Vitesse")
-							vieup=vieup+8
-							forceup=forceup+2
-							defenseup=defenseup+1
-							vitesseup=vitesseup+4
+							print ("+105 PV")
+							print ("+70 Force")
+							print ("+35 Defense")
+							print ("+45 Vitesse")
+							vieup=vieup+105
+							forceup=forceup+70
+							defenseup=defenseup+35
+							vitesseup=vitesseup+45
 							print (" ")
 							print (" ")
 						if corrup==1 or corrup==2:
-							print ("+16 PV")
-							print ("+4 Force")
-							print ("+2 Defense")
-							print ("+2 Vitesse")
-							vieup=vieup+16
-							forceup=forceup+4
-							defenseup=defenseup+2
-							vitesseup=vitesseup+2
+							print ("+120 PV")
+							print ("+80 Force")
+							print ("+40 Defense")
+							print ("+40 Vitesse")
+							vieup=vieup+120
+							forceup=forceup+80
+							defenseup=defenseup+40
+							vitesseup=vitesseup+40
 							print (" ")
 							print (" ")
 					print (" ")
