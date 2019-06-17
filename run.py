@@ -488,7 +488,7 @@ while int(pal)<100:
 	maladie=0
 	atb=0
 	atbm=0
-	atbmax=vitesse*vitessem
+	atbmax=10000
 	while int(vie)>0 and int(viem)>0:
 		while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
 			atb=atb+vitesse
@@ -1425,14 +1425,14 @@ while int(pal)<100:
 							print ("+"+str(90+9*pal//10)+" Vitesse !")
 							lootvitesse=lootvitesse+90+9*pal//10
 						elif str(leg)=="5":
-							print ("+"+str(250+5*pal//2)+" PV !")
-							print ("+"+str(170+17*pal//10)+" Force !")
-							print ("+"+str(90+9*pal//10)+" Defense !")
-							print ("+"+str(90+9*pal//10)+" Vitesse !")
-							lootpv=lootpv+250+5*pal//2
-							lootforce=lootforce+170+17*pal//10
-							lootdefense=lootdefense+90+9*pal//10
-							lootvitesse=lootvitesse+90+9*pal//10
+							print ("+"+str(180+18*pal//10)+" PV !")
+							print ("+"+str(50+5*pal//10)+" Force !")
+							print ("+"+str(25+25*pal//100)+" Defense !")
+							print ("+"+str(25+25*pal//100)+" Vitesse !")
+							lootpv=lootpv+180+18*pal//10
+							lootforce=lootforce+50+5*pal//10
+							lootdefense=lootdefense+25+25*pal//100
+							lootvitesse=lootvitesse+25+25*pal//100
 					print (" ")
 					print (" ")
 					continuer=input("[enter]")
@@ -1989,31 +1989,31 @@ while int(pal)<1000000:
 		elif str(choix5)=="2":
 			lvlm=10+palimmo
 			nomm="Roi immortel lvl "+str(lvlm)
-			viem=3000+700*lvlm
-			forcem=8+3*lvlm
-			defensem=12+4*lvlm
-			vitessem=16+1*lvlm
+			viem=15625+12687*lvlm
+			forcem=254+30*lvlm
+			defensem=10+1*lvlm
+			vitessem=20+2*lvlm
 		elif str(choix5)=="3":
 			lvlm=10+palbarb
 			nomm="Seigneur barbare lvl "+str(lvlm)
-			viem=125+120*lvlm
-			forcem=103+8*lvlm
-			defensem=36+2*lvlm
-			vitessem=16+1*lvlm
+			viem=13230+1540*lvlm
+			forcem=522+68*lvlm
+			defensem=330+34*lvlm
+			vitessem=76+9*lvlm
 		elif str(choix5)=="4":
 			lvlm=10+palelem
 			nomm="Elementaire instable lvl "+str(lvlm)
-			viem=120+32*lvlm
-			forcem=70+7*lvlm
-			defensem=30+10*lvlm
-			vitessem=16+1*lvlm
+			viem=11812+1375*lvlm
+			forcem=140+16*lvlm
+			defensem=1207+141*lvlm
+			vitessem=157+18*lvlm
 		elif str(choix5)=="5":
 			lvlm=10+palfufu
 			nomm="Capitaine lvl "+str(lvlm)
-			viem=115+32*lvlm
-			forcem=37+5*lvlm
-			defensem=18+3*lvlm
-			vitessem=25+6*lvlm
+			viem=13230+1540*lvlm
+			forcem=71+8*lvlm
+			defensem=150+16*lvlm
+			vitessem=625+67*lvlm
 	else:
 		if str(choix5)=="1":
 			if str(choix1)=="1":
@@ -2060,7 +2060,7 @@ while int(pal)<1000000:
 				lvlm=9+palimmo
 			nomm="Garde immortel lvl "+str(lvlm)
 			viem=12500+10150*lvlm
-			forcem=5+2*lvlm
+			forcem=287+31*lvlm
 			defensem=10+1*lvlm
 			vitessem=42+4*lvlm
 		elif str(choix5)=="3":
@@ -2166,7 +2166,7 @@ while int(pal)<1000000:
 			vitesse=400+vitesseup+lootvitesse
 		atb=0
 		atbm=0
-		atbmax=vitesse*vitessem
+		atbmax=10000
 		maladie=0
 		while int(vie)>0 and int(viem)>0:
 			while int(atb)<int(atbmax) and int(atbm)<int(atbmax):
@@ -2970,34 +2970,34 @@ while int(pal)<1000000:
 							if int(lootchoice)==1:
 								print ("Vous gagnez un coeur de demon !")
 								print (" ")
-								print ("+"+str(80+2*paldemo)+" PV !")
-								lootpv=lootpv+80+2*paldemo
+								print ("+"+str(250+3*paldemo)+" PV !")
+								lootpv=lootpv+250+3*paldemo
 							elif int(lootchoice)==2:
 								print ("Vous gagnez un bras de demon !")
 								print (" ")
-								print ("+"+str(20+paldemo//2)+" force !")
-								lootforce=lootforce+20+paldemo//2
+								print ("+"+str(170+20*paldemo//10)+" force !")
+								lootforce=lootforce+170+20*paldemo//10
 							elif int(lootchoice)==3:
 								print ("Vous gagnez un os de demon !")
 								print (" ")
-								print ("+"+str(10+paldemo//4)+" defense !")
-								lootdefense=lootdefense+10+paldemo//4
+								print ("+"+str(90+10*paldemo//10)+" defense !")
+								lootdefense=lootdefense+90+10*paldemo//10
 							elif int(lootchoice)==4:
 								print ("Vous gagnez une jambe de demon !")
 								print (" ")
-								print ("+"+str(10+paldemo//4)+" vitesse !")
-								lootvitesse=lootvitesse+10+paldemo//4
+								print ("+"+str(90+10*paldemo//10)+" vitesse !")
+								lootvitesse=lootvitesse+90+10*paldemo//10
 							elif int(lootchoice)==5:
 								print ("Vous gagnez une tête de demon !")
 								print (" ")
-								print ("+"+str(40+paldemo)+" PV !")
-								print ("+"+str(10+paldemo//4)+" force !")
-								print ("+"+str(5+paldemo//8)+" defense !")
-								print ("+"+str(5+paldemo//8)+" vitesse !")
-								lootpv=lootpv+40+paldemo
-								lootforce=lootforce+10+paldemo//4
-								lootdefense=lootdefense+5+paldemo//8
-								lootvitesse=lootvitesse+5+paldemo//8
+								print ("+"+str(180+5*paldemo//4)+" PV !")
+								print ("+"+str(80+17*paldemo//20)+" force !")
+								print ("+"+str(40+9*paldemo//20)+" defense !")
+								print ("+"+str(40+9*paldemo//20)+" vitesse !")
+								lootpv=lootpv+180+5*paldemo//4
+								lootforce=lootforce+80+17*paldemo//20
+								lootdefense=lootdefense+40+9*paldemo//20
+								lootvitesse=lootvitesse+40+9*paldemo//20
 							elif int(lootchoice)==6:
 								print ("|===================|")
 								print ("|                   |")
@@ -3022,64 +3022,64 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 								if str(leg)=="1":
-									print ("+"+str(80+2*paldemo)+" PV !")
-									lootpv=lootpv+80+2*paldemo
+									print ("+"+str(250+5*paldemo//2)+" PV !")
+									lootpv=lootpv+250+5*paldemo//2
 								elif str(leg)=="2":
-									print ("+"+str(20+paldemo//2)+" force !")
-									lootforce=lootforce+20+paldemo//2
+									print ("+"+str(170+17*paldemo//10)+" force !")
+									lootforce=lootforce+170+17*paldemo//10
 								elif str(leg)=="3":
-									print ("+"+str(10+paldemo//4)+" defense !")
-									lootdefense=lootdefense+10+paldemo//4
+									print ("+"+str(90+paldemo*9//10)+" defense !")
+									lootdefense=lootdefense+90+paldemo*9//10
 								elif str(leg)=="4":
-									print ("+"+str(10+paldemo//4)+" vitesse !")
-									lootvitesse=lootvitesse+10+paldemo//4
+									print ("+"+str(90+paldemo*9//10)+" vitesse !")
+									lootvitesse=lootvitesse+90+paldemo*9//10
 								elif str(leg)=="5":
-									print ("+"+str(40+paldemo)+" PV !")
-									print ("+"+str(10+paldemo//4)+" force !")
-									print ("+"+str(5+paldemo//8)+" defense !")
-									print ("+"+str(5+paldemo//8)+" vitesse !")
-									lootpv=lootpv+40+paldemo
-									lootforce=lootforce+10+paldemo//4
-									lootdefense=lootdefense+5+paldemo//8
-									lootvitesse=lootvitesse+5+paldemo//8
+									print ("+"+str(180+5*paldemo//4)+" PV !")
+									print ("+"+str(80+paldemo*17//20)+" force !")
+									print ("+"+str(40+paldemo*9//20)+" defense !")
+									print ("+"+str(40+paldemo*9//20)+" vitesse !")
+									lootpv=lootpv+180+5*paldemo//4
+									lootforce=lootforce+80+paldemo*17//20
+									lootdefense=lootdefense+40+paldemo*9//20
+									lootvitesse=lootvitesse+40+paldemo*9//20
 						if str(choix5)=="2":
 							if int(lootchoice)==1:
 								print ("Vous gagnez une goutte d'eau enchantée !")
 								print (" ")
-								print ("+"+str(100+5*palimmo//2)+" PV !")
-								lootpv=lootpv+100+5*palimmo//2
+								print ("+"+str(310+312*palimmo//100)+" PV !")
+								lootpv=lootpv+310+312*palimmo//100
 							elif int(lootchoice)==2:
 								print ("Vous gagnez une épée enchantée !")
 								print (" ")
-								print ("+"+str(20+palimmo//2)+" PV !")
-								print ("+"+str(15+3*palimmo//8)+" force !")
-								lootpv=lootpv+20+palimmo//2
-								lootforce=lootforce+15+3*palimmo//8
+								print ("+"+str(127+palimmo*127//100)+" de force !")
+								print ("+"+str(62+palimmo*62//100)+" PV !")
+								lootforce=lootforce+127+palimmo*127//100
+								lootpv=lootpv+62+62*palimmo//100
 							elif int(lootchoice)==3:
 								print ("Vous gagnez un bouclier enchantée !")
 								print (" ")
-								print ("+"+str(20+palimmo//2)+" PV !")
-								print ("+"+str(8+3*palimmo//16)+" defense !")
-								lootpv=lootpv+20+palimmo//2
-								lootdefense=lootdefense+8+3*palimmo//16
+								print ("+"+str(67+67*palimmo//100)+" de defense !")
+								print ("+"+str(62+62*palimmo//100)+" PV !")
+								lootdefense=lootdefense+67+palimmo*67//100
+								lootpv=lootpv+62+62*palimmo//100
 							elif int(lootchoice)==4:
 								print ("Vous gagnez une plume enchantée !")
 								print (" ")
-								print ("+"+str(20+palimmo//2)+" PV !")
-								print ("+"+str(8+3*palimmo//16)+" vitesse !")
-								lootpv=lootpv+20+palimmo//2
-								lootvitesse=lootvitesse+8+3*palimmo//16
+								print ("+"+str(67+67*palimmo//100)+" de vitesse !")
+								print ("+"+str(62+62*palimmo//100)+" PV !")
+								lootvitesse=lootvitesse+67+67*palimmo//100
+								lootpv=lootpv+62+62*palimmo//100
 							elif int(lootchoice)==5:
 								print ("Vous gagnez une bague divine !")
 								print (" ")
-								print ("+"+str(80+2*palimmo)+" PV !")
-								print ("+"+str(8+3*palimmo//16)+" force !")
-								print ("+"+str(4+3*palimmo//32)+" defense !")
-								print ("+"+str(4+3*palimmo//32)+" vitesse !")
-								lootpv=lootpv+80+2*palimmo
-								lootforce=lootforce+8+3*palimmo//16
-								lootdefense=lootdefense+4+3*palimmo//32
-								lootvitesse=lootvitesse+4+3*palimmo//32
+								print ("+"+str(310+312*palimmo//200)+" PV !")
+								print ("+"+str(127+127*palimmo//200)+" force !")
+								print ("+"+str(67+67*palimmo//200)+" defense !")
+								print ("+"+str(67+67*palimmo//200)+" vitesse !")
+								lootpv=lootpv+310+312*palimmo//200
+								lootforce=lootforce+127+127*palimmo//200
+								lootdefense=lootdefense+67+67*palimmo//200
+								lootvitesse=lootvitesse+67+67*palimmo//200
 							elif int(lootchoice)==6:
 								print ("|====================|")
 								print ("|                    |")
@@ -3104,64 +3104,64 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 								if str(leg)=="1":
-									print ("+"+str(100+5*palimmo//2)+" PV !")
-									lootpv=lootpv+100+palimmo//2
+									print ("+"+str(250+5*palimmo//2)+" PV !")
+									lootpv=lootpv+200+5*palimmo//2
 								elif str(leg)=="2":
-									print ("+"+str(20+palimmo//2)+" force !")
-									lootforce=lootforce+20+pal//2
+									print ("+"+str(170+17*palimmo//10)+" force !")
+									lootforce=lootforce+170+palimmo//10
 								elif str(leg)=="3":
-									print ("+"+str(10+palimmo//4)+" defense !")
-									lootdefense=lootdefense+10+pal//4
+									print ("+"+str(90+9*palimmo//10)+" defense !")
+									lootdefense=lootdefense+90+9*palimmo//10
 								elif str(leg)=="4":
-									print ("+"+str(10+palimmo//4)+" vitesse !")
-									lootvitesse=lootvitesse+10+pal//4
+									print ("+"+str(90+9*palimmo//10)+" vitesse !")
+									lootvitesse=lootvitesse+90+9*palimmo//10
 								elif str(leg)=="5":
-									print ("+"+str(80+2*palimmo)+" PV !")
-									print ("+"+str(8+3*palimmo//16)+" force !")
-									print ("+"+str(4+3*palimmo//32)+" defense !")
-									print ("+"+str(4+3*palimmo//32)+" vitesse !")
-									lootpv=lootpv+80+2*palimmo
-									lootforce=lootforce+8+3*palimmo//16
-									lootdefense=lootdefense+4+3*palimmo//32
-									lootvitesse=lootvitesse+4+3*palimmo//32
+									print ("+"+str(180+5*palimmo//4)+" PV !")
+									print ("+"+str(80+17*palimmo//20)+" force !")
+									print ("+"+str(40+9*palimmo//20)+" defense !")
+									print ("+"+str(40+9*palimmo//20)+" vitesse !")
+									lootpv=lootpv+180+5*palimmo//4
+									lootforce=lootforce+80+17*palimmo//20
+									lootdefense=lootdefense+40+9*palimmo//20
+									lootvitesse=lootvitesse+40+9*palimmo//20
 						if str(choix5)=="3":
 							if int(lootchoice)==1:
 								print ("Vous gagnez une fiole de sang barbare !")
 								print (" ")
-								print ("+"+str(60+3*palbarb//2)+" PV !")
-								print ("+"+str(5+palbarb//8)+" force !")
-								lootpv=lootpv+60+3*palbarb//2
-								lootforce=lootforce+5+palbarb//8
+								print ("+"+str(187+187*palbarb//100)+" PV !")
+								print ("+"+str(42+42*palbarb//100)+" force !")
+								lootpv=lootpv+187+187*palbarb//100
+								lootforce=lootforce+42+42*palbarb//100
 							elif int(lootchoice)==2:
 								print ("Vous gagnez une hache barbare !")
 								print (" ")
-								print ("+"+str(25+5*palbarb//8)+" force !")
-								lootforce=lootforce+25+5*palbarb//8
+								print ("+"+str(212+212*palbarb//100)+" force !")
+								lootforce=lootforce+212+212*palbarb//100
 							elif int(lootchoice)==3:
 								print ("Vous gagnez une peau de bête épaisse !")
 								print (" ")
-								print ("+"+str(8+3*palbarb//16)+" defense !")
-								print ("+"+str(5+palbarb//8)+" force !")
-								lootdefense=lootdefense+8+3*palbarb//16
-								lootforce=lootforce+5+palbarb//8
+								print ("+"+str(67+67*palbarb//100)+" defense !")
+								print ("+"+str(42+42*palbarb//100)+" force !")
+								lootdefense=lootdefense+67+67*palbarb//100
+								lootforce=lootforce+42+42*palbarb//100
 							elif int(lootchoice)==4:
 								print ("Vous gagnez des bottes légères en cuir !")
 								print (" ")
-								print ("+"+str(8+3*palbarb//16)+" vitesse !")
-								print ("+"+str(5+palbarb//8)+" force !")
-								lootvitesse=lootvitesse+8+3*palbarb//16
-								lootforce=lootforce+5+palbarb//8
+								print ("+"+str(67+67*palbarb//100)+" vitesse !")
+								print ("+"+str(42+42*palbarb//100)+" force !")
+								lootvitesse=lootvitesse+67+67*palbarb//100
+								lootforce=lootforce+42+42*palbarb//100
 							elif int(lootchoice)==5:
 								print ("Vous gagnez la tresse du seigneur barbare  !")
 								print (" ")
-								print ("+"+str(30+3*palbarb//4)+" PV !")
-								print ("+"+str(20+palbarb//2)+" force !")
-								print ("+"+str(4+3*palbarb//32)+" defense !")
-								print ("+"+str(4+3*palbarb//32)+" vitesse !")
-								lootpv=lootpv+30+3*palbarb//4
-								lootforce=lootforce+20+palbarb//2
-								lootdefense=lootdefense+4+palbarb//32
-								lootvitesse=lootvitesse+4+palbarb//32
+								print ("+"+str(187+187*palbarb//200)+" PV !")
+								print ("+"+str(212+212*palbarb//200)+" force !")
+								print ("+"+str(67+67*palbarb//200)+" defense !")
+								print ("+"+str(67+67*palbarb//200)+" vitesse !")
+								lootpv=lootpv+187+187*palbarb//200
+								lootforce=lootforce+212+212*palbarb//200
+								lootdefense=lootdefense+67+67*palbarb//200
+								lootvitesse=lootvitesse+67+67*palbarb//200
 							elif int(lootchoice)==6:
 								print ("|====================|")
 								print ("|                    |")
@@ -3186,64 +3186,64 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 								if str(leg)=="1":
-									print ("+"+str(80+2*palbarb)+" PV !")
-									lootpv=lootpv+80+2*palbarb
+									print ("+"+str(250+5*palbarb//2)+" PV !")
+									lootpv=lootpv+250+5*palbarb//2
 								elif str(leg)=="2":
-									print ("+"+str(25+5*palbarb//8)+" force !")
-									lootforce=lootforce+25+5*palbarb//8
+									print ("+"+str(170+17*palbarb//10)+" force !")
+									lootforce=lootforce+170+17*palbarb//10
 								elif str(leg)=="3":
-									print ("+"+str(10+palbarb//4)+" defense !")
-									lootdefense=lootdefense+10+palbarb//4
+									print ("+"+str(90+9*palbarb//10)+" defense !")
+									lootdefense=lootdefense+90+9*palbarb//10
 								elif str(leg)=="4":
-									print ("+"+str(10+palbarb//4)+" vitesse !")
-									lootvitesse=lootvitesse+10+palbarb//4
+									print ("+"+str(90+9*palbarb//10)+" vitesse !")
+									lootvitesse=lootvitesse+90+9*palbarb//10
 								elif str(leg)=="5":
-									print ("+"+str(30+3*palbarb//4)+" PV !")
-									print ("+"+str(20+palbarb//2)+" force !")
-									print ("+"+str(4+3*palbarb//32)+" defense !")
-									print ("+"+str(4+3*palbarb//32)+" vitesse !")
-									lootpv=lootpv+30+3*palbarb//4
-									lootforce=lootforce+20+palbarb//2
-									lootdefense=lootdefense+4+3*palbarb//32
-									lootvitesse=lootvitesse+4+3*palbarb//32
+									print ("+"+str(180+5*palbarb//4)+" PV !")
+									print ("+"+str(80+17*palbarb//20)+" force !")
+									print ("+"+str(40+9*palbarb//20)+" defense !")
+									print ("+"+str(40+9*palbarb//20)+" vitesse !")
+									lootpv=lootpv+180+5*palbarb//4
+									lootforce=lootforce+80+17*palbarb//20
+									lootdefense=lootdefense+40+9*palbarb//20
+									lootvitesse=lootvitesse+40+9*palbarb//20
 						if str(choix5)=="4":
 							if int(lootchoice)==1:
 								print ("Vous gagnez fragment elementaire aquatique !")
 								print (" ")
-								print ("+"+str(60+3*palelem//2)+" PV !")
-								print ("+"+str(3+palelem//16)+" defense !")
-								lootpv=lootpv+60+3*palelem//2
-								lootdefense=lootdefense+3+palelem//16
+								print ("+"+str(187+187*palelem//100)+" PV !")
+								print ("+"+str(22+22*palelem//100)+" defense !")
+								lootpv=lootpv+187+187*palelem//100
+								lootdefense=lootdefense+22+22*palelem//100
 							elif int(lootchoice)==2:
 								print ("Vous gagnez fragment elementaire flamboyant!")
 								print (" ")
-								print ("+"+str(15+3*palelem//8)+" force !")
-								print ("+"+str(3+palelem//16)+" defense !")
-								lootforce=lootforce+15+3*palelem//8
-								lootdefense=lootdefense+3+palelem//16
+								print ("+"+str(127+127*palelem//100)+" force !")
+								print ("+"+str(22+22*palelem//100)+" defense !")
+								lootforce=lootforce+127+127*palelem//100
+								lootdefense=lootdefense+22+22*palelem//100
 							elif int(lootchoice)==3:
 								print ("Vous gagnez fragment elementaire rocheux!")
 								print (" ")
-								print ("+"+str(13+5*palelem//16)+" defense !")
-								lootdefense=lootdefense+13+5*palelem//16
+								print ("+"+str(112+112*palelem//100)+" defense !")
+								lootdefense=lootdefense+112+112*palelem//100
 							elif int(lootchoice)==4:
 								print ("Vous gagnez fragment elementaire venteux!")
 								print (" ")
-								print ("+"+str(8+3*palelem//16)+" vitesse !")
-								print ("+"+str(3+palelem//16)+" defense !")
-								lootvitesse=lootvitesse+8+3*palelem//16
-								lootdefense=lootdefense+3+palelem//16
+								print ("+"+str(67+67*palelem//100)+" vitesse !")
+								print ("+"+str(22+22*palelem//100)+" defense !")
+								lootvitesse=lootvitesse+67+67*palelem//100
+								lootdefense=lootdefense+22+22*palelem//100
 							elif int(lootchoice)==5:
 								print ("Vous gagnez fragment elementaire magique!")
 								print (" ")
-								print ("+"+str(30+3*palelem//4)+" PV !")
-								print ("+"+str(8+3*palelem//16)+" force !")
-								print ("+"+str(10+palelem//4)+" defense !")
-								print ("+"+str(4+palelem//32)+" vitesse !")
-								lootpv=lootpv+30+3*palelem//4
-								lootforce=lootforce+8+3*palelem//16
-								lootdefense=lootdefense+10+palelem//4
-								lootvitesse=lootvitesse+4+palelem//32
+								print ("+"+str(187+187*palelem//200)+" PV !")
+								print ("+"+str(127+127*palelem//200)+" force !")
+								print ("+"+str(112+112*palelem//200)+" defense !")
+								print ("+"+str(67+67*palelem//200)+" vitesse !")
+								lootpv=lootpv+187+187*palelem//200
+								lootforce=lootforce+127+127*palelem//200
+								lootdefense=lootdefense+112+112*palelem//200
+								lootvitesse=lootvitesse+67+67*palelem//200
 							elif int(lootchoice)==6:
 								print ("|====================|")
 								print ("|                    |")
@@ -3268,64 +3268,64 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 								if str(leg)=="1":
-									print ("+"+str(80+2*palelem)+" PV !")
-									lootpv=lootpv+80+palelem
+									print ("+"+str(250+5*palelem//2)+" PV !")
+									lootpv=lootpv+250+5*palelem//2
 								elif str(leg)=="2":
-									print ("+"+str(20+palelem//2)+" force !")
-									lootforce=lootforce+20+palelem//2
+									print ("+"+str(170+17*palelem//10)+" force !")
+									lootforce=lootforce+170+17*palelem//10
 								elif str(leg)=="3":
-									print ("+"+str(13+palelem*5//16)+" defense !")
-									lootdefense=lootdefense+2+palelem*2//13
+									print ("+"+str(90+palelem*9//10)+" defense !")
+									lootdefense=lootdefense+90+palelem*9//10
 								elif str(leg)=="4":
-									print ("+"+str(10+palelem//4)+" vitesse !")
-									lootvitesse=lootvitesse+10+palelem//4
+									print ("+"+str(90+palelem*9//10)+" vitesse !")
+									lootvitesse=lootvitesse+90+palelem*9//10
 								elif str(leg)=="5":
-									print ("+"+str(30+3*palelem//4)+" PV !")
-									print ("+"+str(8+3*palelem//16)+" force !")
-									print ("+"+str(10+palelem//4)+" defense !")
-									print ("+"+str(4+palelem//32)+" vitesse !")
-									lootpv=lootpv+30+3*palelem//4
-									lootforce=lootforce+8+3*palelem//16
-									lootdefense=lootdefense+10+palelem//4
-									lootvitesse=lootvitesse+4+palelem//32
+									print ("+"+str(180+5*palelem//4)+" PV !")
+									print ("+"+str(80+17*palelem//20)+" force !")
+									print ("+"+str(40+9*palelem//20)+" defense !")
+									print ("+"+str(40+9*palelem//20)+" vitesse !")
+									lootpv=lootpv+180+5*palelem//4
+									lootforce=lootforce+80+17*palelem//20
+									lootdefense=lootdefense+40+9*palelem//20
+									lootvitesse=lootvitesse+40+9*palelem//20
 						if str(choix5)=="5":
 							if int(lootchoice)==1:
 								print ("Vous gagnez une emmeraude !")
 								print (" ")
-								print ("+"+str(60+3*palfufu//2)+" PV !")
-								print ("+"+str(3+palfufu//16)+" vitesse !")
-								lootpv=lootpv+60+3*palfufu//2
-								lootvitesse=lootvitesse+3+palfufu//16
+								print ("+"+str(187+187*palfufu//100)+" PV !")
+								print ("+"+str(22+22*palfufu//100)+" vitesse !")
+								lootpv=lootpv+187+187*palfufu//100
+								lootvitesse=lootvitesse+22+22*palfufu//100
 							elif int(lootchoice)==2:
 								print ("Vous gagnez un rubis !")
 								print (" ")
-								print ("+"+str(15+3*palfufu//8)+" force !")
-								print ("+"+str(3+palfufu//16)+" vitesse !")
-								lootforce=lootforce+15+3*palfufu//8
-								lootvitesse=lootvitesse+3+palfufu//16
+								print ("+"+str(127+127*palfufu//100)+" force !")
+								print ("+"+str(22+22*palfufu//100)+" vitesse !")
+								lootforce=lootforce+127+127*palfufu//100
+								lootvitesse=lootvitesse+22+22*palfufu//100
 							elif int(lootchoice)==3:
 								print ("Vous gagnez un saphir !")
 								print (" ")
-								print ("+"+str(8+3*palfufu//16)+" defense !")
-								print ("+"+str(3+palfufu//16)+" vitesse !")
-								lootdefense=lootdefense+8+3*palfufu//16
-								lootvitesse=lootvitesse+3+palfufu//16
+								print ("+"+str(67+67*palfufu//100)+" defense !")
+								print ("+"+str(22+22*palfufu//100)+" vitesse !")
+								lootdefense=lootdefense+67+67*palfufu//100
+								lootvitesse=lootvitesse+22+22*palfufu//100
 							elif int(lootchoice)==4:
 								print ("Vous gagnez une topaze !")
 								print (" ")
-								print ("+"+str(13+5*palfufu//16)+" vitesse !")
-								lootvitesse=lootvitesse+13+5*palfufu//16
+								print ("+"+str(112+112*palfufu//100)+" vitesse !")
+								lootvitesse=lootvitesse+112+112*palfufu//100
 							elif int(lootchoice)==5:
 								print ("Vous gagnez une obsidienne !")
 								print (" ")
-								print ("+"+str(30+3*palfufu//4)+" PV !")
-								print ("+"+str(8+3*palfufu//16)+" force !")
-								print ("+"+str(4+palfufu//32)+" defense !")
-								print ("+"+str(10+palfufu//4)+" vitesse !")
-								lootpv=lootpv+30+3*palfufu//4
-								lootforce=lootforce+8+3*palfufu//16
-								lootdefense=lootdefense+4+palfufu//32
-								lootvitesse=lootvitesse+10+palfufu//4
+								print ("+"+str(187+187*palfufu//200)+" PV !")
+								print ("+"+str(127+127*palfufu//200)+" force !")
+								print ("+"+str(67+67*palfufu//200)+" defense !")
+								print ("+"+str(112+112*palfufu//200)+" vitesse !")
+								lootpv=lootpv+187+187*palfufu//200
+								lootforce=lootforce+127+127*palfufu//200
+								lootdefense=lootdefense+67+67*palfufu//200
+								lootvitesse=lootvitesse+112+112*palfufu//200
 							elif int(lootchoice)==6:
 								print ("|===================|")
 								print ("|                   |")
@@ -3350,26 +3350,26 @@ while int(pal)<1000000:
 								print (" ")
 								print (" ")
 								if str(leg)=="1":
-									print ("+"+str(80+2*palfufu)+" PV !")
-									lootpv=lootpv+80+2*palfufu
+									print ("+"+str(250+5*palfufu//2)+" PV !")
+									lootpv=lootpv+250+5*palfufu//2
 								elif str(leg)=="2":
-									print ("+"+str(20+palfufu//2)+" force !")
-									lootforce=lootforce+20+palfufu//2
+									print ("+"+str(170+17*palfufu//10)+" force !")
+									lootforce=lootforce+170+17*palfufu//10
 								elif str(leg)=="3":
-									print ("+"+str(10+palfufu//4)+" defense !")
-									lootdefense=lootdefense+10+palfufu//4
+									print ("+"+str(90+9*palfufu//10)+" defense !")
+									lootdefense=lootdefense+90+9*palfufu//10
 								elif str(leg)=="4":
-									print ("+"+str(13+5*palfufu//16)+" vitesse !")
-									lootvitesse=lootvitesse+13+palfufu*5//16
+									print ("+"+str(90+9*palfufu//10)+" vitesse !")
+									lootvitesse=lootvitesse+90+palfufu*9//10
 								elif str(leg)=="5":
-									print ("+"+str(30+3*palfufu//4)+" PV !")
-									print ("+"+str(8+3*palfufu//16)+" force !")
-									print ("+"+str(4+palfufu//32)+" defense !")
-									print ("+"+str(10+palfufu//4)+" vitesse !")
-									lootpv=lootpv+30+3*palfufu//4
-									lootforce=lootforce+8+3*palfufu//16
-									lootdefense=lootdefense+4+palfufu//32
-									lootvitesse=lootvitesse+10+palfufu//4
+									print ("+"+str(180+5*palfufu//4)+" PV !")
+									print ("+"+str(80+17*palfufu//20)+" force !")
+									print ("+"+str(40+9*palfufu//20)+" defense !")
+									print ("+"+str(40+9*palfufu//20)+" vitesse !")
+									lootpv=lootpv+180+5*palfufu//4
+									lootforce=lootforce+80+17*palfufu//20
+									lootdefense=lootdefense+40+9*palfufu//20
+									lootvitesse=lootvitesse+40+9*palfufu//20
 						print (" ")
 						print (" ")
 						continuer=input("[enter]")
@@ -3531,8 +3531,8 @@ while int(pal)<1000000:
 							print (str(nom)+" perd "+str(degatm)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nomm)+" gagne "+str(degatm//2)+" PV !")
-							viem=viem+degatm//2
+							print (str(nomm)+" gagne "+str((15625+12687*lvlm)*10//100)+" PV !")
+							viem=viem+(15625+12687*lvlm)*10//100
 							print (" ")
 							print (" ")
 						elif int(capa)==2:
@@ -3549,8 +3549,8 @@ while int(pal)<1000000:
 							print (str(nom)+" perd "+str(degatm)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nomm)+" perd "+str(degatm//2)+" PV !")
-							viem=viem-degatm//2
+							print (str(nomm)+" perd "+str((15625+12687*lvlm)*20//100)+" PV !")
+							viem=viem-(15625+12687*lvlm)*20//100
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
@@ -3575,8 +3575,8 @@ while int(pal)<1000000:
 							continuer=input("[enter]")
 							print (" ")
 							print (" ")
-							print (str(nomm)+" gagne "+str(forcem//5))
-							forcem=forcem+forcem//5
+							print (str(nomm)+" gagne "+str(forcem*25//100)+" de force !")
+							forcem=forcem+forcem*25//100
 							print (" ")
 							print (" ")
 						continuer=input("[enter]")
@@ -3650,15 +3650,15 @@ while int(pal)<1000000:
 						print (" ")
 						continuer=input("[enter]")
 					elif str(choix5)=="2":
-						degatm=rituel_sanglant(viem,defense)
+						degatm=coup_demoniaque(forcem,defense)
 						vie=vie-degatm
 						print (str(nomm)+" utilise rituel sanglant...")
 						print (" ")
 						print (" ")
 						print (str(nom)+" perd "+str(degatm)+" PV !")
 						print (" ")
-						viem=viem+degatm//3
-						print (str(nomm)+" gagne "+str(degatm//3)+" PV !")
+						print (str(nomm)+" gagne "+str((12500+10150*lvlm)*8//100)+" PV !")
+						viem=viem+(12500+10150*lvlm)*8//100
 						print (" ")
 						print (" ")
 						continuer=input("[enter]")
@@ -3673,8 +3673,8 @@ while int(pal)<1000000:
 						print ("Vous saignez...")
 						print (" ")
 						print (" ")
-						print (str(nom)+" perd "+str(vie//45)+" PV !")
-						vie=vie-vie//45
+						print (str(nom)+" perd "+str(vie*5//100)+" PV !")
+						vie=vie-vie*5//100
 						print (" ")
 						print (" ")
 						continuer=input("[enter]")

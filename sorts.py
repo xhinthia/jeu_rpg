@@ -118,25 +118,25 @@ def destru_primo(forcem,defense):
 
 def attaque_boss(viem,forcem,defense,choix5):
 	if int(choix5)==2:
-		degatm=viem//70-defense
+		degatm=forcem*150//100-defense
 	elif int(choix5)==3:
-		degatm=forcem*2-defense
+		degatm=forcem*210/100-defense
 	#elif int(choix5)==4:
 	#	instabilité up carac au pif
 	elif int(choix5)==5:
-		degatm=forcem-defense
+		degatm=forcem*150//100-defense
 	if int(degatm)<0:
 		degatm=0
 
 def ulti_boss(viem,forcem,defense,choix5):
 	if int(choix5)==2:
-		degatm=viem//30-defense
+		degatm=forcem*320//100-defense
 	#elif int(choix5)==3:
 	#	brutalité up force
 	elif int(choix5)==4:
-		degatm=forcem*2-defense
+		degatm=forcem*350//100-defense
 	elif int(choix5)==5:
-		degatm=forcem*4-defense
+		degatm=forcem*370//100-defense
 	if int(degatm)<0:
 		degatm=0
 
@@ -144,20 +144,12 @@ def instabilite_elem(forcem,defensem,vitessem):
 	liste = [1,2,3]
 	a=random.choice(liste)
 	if int(a)==1:
-		buff=forcem//12
+		buff=forcem*25//100
 	elif int(a)==2:
-		buff=defensem//15
+		buff=defensem*15//100
 	elif int(a)==3:
-		buff=vitessem//5
+		buff=vitessem*30//100
 	return buff
-
-
-
-def rituel_sanglant(viem,defense):
-	degatm=viem//100-defense
-	if int(degatm)<0:
-		degatm=0
-	return degatm
 
 def ombreflamme(force,ombre):
 	if int(ombre)<200:
