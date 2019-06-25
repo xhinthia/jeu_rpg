@@ -388,11 +388,11 @@ while int(pal)<100:
 		print ("[1] Demon lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
 		print ("[2] Demon lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
 		print ("[3] Demon lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
-		print ("[4] Demon lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
+		print ("[4] Demon lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*2//45)+")")
 	elif int(azzin)==2:
 		print ("[1] Demon lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+vitesseup+lootvitesse)*9//2)+")")
 		print ("[2] Demon lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
-		print ("[3] Demon lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+		print ("[3] Demon lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*2//45)+")")
 		print ("[4] Demon lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 	else:
 		print ("[1] Demon lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
@@ -474,11 +474,11 @@ while int(pal)<100:
 		vie=1200+vieup+lootpv+(400+defenseup+lootdefense)*9//2
 		force=800+forceup+lootforce+(400+defenseup+lootdefense)//9
 		defense=400+defenseup+lootdefense
-		vitesse=400+vitesseup+lootvitesse+(400+defenseup+lootdefense)*45//2
+		vitesse=400+vitesseup+lootvitesse+(400+defenseup+lootdefense)*2//45
 	elif int(azzin)==2:
 		vie=1200+vieup+lootpv+(400+vitesseup+lootvitesse)*9//2
 		force=800+forceup+lootforce+(400+vitesseup+lootvitesse)//9
-		defense=400+defenseup+lootdefense+(400+vitesseup+lootvitesse)*45//2
+		defense=400+defenseup+lootdefense+(400+vitesseup+lootvitesse)*2//45
 		vitesse=400+vitesseup+lootvitesse
 	else:
 		vie=1200+vieup+lootpv
@@ -548,8 +548,8 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str((1200+vieup+lootpv)*15//100)+" PV !")
-						vie=vie+(1200+vieup+lootpv)*15//100
+						print (str(nom)+" gagne "+str((1200+vieup+lootpv)*8//100)+" PV !")
+						vie=vie+(1200+vieup+lootpv)*8//100
 						print (" ")
 						print (" ")
 						bloodstack=bloodstack+1
@@ -1159,13 +1159,13 @@ while int(pal)<100:
 						print (str(nomm)+" perd "+str(degat)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str((1200+vieup+lootpv)*10//100)+" PV !")
-						vie=vie+(1200+vieup+lootpv)*10//100
+						print (str(nom)+" gagne "+str((1200+vieup+lootpv)*5//100)+" PV !")
+						vie=vie+(1200+vieup+lootpv)*5//100
 						print (" ")
 						jeu=1
 						print (" ")
 						if int(keltu)==1:
-							immortal=immortal+(1200+vieup+lootpv)*10//100
+							immortal=immortal+(1200+vieup+lootpv)*5//100
 						degpv=degpv+1
 						if int(degpv)==200 or int(degpv)==400 or int(degpv)==600:
 							print ("--------------------------------------------------------------------------------------")
@@ -1812,11 +1812,11 @@ while int(pal)<1000000:
 			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
 			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
 			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
-			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
+			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*2//45)+")")
 		elif int(azzin)==2:
 			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
 			print ("[2] Demon malsain lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
-			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[3] Demon malsain lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*2//45)+")")
 			print ("[4] Demon malsain lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
 			print ("[1] Demon malsain lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
@@ -1846,11 +1846,11 @@ while int(pal)<1000000:
 			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
 			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
 			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
-			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
+			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*2//45)+")")
 		elif int(azzin)==2:
 			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
 			print ("[2] Garde immortel lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
-			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[3] Garde immortel lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*2//45)+")")
 			print ("[4] Garde immortel lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
 			print ("[1] Garde immortel lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
@@ -1881,11 +1881,11 @@ while int(pal)<1000000:
 			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
 			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
 			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
-			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
+			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*2//45)+")")
 		elif int(azzin)==2:
 			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
 			print ("[2] Guerrier barbare lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
-			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[3] Guerrier barbare lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*2//45)+")")
 			print ("[4] Guerrier barbare lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
 			print ("[1] Guerrier barbare lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
@@ -1916,11 +1916,11 @@ while int(pal)<1000000:
 			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
 			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
 			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
-			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
+			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*2//45)+")")
 		elif int(azzin)==2:
 			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
 			print ("[2] Elementaire de pierre lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
-			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[3] Elementaire de pierre lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*2//45)+")")
 			print ("[4] Elementaire de pierre lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
 			print ("[1] Elementaire de pierre lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
@@ -1951,11 +1951,11 @@ while int(pal)<1000000:
 			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str((400+defenseup+lootdefense)*9//2)+")")
 			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+defenseup+lootdefense)//9)+")")
 			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense))
-			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*45//2)+")")
+			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse)+" (+"+str((400+defenseup+lootdefense)*2//45)+")")
 		elif int(azzin)==2:
 			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv)+" (+"+str(400+vitesseup+lootvitesse)*9//2+")")
 			print ("[2] Contrebandier lvl "+str(2+pal)+"				Force ("+str(nom)+") = "+str(800+forceup+lootforce)+" (+"+str((400+vitesseup+lootvitesse)//9)+")")
-			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*45//2)+")")
+			print ("[3] Contrebandier lvl "+str(3+pal)+"				Defense ("+str(nom)+") = "+str(400+defenseup+lootdefense)+" (+"+str((400+vitesseup+lootvitesse)*2//45)+")")
 			print ("[4] Contrebandier lvl "+str(4+pal)+"				Vitesse ("+str(nom)+") = "+str(400+vitesseup+lootvitesse))
 		else:
 			print ("[1] Contrebandier lvl "+str(1+pal)+"				PV ("+str(nom)+") = "+str(1200+vieup+lootpv))
@@ -2153,11 +2153,11 @@ while int(pal)<1000000:
 			vie=1200+vieup+lootpv+(400+defenseup+lootdefense)*9//2
 			force=800+forceup+lootforce+(400+defenseup+lootdefense)//9
 			defense=400+defenseup+lootdefense
-			vitesse=400+vitesseup+lootvitesse+(400+defenseup+lootdefense)*45//2
+			vitesse=400+vitesseup+lootvitesse+(400+defenseup+lootdefense)*2//45
 		elif int(azzin)==2:
 			vie=1200+vieup+lootpv+(400+vitesseup+lootvitesse)*9//2
 			force=800+forceup+lootforce+(400+vitesseup+lootvitesse)//9
-			defense=400+defenseup+lootdefense+(400+vitesseup+lootvitesse)*45//2
+			defense=400+defenseup+lootdefense+(400+vitesseup+lootvitesse)*2//45
 			vitesse=400+vitesseup+lootvitesse
 		else:
 			vie=1200+vieup+lootpv
@@ -2227,8 +2227,8 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str((1200+vieup+lootpv)*15//100)+" PV !")
-							vie=vie+(1200+vieup+lootpv)*15//100
+							print (str(nom)+" gagne "+str((1200+vieup+lootpv)*8//100)+" PV !")
+							vie=vie+(1200+vieup+lootpv)*8//100
 							print (" ")
 							print (" ")
 							bloodstack=bloodstack+1
@@ -2838,13 +2838,13 @@ while int(pal)<1000000:
 							print (str(nomm)+" perd "+str(degat)+" PV !")
 							print (" ")
 							print (" ")
-							print (str(nom)+" gagne "+str((1200+vieup+lootpv)*10//100)+" PV !")
-							vie=vie+(1200+vieup+lootpv)*10//100
+							print (str(nom)+" gagne "+str((1200+vieup+lootpv)*5//100)+" PV !")
+							vie=vie+(1200+vieup+lootpv)*5//100
 							print (" ")
 							jeu=1
 							print (" ")
 							if int(keltu)==1:
-								immortal=immortal+(1200+vieup+lootpv)*10//100
+								immortal=immortal+(1200+vieup+lootpv)*5//100
 							degpv=degpv+1
 							if int(degpv)==200 or int(degpv)==400 or int(degpv)==600:
 								print ("--------------------------------------------------------------------------------------")
