@@ -441,13 +441,13 @@ while int(pal)<100:
 		if int(pal)==90:
 			nomm="Demon infernal, gardien des portails"
 			viem=14175+1575*lvlm
-			forcem=225+25*lvlm
+			forcem=225+35*lvlm
 			defensem=630+70*lvlm
 			vitessem=72+8*lvlm
 		else:
 			nomm="Demon primordial lvl "+str(lvlm)
 			viem=11813+1312*lvlm
-			forcem=270+30*lvlm
+			forcem=270+33*lvlm
 			defensem=630+70*lvlm
 			vitessem=153+17*lvlm
 	else:
@@ -1983,35 +1983,35 @@ while int(pal)<1000000:
 			lvlm=10+paldemo
 			nomm="Maître démoniaque lvl "+str(lvlm)
 			viem=11900+1392*lvlm
-			forcem=270+32*lvlm
+			forcem=270+35*lvlm
 			defensem=630+71*lvlm
 			vitessem=155+18*lvlm
 		elif str(choix5)=="2":
 			lvlm=10+palimmo
 			nomm="Roi immortel lvl "+str(lvlm)
 			viem=15625+12687*lvlm
-			forcem=254+30*lvlm
+			forcem=254+32*lvlm
 			defensem=10+1*lvlm
 			vitessem=20+2*lvlm
 		elif str(choix5)=="3":
 			lvlm=10+palbarb
 			nomm="Seigneur barbare lvl "+str(lvlm)
 			viem=13230+1540*lvlm
-			forcem=522+68*lvlm
+			forcem=522+69*lvlm
 			defensem=330+34*lvlm
 			vitessem=76+9*lvlm
 		elif str(choix5)=="4":
 			lvlm=10+palelem
 			nomm="Elementaire instable lvl "+str(lvlm)
 			viem=11812+1375*lvlm
-			forcem=140+16*lvlm
+			forcem=140+17*lvlm
 			defensem=1207+141*lvlm
 			vitessem=157+18*lvlm
 		elif str(choix5)=="5":
 			lvlm=10+palfufu
 			nomm="Capitaine lvl "+str(lvlm)
 			viem=13230+1540*lvlm
-			forcem=71+8*lvlm
+			forcem=71+9*lvlm
 			defensem=150+16*lvlm
 			vitessem=625+67*lvlm
 	else:
@@ -2036,7 +2036,7 @@ while int(pal)<1000000:
 				lvlm=9+paldemo
 			nomm="Demon malsain lvl "+str(lvlm)
 			viem=9450+1100*lvlm
-			forcem=290+35*lvlm
+			forcem=290+34*lvlm
 			defensem=630+71*lvlm
 			vitessem=315+36*lvlm
 		elif str(choix5)=="2":
@@ -2060,7 +2060,7 @@ while int(pal)<1000000:
 				lvlm=9+palimmo
 			nomm="Garde immortel lvl "+str(lvlm)
 			viem=12500+10150*lvlm
-			forcem=287+31*lvlm
+			forcem=287+30*lvlm
 			defensem=10+1*lvlm
 			vitessem=42+4*lvlm
 		elif str(choix5)=="3":
@@ -2084,7 +2084,7 @@ while int(pal)<1000000:
 				lvlm=9+palbarb
 			nomm="Guerrier barbare lvl "+str(lvlm)
 			viem=10584+1232*lvlm
-			forcem=545+70*lvlm
+			forcem=545+68*lvlm
 			defensem=330+34*lvlm
 			vitessem=155+18*lvlm
 		elif str(choix5)=="4":
@@ -2108,7 +2108,7 @@ while int(pal)<1000000:
 				lvlm=9+palelem
 			nomm="Elementaire de pierre lvl "+str(lvlm)
 			viem=9450+1100*lvlm
-			forcem=140+16*lvlm
+			forcem=140+15*lvlm
 			defensem=1210+140*lvlm
 			vitessem=315+36*lvlm
 		elif str(choix5)=="5":
@@ -2132,7 +2132,7 @@ while int(pal)<1000000:
 				lvlm=9+palfufu
 			nomm="Contrebandier lvl "+str(lvlm)
 			viem=10584+1232*lvlm
-			forcem=145+17*lvlm
+			forcem=145+16*lvlm
 			defensem=150+16*lvlm
 			vitessem=615+61*lvlm
 		tour=0
