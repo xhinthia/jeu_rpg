@@ -1095,15 +1095,15 @@ while int(pal)<100:
 							print (" ")
 						continuer=input("[enter]")
 					elif str(choix3)=="3" and int(pal)>=50:
-						vie=vie-(110+vieup+lootpv)//5
+						vie=vie-(1200+vieup+lootpv)*15//100
 						print (" ")
 						print (" ")
-						print (str(nom)+" perd "+str((110+vieup+lootpv)//5)+" PV !")
+						print (str(nom)+" perd "+str((1200+vieup+lootpv)*20//100)+" PV !")
 						print (" ")
 						print (" ")
-						print (str(nom)+" gagne "+str(force*3//2)+" de force !")
+						print (str(nom)+" gagne "+str(force*20//100)+" de force !")
 						print (" ")
-						force=force*3//2
+						force=force+force*20//100
 						print (" ")
 						jeu=1
 						continuer=input("[enter]")
